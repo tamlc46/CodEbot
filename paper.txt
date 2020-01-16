@@ -1,0 +1,385 @@
+1. Introduction to “This is Watson”
+D. A. Ferrucci, "Introduction to “This is Watson”," in IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 1:1-1:15, May-June 2012.
+
+doi: 10.1147/JRD.2012.2184356
+Abstract: In 2007, IBM Research took on the grand challenge of building a computer 
+system that could compete with champions at the game of Jeopardy!™. In 2011, the 
+open-domain question-answering (QA) system, dubbed Watson, beat the two 
+highest ranked players in a nationally televised two-game Jeopardy! match. This 
+paper provides a brief history of the events and ideas that positioned our team to 
+take on the Jeopardy! challenge, build Watson, IBM Watson™, and ultimately 
+triumph. It describes both the nature of the QA challenge represented by Jeopardy! 
+and our overarching technical approach. The main body of this paper provides a 
+narrative of the DeepQA processing pipeline to introduce the articles in this special 
+issue and put them in context of the overall system. Finally, this paper summarizes 
+our main results, describing how the system, as a holistic combination of many 
+diverse algorithmic techniques, performed at champion levels, and it briefly 
+discusses the team's future research plans.
+keywords: {Algorithm design and analysis;Computer 
+architecture;Computers;Games;History;Semantics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177724&isnumber=6177717
+
+2. Question analysis: How Watson reads a clue
+A. Lally et al., "Question analysis: How Watson reads a clue," in  IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 2:1-2:14, May-June 2012.
+
+doi: 10.1147/JRD.2012.2184637
+Abstract: The first stage of processing in the IBM Watson™ system is to perform a 
+detailed analysis of the question in order to determine what it is asking for and how 
+best to approach answering it. Question analysis uses Watson's parsing and 
+semantic analysis capabilities: a deep Slot Grammar parser, a named entity 
+recognizer, a co-reference resolution component, and a relation extraction 
+component. We apply numerous detection rules and classifiers using features from 
+this analysis to detect critical elements of the question, including: 1) the part of the 
+question that is a reference to the answer (the focus); 2) terms in the question that 
+indicate what type of entity is being asked for (lexical answer types); 3) a 
+classification of the question into one or more of several broad types; and 4) 
+elements of the question that play particular roles that may require special handling, 
+for example, nested subquestions that must be separately answered. We describe 
+how these elements are detected and evaluate the impact of accurate detection on 
+our end-to-end question-answering system accuracy.
+keywords: {Computer architecture;Feature extraction;Grammar;Information 
+analysis;Semantics;Syntactics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177727&isnumber=6177717
+
+3. Deep parsing in Watson
+M. C. McCord, J. W. Murdock and B. K. Boguraev, "Deep parsing in Watson," in IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 3:1-3:15, May-June 2012.
+doi: 10.1147/JRD.2012.2185409
+Abstract: Two deep parsing components, an English Slot Grammar (ESG) parser 
+and a predicate-argument structure (PAS) builder, provide core linguistic analyses of 
+both the questions and the text content used by IBM Watson™ to find and 
+hypothesize answers. Specifically, these components are fundamental in question 
+analysis, candidate generation, and analysis of passage evidence. As part of the 
+Watson project, ESG was enhanced, and its performance on Jeopardy!™ questions 
+and on established reference data was improved. PAS was built on top of ESG to 
+support higher-level analytics. In this paper, we describe these components and 
+illustrate how they are used in a pattern-based relation extraction component of 
+Watson. We also provide quantitative results of evaluating the component-level 
+performance of ESG parsing.
+keywords: {Data structures;Grammar;Morphology;Semantics;Speech 
+processing;Surface structures;Syntactics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177729&isnumber=6177717
+
+4. Textual resource acquisition and engineering
+J. Chu-Carroll, J. Fan, N. Schlaefer and W. Zadrozny, "Textual resource acquisition and engineering," in  IBM Journal of Research and Development, vol. 56, no. .4, pp. 4:1-4:11, May-June 2012.
+
+doi: 10.1147/JRD.2012.2185901
+Abstract: A key requirement for high-performing question-answering (QA) systems is 
+access to high-quality reference corpora from which answers to questions can be 
+hypothesized and evaluated. However, the topic of source acquisition and 
+engineering has received very little attention so far. This is because most existing 
+systems were developed under organized evaluation efforts that included reference 
+corpora as part of the task specification. The task of answering Jeopardy!™ 
+questions, on the other hand, does not come with such a well-circumscribed set of 
+relevant resources. Therefore, it became part of the IBM Watson™ effort to develop 
+a set of well-defined procedures to acquire high-quality resources that can effectively 
+support a high-performing QA system. To this end, we developed three procedures, 
+i.e., source acquisition, source transformation, and source expansion. Source 
+acquisition is an iterative development process of acquiring new collections to cover 
+salient topics deemed to be gaps in existing resources based on principled error 
+analysis. Source transformation refers to the process in which information is 
+extracted from existing sources, either as a whole or in part, and is represented in a 
+form that the system can most easily use. Finally, source expansion attempts to 
+increase the coverage in the content of each known topic by adding new information 
+as well as lexical and syntactic variations of existing information extracted from 
+external large collections. In this paper, we discuss the methodology that we 
+developed for IBM Watson for performing acquisition, transformation, and expansion 
+of textual resources. We demonstrate the effectiveness of each technique through its 
+impact on candidate recall and on end-to-end QA performance.
+keywords: {Dictionaries;Electronic publishing;Encyclopedias;Error 
+analysis;Information analysis;Resource management;Search problems;Text mining},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177719&isnumber=6177717
+
+5. Automatic knowledge extraction from documents
+J. Fan, A. Kalyanpur, D. C. Gondek and D. A. Ferrucci, "Automatic knowledge extraction from documents," in IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 5:1-5:10, May-June 2012.
+
+doi: 10.1147/JRD.2012.2186519
+Abstract: Access to a large amount of knowledge is critical for success at answering 
+open-domain questions for DeepQA systems such as IBM Watson™. Formal 
+representation of knowledge has the advantage of being easy to reason with, but 
+acquisition of structured knowledge in open domains from unstructured data is often 
+difficult and expensive. Our central hypothesis is that shallow syntactic knowledge 
+and its implied semantics can be easily acquired and can be used in many areas of a 
+question-answering system. We take a two-stage approach to extract the syntactic 
+knowledge and implied semantics. First, shallow knowledge from large collections of 
+documents is automatically extracted. Second, additional semantics are inferred 
+from aggregate statistics of the automatically extracted shallow knowledge. In this 
+paper, we describe in detail what kind of shallow knowledge is extracted, how it is 
+automatically done from a large corpus, and how additional semantics are inferred 
+from aggregate statistics. We also briefly discuss the various ways extracted 
+knowledge is used throughout the IBM DeepQA system.
+keywords: {Computational linguistics;Context awareness;Information 
+analysis;Knowledge based systems;Knowledge management;Semantics;Syntactics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177723&isnumber=6177717
+
+6. Finding needles in the haystack: Search and candidate generation
+J. Chu-Carroll, J. Fan, B. K. Boguraev, D. Carmel, D. Sheinwald and C. Welty, "Finding needles in the haystack: Search and candidate generation," in IBM ournal of Research and Development, vol. 56, no. 3.4, pp. 6:1-6:12, May-June 2012.
+
+doi: 10.1147/JRD.2012.2186682
+Abstract: A key phase in the DeepQA architecture is Hypothesis Generation, in which 
+candidate system responses are generated for downstream scoring and ranking. In 
+the IBM Watson™ system, these hypotheses are potential answers to Jeopardy!™ 
+questions and are generated by two components: search and candidate generation. 
+The search component retrieves content relevant to a given question from Watson's 
+knowledge resources. The candidate generation component identifies potential 
+answers to the question from the retrieved content. In this paper, we present 
+strategies developed to use characteristics of Watson's different knowledge sources 
+and to formulate effective search queries against those sources. We further discuss 
+a suite of candidate generation strategies that use various kinds of metadata, such 
+as document titles or anchor texts in hyperlinked documents. We demonstrate that a 
+combination of these strategies brings the correct answer into the candidate answer 
+pool for 87.17% of all the questions in a blind test set, facilitating high end-to-end 
+question-answering performance.
+keywords: {Computer architecture;Electronic 
+publishing;Encyclopedias;Internet;Search engines;Search 
+problems;Semantics;Syntactics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177720&isnumber=6177717
+
+7. Typing candidate answers using type coercion
+J. W. Murdock et al., "Typing candidate answers using type coercion," in IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 7:1-7:13, May-June 012.
+
+doi: 10.1147/JRD.2012.2187036
+Abstract: Many questions explicitly indicate the type of answer required. One popular 
+approach to answering those questions is to develop recognizers to identify 
+instances of common answer types (e.g., countries, animals, and food) and consider 
+only answers on those lists. Such a strategy is poorly suited to answering questions 
+from the Jeopardy!™ television quiz show. Jeopardy! questions have an extremely 
+broad range of types of answers, and the most frequently occurring types cover only 
+a small fraction of all answers. We present an alternative approach to dealing with 
+answer types. We generate candidate answers without regard to type, and for each 
+candidate, we employ a variety of sources and strategies to judge whether the 
+candidate has the desired type. These sources and strategies provide a set of type 
+coercion scores for each candidate answer. We use these scores to give preference 
+to answers with more evidence of having the right type. Our question-answering 
+system is significantly more accurate with type coercion than it is without type 
+coercion; these components have a combined impact of nearly 5% on the accuracy 
+of the IBM Watson™ question-answering system.
+keywords: {Computer architecture;Context awareness;Electronic 
+publishing;Encyclopedias;Information analysis;Internet;Semantics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177730&isnumber=6177717
+
+8. Textual evidence gathering and analysis
+J. W. Murdock, J. Fan, A. Lally, H. Shima and B. K. Boguraev, "Textual evidence gathering and analysis," in  IBM Journal of Research and Development, vol. 56, o. 3.4, pp. 8:1-8:14, May-June 2012.
+
+doi: 10.1147/JRD.2012.2187249
+Abstract: One useful source of evidence for evaluating a candidate answer to a 
+question is a passage that contains the candidate answer and is relevant to the 
+question. In the DeepQA pipeline, we retrieve passages using a novel technique that 
+we call Supporting Evidence Retrieval, in which we perform separate search queries 
+for each candidate answer, in parallel, and include the candidate answer as part of 
+the query. We then score these passages using an assortment of algorithms that use 
+different aspects and relationships of the terms in the question and passage. We 
+provide evidence that our mechanisms for obtaining and scoring passages have a 
+substantial impact on the ability of our question-answering system to answer 
+questions and judge the confidence of the answers.
+keywords: {Audio systems;Image edge detection;Information 
+analysis;Semantics;Syntactics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177731&isnumber=6177717
+
+9. Relation extraction and scoring in DeepQA
+C. Wang, A. Kalyanpur, J. Fan, B. K. Boguraev and D. C. Gondek, "Relation extraction and scoring in DeepQA," in  IBM Journal of Research and Development, vol. 6, no. 3.4, pp. 9:1-9:12, May-June 2012.
+
+doi: 10.1147/JRD.2012.2187239
+Abstract: Detecting semantic relations in text is an active problem area in natural-language processing and information retrieval. For question answering, there are 
+many advantages of detecting relations in the question text because it allows 
+background relational knowledge to be used to generate potential answers or find 
+additional evidence to score supporting passages. This paper presents two 
+approaches to broad-domain relation extraction and scoring in the DeepQA question-answering framework, i.e., one based on manual pattern specification and the other 
+relying on statistical methods for pattern elicitation, which uses a novel transfer 
+learning technique, i.e., relation topics. These two approaches are complementary; 
+the rule-based approach is more precise and is used by several DeepQA 
+components, but it requires manual effort, which allows for coverage on only a small 
+targeted set of relations (approximately 30). Statistical approaches, on the other 
+hand, automatically learn how to extract semantic relations from the training data 
+and can be applied to detect a large amount of relations (approximately 7,000). 
+Although the precision of the statistical relation detectors is not as high as that of the 
+rule-based approach, their overall impact on the system through passage scoring is 
+statistically significant because of their broad coverage of knowledge.
+keywords: {Electronic publishing;Encyclopedias;Information analysis;Information 
+retrieval;Internet;Natural language processing;Semantics;Syntactics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177734&isnumber=6177717
+
+10. Structured data and inference in DeepQA
+A. Kalyanpur  et al., "Structured data and inference in DeepQA," in IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 10:1-10:14, May-June 2012.
+
+doi: 10.1147/JRD.2012.2188737
+Abstract: Although the majority of evidence analysis in DeepQA is focused on 
+unstructured information (e.g., natural-language documents), several components in 
+the DeepQA system use structured data (e.g., databases, knowledge bases, and 
+ontologies) to generate potential candidate answers or find additional evidence. 
+Structured data analytics are a natural complement to unstructured methods in that 
+they typically cover a narrower range of questions but are more precise within that 
+range. Moreover, structured data that has formal semantics is amenable to logical 
+reasoning techniques that can be used to provide implicit evidence. The DeepQA 
+system does not contain a single monolithic structured data module; instead, it 
+allows for different components to use and integrate structured and semistructured 
+data, with varying degrees of expressivity and formal specificity. This paper is a 
+survey of DeepQA components that use structured data. Areas in which evidence 
+from structured sources has the most impact include typing of answers, application 
+of geospatial and temporal constraints, and the use of formally encoded a priori 
+knowledge of commonly appearing entity types such as countries and U.S. 
+presidents. We present details of appropriate components and demonstrate their 
+end-to-end impact on the IBM Watson™ system.
+keywords: {Data mining;Databases;Electronic publishing;Encyclopedias;Geospatial 
+analysis;Internet;Natural language processing},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177725&isnumber=6177717
+
+11. Special Questions and techniques
+J. M. Prager, E. W. Brown and J. Chu-Carroll, "Special Questions and techniques," in  IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 11:1-1:13, May-June 2012.
+
+doi: 10.1147/JRD.2012.2187392
+Abstract: Jeopardy!™ questions represent a wide variety of question types. The vast 
+majority are Standard Jeopardy! Questions, where the question contains one or 
+more assertions about some unnamed entity or concept, and the task is to identify 
+the described entity or concept. This style of question is a representative of a wide 
+range of common question-answering tasks, and the bulk of the IBM Watson™ 
+system is focused on solving this problem. A small percentage of Jeopardy! 
+questions require a specialized procedure to derive an answer or some derived 
+assertion about the answer. We call any question that requires such a specialized 
+computational procedure, selected on the basis of a unique classification of the 
+question, a Special Jeopardy! Question. Although Special Questions per se are 
+typically less relevant in broader question-answering applications, they are an 
+important class of question to address in the Jeopardy! context. Moreover, the 
+design of our Special Question solving procedures motivated architectural design 
+decisions that are applicable to general open-domain question-answering systems. 
+We explore these rarer classes of questions here and describe and evaluate the 
+techniques that we developed to solve these questions.
+keywords: {History;Inference algorithms;Information analysis;Machine 
+learning;Object recognition;Probability;TV},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177732&isnumber=6177717
+
+12. Identifying implicit relationships
+J. Chu-Carroll, E. W. Brown, A. Lally and J. W. Murdock, "Identifying implicit relationships," in IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 12:1-12:10, May-June 2012.
+
+doi: 10.1147/JRD.2012.2188154
+Abstract: Answering natural-language questions may often involve identifying hidden 
+associations and implicit relationships. In some cases, an explicit question is asked 
+by the user to discover some hidden concept related to a set of entities. Answering 
+the explicit question and identifying the implicit entity both require the system to 
+discover the semantically related but hidden concepts in the question. In this paper, 
+we describe a spreading-activation approach to concept expansion, backed by three 
+distinct knowledge resources for measuring semantic relatedness. We discuss how 
+our spreading-activation approach is applied to address these questions, exemplified 
+in Jeopardy!™ by questions in the “COMMON BONDS” category and by many Final 
+Jeopardy! questions. We demonstrate the effectiveness of the approach by 
+measuring its impact on IBM Watson™ performance on these questions.
+keywords: {Electronic publishing;Encyclopedias;Internet;Natural language 
+processing;Semantics;Syntactics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177721&isnumber=6177717
+
+13. Fact-based question decomposition in DeepQA
+A. Kalyanpur, S. Patwardhan, B. K. Boguraev, A. Lally and J. Chu-Carroll, "Fact-based question decomposition in DeepQA," in IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 13:1-13:11, May-June 2012.
+
+doi: 10.1147/JRD.2012.2188934
+Abstract: Factoid questions often contain more than one fact or assertion about their 
+answers. Question-answering (QA) systems, however, typically do not use such fine-grained distinctions because of the need for deep understanding of the question in 
+order to identify and separate the facts. We argue that decomposing complex factoid 
+questions is beneficial to QA systems, because the more facts that support an 
+answer candidate, the more likely it is to be the correct answer. We broadly 
+categorize decomposable questions into two types: parallel and nested. Parallel 
+decomposable questions contain subquestions that can be evaluated independent of 
+each other. Nested questions require decompositions to be processed in sequence, 
+with the answer to an “inner” subquestion plugged into an “outer” subquestion. In this 
+paper, we present a novel question decomposition framework capable of handling 
+both decomposition types, built on top of the base IBM Watson™ QA system for 
+Jeopardy!™. The framework contains a suite of decomposition rules that use 
+predominantly lexico-syntactic features to identify facts within complex questions. It 
+also contains a question-rewriting component and a candidate re-ranker, which uses 
+machine learning and heuristic selection strategies to generate a final ranked answer 
+list, taking into account answer confidences from the base QA system. We apply our 
+decomposition framework to the particularly challenging domain of Final Jeopardy! 
+questions, which are found to be difficult even for qualified Jeopardy! players, and 
+we show a statistically significant improvement in the performance of our baseline 
+QA system.
+keywords: {Companies;Complexity theory;Context awareness;History;Machine 
+learning;Syntactics},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177726&isnumber=6177717
+
+14. A framework for merging and ranking of answers in DeepQA 
+D. C. Gondek et al., "A framework for merging and ranking of answers in DeepQA," in  IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 14:1-14:12, May-June 2012.
+
+doi: 10.1147/JRD.2012.2188760
+Abstract: The final stage in the IBM DeepQA pipeline involves ranking all candidate 
+answers according to their evidence scores and judging the likelihood that each 
+candidate answer is correct. In DeepQA, this is done using a machine learning 
+framework that is phase-based, providing capabilities for manipulating the data and 
+applying machine learning in successive applications. We show how this design can 
+be used to implement solutions to particular challenges that arise in applying 
+machine learning for evidence-based hypothesis evaluation. Our approach facilitates 
+an agile development environment for DeepQA; evidence scoring strategies can be 
+easily introduced, revised, and reconfigured without the need for error-prone manual 
+effort to determine how to combine the various evidence scores. We describe the 
+framework, explain the challenges, and evaluate the gain over a baseline machine 
+learning approach.
+keywords: {Information analysis;Logistics;Machine learning;Training data},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177810&isnumber=6177717
+
+15. Making Watson fast
+E. A. Epstein, M. I. Schor, B. S. Iyer, A. Lally, E. W. Brown and J. Cwiklik, "Making Watson fast," in  IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 15:1-15:12, May-June 2012.
+
+doi: 10.1147/JRD.2012.2188761
+Abstract: IBM Watson™ is a system created to demonstrate DeepQA technology by 
+competing against human champions in a question-answering game designed for 
+people. The DeepQA architecture was designed to be massively parallel, with an 
+expectation that low latency response times could be achieved by doing parallel 
+computation on many computers. This paper describes how a large set of deep 
+natural-language processing programs were integrated into a single application, 
+scaled out across thousands of central processing unit cores, and optimized to run 
+fast enough to compete in live Jeopardy!™ games.
+keywords: {Algorithm design and analysis;Computer architecture;Games;Information 
+analysis;Parallel processing;Production systems},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177722&isnumber=6177717
+
+16. Simulation, learning, and optimization techniques in Watson's game strategies
+G. Tesauro, D. C. Gondek, J. Lenchner, J. Fan and J. M. Prager, "Simulation, learning, and optimization techniques in Watson's game strategies," in  IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 16:1-16:11, May-June 2012.
+
+doi: 10.1147/JRD.2012.2188931
+Abstract: The game of Jeopardy!™ features four types of strategic decision-making: 
+1) Daily Double wagering; 2) Final Jeopardy! wagering; 3) selecting the next square 
+when in control of the board; and 4) deciding whether to attempt to answer, i.e., buzz 
+in. Strategies that properly account for the game state and future event probabilities 
+can yield a huge boost in overall winning chances, when compared with simple rule-of-thumb strategies. In this paper, we present an approach to developing and testing 
+components to make said strategy decisions, founded upon development of 
+reasonably faithful simulation models of the players and the Jeopardy! game 
+environment. We describe machine learning and Monte Carlo methods used in 
+simulations to optimize the respective strategy algorithms. Application of these 
+methods yielded superhuman game strategies for IBM Watson™ that significantly 
+enhanced its overall competitive record.
+keywords: {Accuracy;Correlation;Data models;Decision making;Games;Monte Carlo 
+methods},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177733&isnumber=6177717
+
+17. In the game: The interface between Watson and Jeopardy!
+B. L. Lewis, "In the game: The interface between Watson and Jeopardy!," in IBM Journal of Research and Development, vol. 56, no. 3.4, pp. 17:1-17:6, May-June 2012.
+
+doi: 10.1147/JRD.2012.2188932
+Abstract: To play as a contestant in Jeopardy!™, IBM Watson™ needed an interface 
+program to handle the communications between the Jeopardy! computers that 
+operate the game and its own components: question answering, game strategy, 
+speech, buzzer, etc. Because Watson cannot hear or see, when the categories and 
+clues were displayed on the game board, they were also sent electronically to 
+Watson. The program also monitored signals generated when the buzzer system 
+was activated and when a contestant successfully rang in. If Watson was confident 
+of its answer, it triggered a solenoid to depress its buzzer button and used a text-to-speech system to speak its response. Since it did not hear the host's judgment, it 
+relied on changes to the scores and the game flow to infer whether its answer was 
+correct. The interface program had to use what were sometimes conflicting events to 
+determine the state of the game without any human intervention.
+keywords: {Computers;Games;Human factors;Information analysis;Interface 
+states;Optical character recognition software},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?
+tp=&arnumber=6177728&isnumber=6177717
