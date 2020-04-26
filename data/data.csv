@@ -64,7 +64,6 @@ diff,cpp,1,Sự khác nhau giữa con trỏ và tham chiếu?
 diff,cpp,1,Sự khác nhau giữa truyền giá trị và truyền tham biến?
 what,cpp,1,Memory leak là gì?
 how,cpp,1,Cách tránh memory leak?
-proscons,cpp,1,Ưu và nhược điểm khi sử dụng mảng trong ngôn ngữ C?
 diff,cpp,1,Sự khác nhau giữa cấp phát tĩnh và cấp phát động?
 diff,cpp,1,Sự khác nhau giữa const char* s và char* const s?
 diff,cpp,1,Sự khác nhau giữa mảng và chuỗi?
@@ -86,10 +85,7 @@ when,cpp,1,Ứng dụng con trỏ hàm?
 what,cpp,1,Con trỏ gần là gì?
 what,cpp,1,Con trỏ xa là gì?
 what,cpp,1,Alignment struct là gì?
-rela,cpp,1,Mối liên hệ giữa con trỏ và mảng 1 chiều?
-rela,cpp,1,Mối liên hệ giữa con trỏ và mảng 2 chiều?
 what,cpp,1,Macro là gì?
-proscons,cpp,1,Ưu và nhược điểm khi sử dụng macro?
 diff,cpp,1,Sự khác nhau giữa ++x và x++ trong C/C++?
 why,cpp,1,Tại sao keyword default và break được sử dụng trong lệnh switch case?
 diff,cpp,1,Nên sử dụng switch case hay if else?
@@ -142,7 +138,6 @@ what,cpp,1,C++ là gì?
 what,cpp,1,C là gì?
 what,py,1,Python là gì?
 why,py,1,Vì sao nói Python là ngôn ngữ thông dịch?
-proscons,py,1,Ưu điểm và nhược điểm của Python là gì?
 what,py,1,PEP8 là gì?
 how,py,1,Quá trình thông dịch của Python như thế nào?
 how,py,1,Python quản lý bộ nhớ như thế nào?
@@ -159,8 +154,6 @@ how,py,1,Làm sao để chuyển một số thành một chuỗi trong python?
 what,py,1,Module trong python là gì?
 what,py,1,Package trong python là gì?
 diff,py,1,Biến cục bộ và biến toàn cục trong python khác nhau như thế nào?
-polar,py,1,Có phải Python là ngôn ngữ thông dịch hay không?
-polar,cpp,1,Có phải printf chạy nhanh hơn cout không?
 set_context,cpp,1,mình có thắc mắc về C++
 set_context,cpp,1,cho mình hỏi đôi chút về C++
 set_context,cpp,1,mình có câu hỏi về C++
