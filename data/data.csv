@@ -1,4 +1,4 @@
-﻿intent,context,is_programming,question
+﻿intent,context,relevance,question
 greeting,general,0,xin chào
 greeting,general,0,chào buổi sáng
 greeting,general,0,chào buổi trưa
