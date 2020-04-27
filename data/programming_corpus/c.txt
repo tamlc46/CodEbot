@@ -1,0 +1,490 @@
+﻿Ngôn ngữ lập trình C là một ngôn ngữ mệnh lệnh được phát triển từ đầu thập niên 1970 bởi Dennis Ritchie để dùng trong hệ điều hành UNIX. Từ đó, ngôn ngữ này đã lan rộng ra nhiều hệ điều hành khác và trở thành một những ngôn ngữ phổ dụng nhất. C là ngôn ngữ rất có hiệu quả và được ưa chuộng nhất để viết các phần mềm hệ thống, mặc dù nó cũng được dùng cho việc viết các ứng dụng. Ngoài ra, C cũng thường được dùng làm phương tiện giảng dạy trong khoa học máy tính mặc dù ngôn ngữ này không được thiết kế dành cho người nhập môn.
+
+Về tổng quan, C là một ngôn ngữ lập trình tương đối nhỏ gọn vận hành gần với phần cứng và nó giống với ngôn ngữ Assembler hơn hầu hết các ngôn ngữ bậc cao. Hơn thế, C đôi khi được đánh giá như là "có khả năng di động", cho thấy sự khác nhau quan trọng giữa nó với ngôn ngữ bậc thấp như là Assembler, đó là việc mã C có thể được dịch và thi hành trong hầu hết các máy tính, hơn hẳn các ngôn ngữ hiện tại trong khi đó thì Assembler chỉ có thể chạy trong một số máy tính đặc biệt. Vì lý do này C được xem là ngôn ngữ bậc trung.
+
+C đã được tạo ra với một mục tiêu là làm cho nó thuận tiện để viết các chương trình lớn với số lỗi ít hơn trong mẫu hình lập trình thủ tục mà lại không đặt gánh nặng lên vai người viết ra trình dịch C, là những người bề bộn với các đặc tả phức tạp của ngôn ngữ. Cuối cùng C có thêm những chức năng sau:
+Một ngôn ngữ cốt lõi đơn giản, với các chức năng quan trọng chẳng hạn như là những hàm hay việc xử lý tập tin sẽ được cung cấp bởi các bộ thư viện các thủ tục.
+Tập trung trên mẫu hình lập trình thủ tục, với các phương tiện lập trình theo kiểu cấu trúc.
+Một hệ thống kiểu đơn giản nhằm loại bỏ nhiều phép toán không có ý nghĩa thực dụng.
+Dùng ngôn ngữ tiền xử lý, tức là các câu lệnh tiền xử lý C, cho các nhiệm vụ như là định nghĩa các macro và hàm chứa nhiều tập tin mã nguồn (bằng cách dùng câu lệnh tiền xử lý dạng #include chẳng hạn).
+Mức thấp của ngôn ngữ cho phép dùng tới bộ nhớ máy tính qua việc sử dụng kiểu dữ liệu pointer.
+Số lượng từ khóa rất nhỏ gọn.
+Các tham số được đưa vào các hàm bằng giá trị, không bằng địa chỉ.
+Hàm các con trỏ cho phép hình thành một nền tảng ban đầu cho tính đóng và tính đa hình.
+Hỗ trợ các bản ghi hay các kiểu dữ liệu kết hợp do người dùng từ khóa định nghĩa struct cho phép các dữ liệu liên hệ nhau có thể được tập hợp lại và được điều chỉnh như là toàn bộ.
+
+Một số chức năng khác mà C không có (hay còn thiếu) nhưng có thể tìm thấy ở các ngôn ngữ khác bao gồm:
+An toàn kiểu,
+Tự động Thu dọn rác,
+Các lớp hay các đối tượng cùng với các ứng xử của chúng (xem thêm OOP),
+Các hàm lồng nhau,
+Lập trình tiêu bản hay Lập trình phổ dụng,
+Quá tải và Quá tải toán tử,
+Các hỗ trợ cho đa luồng, đa nhiệm và mạng.
+
+Mặc dù C còn thiếu nhiều chức năng hữu ích nhưng lý do quan trọng để C được chấp nhận vì nó cho phép các trình dịch mới được tạo ra một cách nhanh chóng trên các nền tảng mới và vì nó cho phép người lập trình dễ kiểm soát được những gì mà chương trình (do họ viết) thực thi. Đây là điểm thường làm cho mã C chạy hiệu quả hơn các ngôn ngữ khác. Thường thì chỉ có ngôn ngữ ASM chỉnh bằng tay chạy nhanh hơn (ngôn ngữ C), bởi vì ASM kiểm soát được toàn bộ máy. Mặc dù vậy, với sự phát triển các trình dịch C, và với sự phức tạp của các CPU hiện đại có tốc độ cao, C đã dần thu nhỏ khác biệt về tốc độ này.
+
+Một lý do nữa cho việc C được sử dụng rộng rãi và hiệu quả là do các trình dịch, các thư viện và các phần mềm thông dịch của các ngôn ngữ bậc cao khác lại thường được tạo nên từ C.
+
+Ví dụ đơn giản sau đây được thấy trong lần in đầu tiên của cuốn "The C Programming Language", và đã trở thành bài tiêu chuẩn trong chương nhập môn của hầu hết các loại sách giáo khoa về lập trình. Chương trình hiển thị câu "hello, world!" trên đầu ra chuẩn, mà thường là một màn hình. Mặc dù vậy, nó có thể xuất ra một tập tin hay xuất ra trên một thiết bị phần cứng kể cả trên một vùng chứa, tùy thuộc vào việc đầu ra chuẩn được chỉ thị vào đâu khi chương trình này được thực thi.
+
+Chương trình trên sẽ dịch đúng trong hầu hết các trình dịch hỗ trợ chuẩn ANSI C hay chuẩn C99.
+Sau đây là các phân tích theo từng dòng mã của ví dụ trên:
+Dòng đầu tiên này là một chỉ thị tiền xử lý #include. Điều này sẽ làm cho bộ tiền xử lý (bộ tiền xử lý này là một công cụ để kiểm tra mã nguồn trước khi nó được dịch) tiến hành thay dòng lệnh đó bởi toàn bộ các dòng mã hay thực thể trong tập tin mà nó đề cập đến (tức là tập tin stdio.h). Dấu ngoặc nhọn bao quanh stdio.h cho biết rằng tập tin này có thể tìm thấy trong các nơi đã định trước cho bộ tiền xử lý biết thông qua các đường tìm kiếm đến các tập tin header. Tập hợp các tập tin được khai báo sử dụng qua các chỉ thị tiền xử lý còn được gọi là các tập tin bao gồm.
+Dòng trên biểu thị một hàm chuẩn tên main. Hàm này có mục đích đặc biệt trong C. Khi chương trình thi hành thì hàm main() được gọi trước tiên. Phần mã int chỉ ra rằng giá trị trả về của hàm main (tức là giá trị mà main() sẽ được trả về sau khi thực thi) sẽ có kiểu là một số nguyên. Còn phần mã (void) cho biết rằng hàm main sẽ không cần đến tham số để gọi nó. Xem thêm Void.
+Dấu '{' cho biết sự bắt đầu của định nghĩa của hàm main.
+Dòng trên gọi đến một hàm chuẩn khác tên là printf. Hàm này đã được khai báo trước đó trong tập tin stdio.h. Dòng này sẽ cho phép tìm và thực thi mã (đã được hỗ trợ sẵn) với ý nghĩa là hiển thị lên đầu ra chuẩn dòng chữ
+hello, world<ký tự xuống dòng EOL-chuyển dấu nhắc sang dòng mới>.
+Mã ký tự \n là một dãy thoát được chuyển dịch thành dấu ký tự EOL (viết tắt từ chữ End-Of-Line) có nghĩa là chuyển vị trí dấu nhắc xuống đầu một dòng kế. Gía trị trả về của hàm printf (theo khai báo nguyên mẫu chuẩn của hàm này trong C) có kiểu int, nhưng vì giá trị trả về này không được (người lập trình) dùng tới nên giá trị đó bị bỏ qua (một cách lặng lẽ).
+Dòng này sẽ kết thúc việc thực thi mã của hàm main và buộc nó trả về giá trị 0 (là một số nguyên như khai báo ban đầu int main ).
+Dấu '}' cho biết việc kết thúc mã cho hàm main.
+
+Về các kiểu dữ liệu, C có một hệ thống kiểu tương tự như của Pascal, mặc dù chúng khác nhau trong một số khía cạnh. Có nhiều kiểu cho các số nguyên với nhiều cỡ cho có đấu và không có dấu, có kiểu số floating point, kiểu các ký tự char, các kiểu thứ tự enum, kiểu bản ghi record và kiểu đơn vị union.
+
+C tạo ra sự mở rộng mạnh mẽ việc sử dụng của kiểu các con trỏ pointer, một dạng đơn giản các tham chiếu mà chúng chứa địa chỉ các vùng nhớ. Các con trỏ có thể được tham chiếu ngược (dereference) để lấy về giá trị của dữ liệu được chứa trong địa chỉ đó (địa chỉ mà con trỏ chỉ vào). Địa chỉ này có thể được điều chỉnh bằng các phép gán thông thường và các phép toán số học trên con trỏ. Trong thời gian thực thi, một con trỏ đại diện cho một địa chỉ của bộ nhớ. Trong thời gian chuyển dịch, nó là một kiểu phức tạp đại diện cho cả địa chỉ và kiểu của dữ liệu. Điều này cho phép các biểu thức bao gồm các con trỏ được kiểm tra về kiểu. Các con trỏ thì được dùng cho nhiều mục tiêu trong C. Các dòng ký tự string thường được đại diện bởi một con trỏ chỉ tới một dãy của các ký tự. Sự cấp phát bộ nhớ động, được miêu tả sau đây, thì được tiến hành thông qua các con trỏ.
+
+Một con trỏ rỗng có nghĩa là nó không chỉ đến một chỗ nào hết. Điều này có ích trong những trường hợp như là con trỏ next trong một nút cuối của một danh sách liên kết linked list. Việc tham chiếu ngược một con trỏ trống gây ra các biểu hiện không dự đoán trước được. Các con trỏ kiểu void thì lại có thể chỉ đến một đối tượng mà không cần biết kiểu của đối tượng đó. Điều này đặc biệt hữu dụng trong lập trình tiêu bản bởi vì cỡ và kiểu của các đối tượng mà chúng chỉ tới thì không thể biết được và do đó không thể thực hiện tham chiếu ngược, nhưng chúng lại có thể được hoán chuyển thành các con trỏ của các kiểu khác.
+
+Các kiểu mảng array trong C thì có cỡ cố định, độ lớn tĩnh của nó phải được biết trước trong thời gian chuyển dịch. Điều này gây nhiều trở ngại trong thực tế bởi vì người ta có thể chỉ định các vùng nhớ ở thời gian thực thi dựa trên các thư viện chuẩn và hành xử chúng như là các mảng. Không như các ngôn ngữ khác, C biểu thị các mảng giống như trường hợp các con trỏ: chúng đóng vai trò một địa chỉ của bộ nhớ và một kiểu dữ liệu. Do đó, các giá trị chỉ số có thể vượt quá cỡ của một mảng.
+
+C cũng cung cấp các kiểu mảng đa chiều. Các giá trị chỉ số của các mảng đa chiều thì được gán theo thứ tự hàng chính. Một cách có ý nghĩa thì các mảng này hoạt động như là mảng của các mảng nhưng thực chất chúng được phân bố như là mảng một chiều với việc tính và tạo các vị trí tương đối.
+
+C thường được dùng trong việc lập trình các hệ thống bậc thấp, ở đó có thể cần thiết để xem số nguyên như là một địa chỉ của bộ nhớ, là một giá trị double precision, hay là một kiểu con trỏ. Trong các trường hợp này, C cung cấp việc hoán chuyển, mà phép toán này sẽ bắt buộc chuyển đổi giá trị từ một kiểu sang một kiểu khác. Dùng phép hoán chuyển sẽ làm mất đi phần nào tính an toàn mà thường được cung cấp bởi hệ thống kiểu.
+
+Về lưu trữ dữ liệu, một trong những chức năng quan trọng nhất của một ngôn ngữ lập trình là việc cung cấp cơ sở cho việc quản lý bộ nhớ và các đối tượng được chứa trong bộ nhớ. C cung ứng 3 phương cách để cấp phát bộ nhớ cho các đối tượng:
+
+Sự cấp phát vùng nhớ tĩnh: khoảng trống dành cho đối tượng thì được cung cấp trong phần mã nhị phân ở thời gian dịch; những đối tượng này có một thời gian sống lâu dài theo sự tồn tại của phần mã nhị phân chứa chúng (các đối tượng).
+Sự cấp phát vùng nhớ tự động: Các đối tượng tạm thời có thể được chứa trong một chồng (stack), và khoảng trống này thì được trả về một cách tự động và có thể được dùng lại sau khi khối mã mà chúng (tức các đối tượng tạm thời) được khai báo đã thực thi xong.
+Sự cấp phát vùng nhớ động: Các khối của bộ nhớ với bất kì cỡ lớn mong muốn nào đều có thể được yêu cầu (hay xin) trong thời gian thi hành bằng cách dùng các hàm thư viện như là malloc(), realloc() và free() từ một khu vực của bộ nhớ có tên là heap; các khối này có thể được tái dụng sau khi gọi hàm free() để hoàn trả chúng lại cho bộ nhớ.
+Ba phương án này thích hợp cho các tình huống khác nhau và có những hậu quả khác nhau. Ví dụ, kiểu cấp phát tĩnh sẽ không cần thời gian (để tính toán) cho sự cấp phát, kiểu cấp phát tự động sẽ cần một khoảng thời gian nào đó cho dự tính, và kiểu cấp phát động có thể đòi hỏi một lượng lớn thời gian dùng dễ tính toán cho việc cấp phát và hoàn trả (các vùng nhớ đã được yêu cầu trước đó). Mặt khác, khoảng trống của chồng thường giới hạn cho vùng nhớ tĩnh hay cho khoảng trống của heap, và chỉ kiểu cấp phát vùng nhớ động là cho phép sự cấp phát cho các đối tượng mà kích thước của nó chỉ có thể biết được trong lúc thi hành. Hầu hết các chương trình C đều dùng nhiều cả ba phương cách này.
+
+Khi có thể thì sự cấp phát tự động hay sự cấp phát tĩnh thường được dề nghị dùng vì kho nhớ được quản lý bởi trình dịch, giải phóng cho người lập trình những lồi lầm phiền hà khi phải xin cấp phát và hoàn trả các vùng nhớ bằng tay. Rất tiếc nhiều cấu trúc dữ liệu có thể trương nở trong thời gian thực thi và vì kiểu cấp phát tĩnh và kiểu tự động phải có một độ lớn cố định ở thời gian dịch nên trong nhiều tình huống mà buộc phải dùng kiểu cấp phát động. Các dãy thay đổi về độ lớn là một ví dụ điển hình của trường hợp này. (Xem ví dụ từ bài malloc về các dãy được cấp phát vùng nhớ động.)
+
+Về cú pháp, không như Fortran, C là ngôn ngữ dạng tự do, cho phép người lập trình tùy tiện sử dụng ký tự whitespace để xếp đặt (cách trình bày) mã nguồn. Các dòng chú giải hoặc có thể đặt nằm giữa /* và */ hoặc viết từng dòng bắt đầu bởi // theo sau đó là các chú giải.
+
+Mỗi tập tin chứa mã có thể chứa các khai báo và các định nghĩa hàm. Các định nghĩa hàm, chính chúng, cũng chứa các khai báo và các mệnh đề. Các khai báo thì hoặc là định nghĩa những kiểu mới với các từ khoá như struct, union, và enum, hoặc là gán các kiểu và đăng ký vùng chứa (trong bộ nhớ) cho các biến mới (Ví dụ: char *myname = "ABC"). Các từ khoá như là char và int cũng như là ký hiệu con trỏ chỉ tới * là các kiểu sẵn có. Các khối mã thì được đóng ở giữa các dấu { và } để chỉ ra phần (mã) mà các khai báo và các cấu trúc điều khiển (bên trong dấu ngoặc) có hiệu lực.
+
+Như là một ngôn ngữ mệnh lệnh, C phụ thuộc vào các mệnh đề (câu lệnh) để làm hầu hết các việc. Hầu hết các mệnh đề lại là các mệnh đề biểu thức mà một cách đơn giản chúng tạo nên việc đánh giá các biểu thức đó—và trong quá trình này, các biến nhận được các giá trị mới hoặc các giá trị này được trả ra. Các mệnh đề dòng điều khiển cũng có hiệu lực cho việc thực thi có điều kiện hay có lặp lại, mà chúng được cấu tạo với các từ khóa như là if, else, switch, do, while và for. Các nhảy dòng cũng có thể thực hiện qua câu lệnh goto. Nhiều phép toán khác nhau được cung cấp sẵn để thực thi trên các phép tính cơ sản về số học, lô gíc, so sánh, kiểu bit, chỉ số của mảng, và phép gán giá trị. Các biểu thức cũng gọi các hàm, bao gồm một số lượng lớn các hàm thư viện, để tiến hành các thao tác chung.
+
+Các vấn đề của C
+Một câu nói phổ biến được người ta lập lại nhiều lần của một nhà thiết kế trình dịch Bjarne Stroustrup, người sáng lập ra C++, là "C makes it easy to shoot yourself in the foot." (tạm dịch: "C làm cho việc bạn tự hại bạn trở nên dễ dàng") [1]. Nói cách khác, C cho phép nhiều phép toán không mong muốn trong một cách tổng quát, và do đó, nhiều lỗi đơn giản đã được tạo ra bởi một người lập trình mà chúng lại không thể phát hiện qua trình dịch hay ngay cả không phát hiện ra trong lúc thi hành. Điều này là nguyên nhân của một số chương trình có các ứng xử không lường trước được và có các lỗ hổng về an toàn. Một dị bản ngôn ngữ C là Cyclone điều chỉnh được một phần trong số các vấn đề như vậy.
+
+Một lý do của các vấn đề nêu trên là để tránh cho cái giá quá cao phải trả cho việc kiểm soát (lỗi) ở thời gian dịch và thời gian thi hành. Một lý do khác là sự đòi hỏi để giữ C được càng hiệu quả và càng uyển chuyển càng tốt. Một ngôn ngữ càng mạnh thì càng khó khăn cho ngôn ngữ lập trình đó để làm rõ ràng mọi thứ trong các chương trình (được viết trong ngôn ngữ này). Một số việc kiểm tra đã được dựa trên các công cụ bên ngoài, những công cụ như vậy được bàn đến trong phần Các công cụ kiểm tra tĩnh bên ngoài cho trình dịch.
+
+Sự cấp phát vùng nhớ
+Một vấn đề với C (và đây thường là vấn đề lớn cho những người mới làm quen với C) là việc cấp phát (vùng nhớ) một cách tự động hay một cách động cho các đốì tượng mà không khởi động chúng. Các đối tượng này, ban đầu, chứa các giá trị bất kì trong khoảng nhớ mà chúng được cấp phát. Các giá trị này có thể là các giá trị ngẫu nhiên còn lại trong bộ nhớ mà chưa được làm sạch, chúng hoàn toàn không dự đoán được. Nếu một chương trình có khai biến mà lại không gán giá trị ban đầu, thường là 0 (cho kiểu số) hay null (cho kiểu con trỏ) hay "" (cho kiểu dãy ký tự,...) thì có thể gây ra các phản ứng không lường trước được của chương trình đó. Hầu hết các trình dịch C hiện đại có thể phát hiện và cảnh cáo về việc "quên gán giá trị khởi động" trong nhiều trường hợp, nhưng cũng không hoàn toàn hiệu quả.
+
+Một vấn đề thường thấy khác là bộ nhớ heap không thể được tái dụng cho tới khi nó được hoàn trả lại về cho bộ nhớ bởi người lập trình bằng câu lệnh free(). Hậu quả là nếu người lập trình quên hoàn trả các vùng đã cấp phát về cho bộ nhớ và lại tiếp tục dùng các lệnh cấp phát, thì càng lúc càng nhiều các phần của bộ nhớ bị chiếm chỗ. Lỗi này là một loại lỗi kiểu memory leak tức là "rỉ bộ nhớ". Ngược lại, cũng có trường hợp trả tự do phần đã cấp phát về cho bộ nhớ quá sớm và lại tiếp tục sử dụng vùng nhớ đã trả về thì cũng có thể dễ gây ra việc nhận sai các giá trị hay tạo ra các tình huống không lường trước được. Lý do là vì máy tính khi nhận lại các vùng đã được trả sẽ có thể dùng vùng nhớ đó cho các việc khác. Một số ngôn ngữ xử lý chuyện này với việc tự động dọn rác.
+
+Các con trỏ
+Các con trỏ là một nguồn gốc chính của nhiều nguy hiểm bởi vì chúng không được kiểm tra, một con trỏ có thể được tạo ra để chỉ tới bất kì đối tượng nào bất kể kiểu nào, kể cả các mã (nhị phân), và khi được dùng đến (hay được viết ra), có thể gây ra các hiệu ứng không lường trước được. Mặc dù hầu hết các con trỏ thường chỉ tới các chỗ an toàn, chúng vẫn có thể di chuyển tới những chỗ không an toàn như khi dùng các phép toán số học trên các con trỏ (thường là cộng trừ trên các địa chỉ mà chúng chỉ tới), vùng nhớ chỗ chúng chỉ tới có thể đã được trả về và đã được tái dụng (con trỏ đu đưa), chúng có thể đã không được khởi động (con trỏ hoang), hay chúng được trực tiếp gán một giá trị nào đó qua việc dùng toán tử đổi kiểu (cast) hoặc được gán qua một con trỏ đã bị hủy hoại. Một vấn đề khác với các con trỏ là việc C cho phép tự do chuyển đổi giữa hai kiểu con trỏ bất kì. Các ngôn ngữ khác điều chỉnh các vấn đề này bằng cách dùng các kiểu tham chiếu bị giới hạn hơn.
+
+Các mảng
+Mặc dù C có hỗ trợ riêng cho các mảng tĩnh, nhưng nó không kiểm tra xem các chỉ số mảng có hợp lệ hay không (kiểm tra biên). Thí dụ, người ta có thể viết phần tử thứ sáu của một mảng được định nghĩa với 5 phần tử, và điều này có thể mang lại các hậu quả không mong muốn. Lỗi này thuộc loại lỗi tràn bộ nhớ đệm. Đây là nguồn gốc của nhiều lỗ hổng an ninh trong các chương trình viết bằng C. Mặt khác, do sự giới hạn về kỹ thuật kiểm tra biên ở thời điểm C ra đời (khi gần như chưa có kỹ thuật kiểm tra biên), nên việc kiểm tra biên trở nên ảnh hưởng nặng đến tốc độ thực thi, đặc biệt là trong các tính toán số.
+
+Các mảng đa chiều rất cần thiết khi cài đặt các thuật toán số (chủ yếu áp dụng cho đại số tuyến tính) để chứa các ma trận. Nhưng cấu trúc mảng theo C không những không đáp ứng mà còn không tương hợp cho thao tác chuyên biệt này. Vấn đề này đã được bàn thảo trong sách Numerical Recipes in C, chương 1.2, trang 20 ff (đọc trực tuyến). Người ta có thể tìm thấy ở đây một giải pháp tốt được dùng xuyên suốt trong cả cuốn sách này.
+
+Các hàm tham lượng động
+Một vấn đề thường thấy khác là về các hàm tham lượng động (variadic function), tức là, các hàm mà có thể thay đổi được số lượng của các tham số. Không giống như các nguyên mẫu khác của hàm trong C, kiểm tra số lượng tham số ở thời điểm dịch là không bắt buộc bởi tiêu chuẩn, và một cách tổng quát là không thể kiểm tra được nếu không có thêm thông tin. Nếu dữ liệu có kiểu không đúng được chuyển vào, thì hậu quả sẻ không lường được, và thường tạo sự hư hại hoàn toàn. Các hàm tham lượng động cũng xử lý các hằng số con trỏ rỗng trong một cách không biết trước được.
+
+Thí dụ: Họ các hàm printf cung cấp bởi thư viện chuẩn, được dùng để định dạng các dòng chữ xuất ra, thì có tiếng vì các lỗi trong giao diện tham lượng động của nó; nó dựa trên một sự định dạng của dãy ký tự để biểu trưng số và kiểu của các tham số theo sau.
+Mặc dù kiểm tra kiểu của các hàm tham lượng động từ thư viện chuẩn là một vấn đề về chất lượng của sự thiết lập, nhiều trình dịch hiện đại đặc biệt tiến hành kiểm tra kiểu của việc gọi printf, và sản sinh ra các cảnh cáo nếu danh mục tham số mà không tương ứng với dãy ký tự định dạng. Dẫu sao thì không phải tất cả các lần gọi printf đều có thể được kiểm tra một cách tĩnh bởi vì có thể dãy ký tự định dạng chỉ được lập thành ở thời gian thực thi, khi mà các hàm tham lượng động thường vẫn không kiểm tra được.
+
+Cú pháp
+C có nhiều điểm yếu trong cú pháp. Đáng chú ý là:
+
+Nguyên mẫu của hàm nào không chỉ ra tham số nào thì được hiểu ngầm là cho phép một tập bất kì các tham số. Một vấn đề về cú pháp đã được đề ra cho khả năng tương thích ngược của K&R C, về việc thiếu các nguyên mẫu.
+Một số sự chọn lựa đáng ngờ vực về thứ tự ưu tiên của các toán tử, chẳng hạn như == "nối kết" một cách chặt chẽ hơn & và | trong các biểu thức như là x & 1 == 0.
+Việc dùng toán tử "=" một cách dễ nhầm lẫn. Nếu dùng trong đẳng thức toán học để chỉ các phép gán, dẫn tới các phép gán không chủ định trong việc so sánh và dẫn tới một ấn tượng sai lầm rằng phép gán có tính bắc cầu. Ví dụ: việc dùng câu lệnh if (x=0) {...} sẽ dễ gây ra các lỗi bất ngờ.
+Thiếu các toán tử infix cho các đối tượng phức tạp, đặc biệt là cho các phép toán trên dãy các ký tự làm cho chương trình phụ thuộc nặng nề lên các phép toán rất khó đọc.
+Dựa vào quá nhiều trên hệ thống ký hiệu làm cơ sở cho cú pháp ngay cả ở nơi không tường minh như là "&&" và "||" thay vì dùng "and" và "or".
+Cú pháp khai báo không được dễ hiểu, đặc biệt cho hàm của các con trỏ. Trong tình huống hoàn toàn tương tự của C++, nhà nghiên cứu Damian Conway nói về cú pháp của khai báo như sau:
+Khó để mà đặc tả một kiểu trong C++ bởi vì thực tế là một số phần tử của việc khai báo (như là con trỏ) thì là các toán tử tiền tố trong khi một số khác (như là mảng) lại là toán tử hậu tố (nghĩa là phải đặt * đứng trước tên con trỏ và dặt [] sau tên mảng—người dịch). Nhừng toán tử khai báo này lại có các thứ tự ưu tiên khác nhau, cần phải được đặt trong các dấu ngoặc cẩn thận để đạt được sự khai báo mong muốn.
+Ben Werther & Damian Conway.
+A Modest Proposal: C++ Resyntaxed. Section 3.1.1. 1996.
+
+Các vấn đề về bảo trì
+Có một số vấn đề khác của C mà không trực tiếp do các lỗi hay sai sót, nhưng lại làm ngăn trở khả năng của người lập trình để xây đựng một hệ thống cỡ lớn, có thể bảo trì và ổn định. Các điển hình bao gồm:
+
+Hệ thống rời rạc vì các câu lệnh định nghĩa nhập (#include) dựa trên các dòng chữ nội tại rải rác không đồng nhất (trong các tập tin) nhằm giữ các nguyên mẫu và các định nghĩa được đồng bộ. Điều này làm tăng đáng kể số lần cho việc tạo dựng (phần mềm).
+Mô hình chuyển dịch rối rắm. Nó buộc phải có việc theo dõi các sự phụ thuộc (về mã) bằng tay và nó ngăn cấm sự tối ưu hóa trình dịch giữa các mô dun (ngoại trừ sự tối ưu hoá thời gian liên kết).
+Hệ thống kiểu yếu dẫn tới việc các chương trình có lỗi hiển nhiên nhưng vẫn được dịch mà không bị bắt lỗi.
+Các công cụ kiểm tra tĩnh cho trình dịch
+Nhiều công cụ đã được tạo ra để giúp người lập trình C tránh dược các lỗi. Việc kiểm tra và kiểm toán mã nguồn tự động thì rất hiệu quả trong mọi ngôn ngữ. Chẳng hạn cho C là Lint. Một thực tế là sử dụng Lint để phát hiện các mã có nghi vấn khi một chương trình được viết lần đầu. Một khi chương trình đã qua được Lint, thì nó được chuyển dịch bởi một trình dịch C. Cũng có một thư viện cho việc tiến hành kiểm tra các biên của mảng và một dạng giới hạn của việc tự động dọn rác, nhưng đó không phải là một phần tiêu chuẩn của C.
+
+Điều nên nhận thức là các công cụ này không phải là vạn năng. Bởi vì sự linh hoạt của C, nhiều kiểu lỗi như là việc dùng sai các hàm tham lượng động, việc dùng chỉ số ngoài biên của mảng và quản lý bộ nhớ không đúng thì không thể phát hiện được. Mặc dù vậy, nhiều trường hợp (lỗi) thông thường đều có thể được nhận ra.
+
+Lịch sử
+Những phát triển ban đầu
+Phát triển khởi đầu của C xảy ra ở AT&T Bell Labs giữa 1969 và 1973; theo Ritchie thì thời gian sáng tạo nhất là vào năm 1972. Nó được đặt tên là C vì nhiều đặc tính của nó rút ra từ một ngôn ngữ trước đó là B.
+
+Thêm vào đó, các điểm khác với ngôn ngữ nguyên thủy "B": Ken Thompson kể tới ngôn ngữ lập trình BCPL, nhưng ông ta cũng đã tạo ra ngôn ngữ là Bon để vinh danh vợ mình.
+
+Có nhiều truyền thuyết về nguồn gốc của C và hệ điều hành liên quan tới nó là Unix bao gồm:
+
+Sự phát triển của C là kết quả của các lập trình viên đã muốn chơi Space Travel. Họ đã chơi nó trên mainframe của hãng làm việc, nhưng bị thiếu khả năng (chạy) và phải hỗ trợ khoảng 100 người dùng, Thompson và Ritchie tìm thấy rằng họ đã không có đủ sự kiểm soát tàu vũ trụ (của trò chơi) để tránh được các va chạm khỏi sự chuyển dịch của các thiên thạch. Do đó, họ quyết định để xuất trò chơi này sang một máy PDP-7 để không trong văn phòng. Nhưng nó lại không có hệ điều hành; do đó, họ viết một hệ điều hành. Tiếp tục, họ quyết định để xuất hệ điều hành này sang PDP-11 của văn phòng nhưng việc này thật khó vì tất cả mã đều là ngôn ngữ Assembly. Họ quyết định dùng một ngôn ngữ dễ xuất cấp cao để hệ điều hành có thể xuất được dễ dàng từ máy tính này sang máy khác. Họ đã tìm đến ngôn ngữ B, nhưng nó lại thiếu các chức năng để khai thác một số khả năng của PDP-11. Vậy nên họ đã sáng tạo ra một ngôn ngữ mới là C.
+Unix nguyên đã được phát triển để tạo ra một hệ thống tự động lập hồ sơ cho các bằng phát minh. Phiên bản đầu tiên của Unix đã phát triển từ ngôn ngữ Assembly. Sau đó, ngôn ngữ C đã được phát triển để từ đó thay thế hệ điều hành mới.
+Cho đến 1973, C đã trở nên đủ mạnh để dùng viết nhân cho Unix, thay vì trước nó chúng được viết bằng Assembly trong các máy PDP-11/20. Đây là lần đầu tiên mà nhân của một hệ điều hành được lắp thành bằng một ngôn ngữ khác hơn Assembly.
+
+K&R C
+Năm 1978, Ritchie và Brian Kernighan xuất bản lần đầu cuốn The C Programming Language. Sách này được những người lập trình biết tới như là "K&R", được dùng trong nhiều năm như là một đặc tả không chính thức của C. Phiên bản C mà cuốn sách đó đề cập thường được gọi là "K&R C". (Lần xuất bản thứ hai của cuốn này cũng bao gồm chuẩn ANSI C).
+
+K&R giới thiệu các chức năng sau đây:
+
+Kiểu dữ liệu struct
+Kiểu dữ liệu long int
+Kiểu dữ liệu unsigned int
+Toán tử =+ đã được đổi thành +=, và tương tự cho các toán tử khác để tránh gây hiểu nhầm cho bộ phân tích từ vựng của trình dịch C. (Ví dụ: sự giống nhau dễ lầm lẫn của hai câu lệnh i =+ 10 và i = +10).
+K&R C thường được xem là phần cơ bản nhất của ngôn ngữ mà nó cần phải có cho một trình dịch C. Trong nhiều năm, ngay cả sau khi ANSI C được giới thiệu, nó đã được xem như là "mẫu số chung nhỏ nhất" mà người lập trình C phải bám lấy nếu muốn có được khả năng dịch chuyển (tái dụng trên nhiều máy) bởi vì không phải mọi trình dịch đều hỗ trợ toàn bộ ANSI C, và một cách hợp lý là mã viết trong K&R C cũng là mã hợp lệ trong ANSI C.
+
+Trong các phiên bản trước đây của C, chỉ có những hàm nào trả về một số khác số nguyên mới cần được khai báo trước khi dùng. Một hàm dùng mà không có bất kì sự khai báo nào trước đó được giả thiết là sẽ trả về một số nguyên.
+
+Ví dụ việc gọi với yêu cầu của sự khai báo trước:
+
+Ví dụ việc gọi mà không cần phải khai báo trước:
+
+Bởi vì nguyên mẫu của K&R đã không bao gồm bất kì thông tin nào về các tham số của hàm, chức năng kiểm tra kiểu của các đối số đã không được tiến hành, mặc dù một số trình dịch sẽ cho ra thông báo cảnh cáo nếu một hàm đã được gọi với số lượng tham số không đúng.
+
+Trong nhiều năm tiếp theo của sự tái bản K&R C, nhiều chức năng "không chính thức" đã được thêm vào cho ngôn ngữ, được hỗ trợ bởi các trình dịch của AT&T và một số nơi khác. Trong đó bao gồm:
+
+Các hàm có kiểu void và dữ liệu có kiểu void *.
+Các hàm trả về các kiểu struct hay union.
+Tên của các miền trong một không gian tên cho mỗi kiểu struct.
+Phép gán cho kiểu dữ liệu struct.
+Hằng const được xem là đối tượng chỉ cho phép đọc.
+Một thư viện chuẩn được sự hợp tác để xây dựng bởi nhiều nhà sản xuất.
+Các kiểu enumeration.
+Kiểu chính xác đơn float.
+ANSI C và ISO C
+Vào khoảng cuối thập niên 1970, C bắt đầu thay thế vai trò của BASIC như là một ngôn ngữ lập trình cho microcomputer. Suốt thập niên 1980 nó đã được chấp thuận dùng trong IBM PC, và sự phổ biến của nó bắt đầu tăng một cách lớn lao.
+
+Trong cùng thời kỳ, Bjarne Stroustrup và đồng nghiệp ở Bell Labs đã bắt tay cho thêm vào C các cấu trúc ngôn ngữ lập trình hướng đối tượng.
+
+Ngôn ngữ họ tạo ra gọi là C++ nay trở thành ngôn ngữ lập trình ứng dụng phổ biến nhất trên hệ điều hành Microsoft Windows; C vẫn còn rất phổ biến trong thế giới UNIX. Một ngôn ngữ khác cũng được phát triển trong khoảng thời gian này là Objective-C, cũng là một mở rộng lập trình hướng đối tượng cho C. Dù không phổ biến như C++, nó được dùng để phát triển các ứng dụng Cocoa của Mac OS X.
+
+Trong 1983, Viện Tiêu chuẩn Quốc gia Hoa Kỳ (ANSI) thành lập hội đồng X3J11 để hoàn tất một tiêu chuẩn dặc tả của C. Sau một quá trình khó khăn và lâu dài, tiêu chuẩn đã hoàn tất vào 1989 và được công nhận là "Programming Language C" ANSI X3.159-1989. Phiên bản ngôn ngữ này thường được nhắc đến như là ANSI C.
+
+Trong 1990, Tiêu chuẩn ANSI C (với một vài chi tiết nhỏ được điều chỉnh) đã được tiêu chuẩn hóa bởi Tổ chức Quốc tế về Tiêu chuẩn hóa (ISO) như là ISO/IEC 9899:1990.
+
+Một điểm mạnh của quá trình tiêu chuẩn hoá ANSI C là làm cho K&R C trở thành một tập con của nó; nó tiếp nhận nhiều chức năng không chính thức của K&R C như là một hệ quả. Xa hơn, hội đồng tiêu chuẩn cũng làm cho ANSI C bao gồm thêm nhiều chức năng mới, như là các nguyên mẫu của hàm (mượn từ C++), và khả năng tiền xử lý mạnh hơn.
+
+Ngày nay, ANSI C được hỗ trợ bởi hầu hết các trình dịch. Hầu hết các mã C ngày nay được viết dựa ttrên ANSI C. Mọi chương trình chỉ viết trong chuẩn C thì sẽ đảm bảo việc thực thi chính xác trên mọi nền nào cho phép dùng C. Mặc dù vậy, nhiều chương trình đã viết ra chỉ dịch được trong một số nền hoặc với một số trình dịch nào đó bởi vì các lý do sau:
+
+Dùng các thư viện không chuẩn, như là cho GUI.
+Một số trình dịch không hoàn toàn theo đúng chuẩn ANSI C hay các chuẩn tiếp sau trong các chế độ làm việc mặc nhiên của chúng.
+Phụ thuộc vào kích thước của một số kiểu dữ liệu cũng như là endian của nền. (Chẳng hạn, trong một số nền kích thước của kiểu int có thể nhiều hơn hay ít hơn—4, 8 hay 16 byte—trong nền khác.)
+Macro __STDC__ có thể được dùng để chẻ mã nguồn thành các phần theo ANSI C và K&R
+
+Một số chuyên gia khuyên rằng dùng #if __STDC__ như trên, thay cho #ifdef __STDC__ bởi vì một số trình dịch cài giá trị __STDC__ về 0 để chỉ việc không theo chuẩn ANSI (trong khi một số trình dịch khác lại cài về giá trị khác 0).
+
+C99
+Sau quá trình chuẩn hóa ANSI, đặc tả của ngôn ngữ C tương đối được giữ nguyên trong một thời gian, trong khi C++ tiếp tục thâm nhập. (Đúng ra, đã có tu chính số 1 tạo ra phiên bản mới của C trong 1995, nhưng phiên bản này hiếm khi được đồng thuận.) Cho đến cuối thập niên 1990 một tiêu chuẩn mới đã được phát hành là ISO 9899:1999. Tiêu chuẩn này thường được mệnh danh là "C99". Nó đã tiếp thu ANSI C trong tháng 3 năm 2000.
+
+Những chức năng mới trong C99 bao gồm:
+
+Các hàm inline.
+Các biến có thể được khai báo ở bất kì chỗ nào (như là trong C++).
+Nhiều kiểu dữ liệu mới được đưa vào bao gồm kiểu long long int (để giảm khó khăn trong việc chuyển hệ từ 32-bit sang 64-bit), kiểu boolean và kiểu complex để dùng cho các số phức.
+Các mảng có chiều dài thay đổi được.
+Hỗ trợ cho dòng lệnh chú giải bắt đầu với // như trong C++ và nhiều ngôn ngữ khác.
+Nhiều hàm thư viện mới như là snprintf().
+Nhiều tập tin tiêu dề như là stdint.h.
+Điều thú vị trong việc hỗ trợ cho chuẩn C99 là một kết quả pha trộn. Trong khi GCC và nhiều trình dịch khác hiện hỗ trợ hầu hết các chức năng của C99, thì trình dịch của Microsoft và Borland lại không tuân theo và hai công ty này dường như không thích thú để thêm vào các hỗ trợ này.
+
+Quan hệ với C++
+C++ nguyên là sự kết thừa từ C. Mặc dù vậy, không phải mọi chương trình trong C đều hợp lệ trong C++. Vì là hai ngôn ngữ độc lập, số lượng không tương thích giữa hai ngôn ngữ này đã tăng lên. [2]. Phiên bản cuối cùng C99 đã tạo ra thêm nhiều tính năng xung đột (giữa C và C++). Các sự khác nhau này tạo ra khó khăn để viết các chương trình và thư viện đẻ có thể được dịch và hoạt động chính xác trong cả hai loại mã C hay C++, đồng thời gây nhầm lẫn cho những người lập trình dùng cả hai ngôn ngữ này. Sự chênh lệch này cũng gây khó khăn cho ngôn ngữ này có thể tiếp thu các tính năng của ngôn ngữ kia.
+Bjarne Stroustrup, cha đẻ của C++ đã lập đi lập lại rằng [3]: Các tính chất không tương thích giữa C và C++ nên được hạ thấp càng nhiều càng tốt để mở rộng tối đa khả năng hoạt động thông suốt của hai ngôn ngữ này. Một số người tranh biện rằng vì C và C++ là hai ngôn ngữ khác nhau, sự tương thích giữ chúng thì hữu ích nhưng không phải có tính sống còn, theo lập trường này, nỗ lực để giảm sự không tương thích không được phá hủy cố gắng để nâng cao mỗi ngôn ngữ đứng riêng.
+
+Ngày nay, những khác nhau căn bản, không kể các mở rộng thêm vào của C++ như là các lớp, các tiêu bản, các không gian tên, và quá tải, giữa hai ngôn ngữ là:
+
+inline — các hàm inline có giá trị toàn cục trong C++ và chỉ có giá trị trong phạm vi tập tin trong C.
+Từ khóa bool trong C99 thì có riêng tập tin tiêu dề của nó là <stdbool.h>. Các chuẩn C trước đây đã không định nghĩa kiểu boolean và nhiều phương pháp không tương thích đã được dùng để mô phỏng kiểu boolean.
+Các hằng ký tự (được đặt trong dấu ') có độ lớn của một int trong C và có độ lớn của một char trong C++. Mặc dù vậy, ngay cả trong C các hàng này sẽ không bao giờ vượt quá giá trị của một char, cho nên việc chuyển đổi kiểu (char)'a' thì hoàn toàn an toàn.
+Nhừng từ khóa mới thêm vào trong C++ sẽ không thể dược dùng làm các tên trong C như trước đây nữa. (Ví dụ: try, catch, template, new, delete,...).
+Trong C++, trình dịch tự động tạo một "thẻ" cho mỗi struct, union hay enum, do vậy, struct S {}; trong C++ tương đương với typedef struct S {} S; trong C.
+C99 tiếp thu một số tính năng mà xuất hiện đầu tiên trong C++. Trong số đó là:
+
+Bắt cuộc khai báo nguyên mẫu của hàm.
+Thêm từ khóa inline.
+Hủy bỏ "hiểu ngầm" của sự trả về sẽ có kiểu int.
+Ngôn ngữ trung gian
+C được dùng như là một ngôn ngữ trung gian vì nó có thể xuất thành dạng tập tin object hay ngôn ngữ máy. Việc này giúp C trở nên dễ vận chuyển hay dễ tối ưu hóa. Các trình dịch C thường có sẵn cho nhiều loại CPU và các hệ điều hành và hầu hết những trình dịch đó cho ra được tập tin *.obj cũng như ngôn ngữ máy có tối ưu hóa. Do đó, các đầu ra của mã nguồn C đột nhiên trở nên rất là dễ vận chuyển, và có khả năng dùng trong dạng *.obj hay mã máy được tối ưu hóa. Dầu sao thì C được thiết kế như là một ngôn ngữ lập trình, nó không phải là lý tưởng cho việc dùng như là một ngôn ngữ trung gian. Điều này dẫn tới việc phát triển các ngôn ngữ trung gian lấy C làm cơ sở, như là một C--.
+
+Các trình dịch quan trọng
+Những trình dịch về C ngày nay thương được cung cấp kèm chung với C++ và ngay cả trình dịch cho ngôn ngữ Assembly. Những sản phẩm trình dịch được bán phổ biến trên thị trường cũng thường cung cấp thêm nhiều công cụ trợ giúp cho người lập trình như là IDE, debugger,...
+
+Sau đây là danh sách một số trình dịch phổ biến:
+
+GCC trình dịch hoàn toàn miễn phí của theo giấy phép GNU toàn bộ gói sẽ bao gồm trình dịch của nhiều ngôn ngữ điển hình là C/C++ và Fortran. Đây là trình dịch chính dùng cho các hệ diều hành Linux. Nó hỗ trợ hầu hết các tiêu chuẩn C/C++. Tuy nhiên vì là miễn phí nên nó không cung cấp các phương tiện đồ họa hỗ trợ cho việc sửa lỗi và viết mã mặc dù nó cũng có các công cụ để giúp phát hiện lỗi rất mạnh như gdb.
+Turbo C++, Borland C/C++, trình dịch này ngày nay đã đổi tên thành Borland Builder và bị giảm sút thị phần rất nhiều nhưng đây là trình dịch có hỗ trợ chuẩn C98.
+Microsoft C/C++, đây là trình dịch chỉ được dùng chủ yếu để phát triển tcác phần mềm trên các hệ Windows. Trình dịch này rất mạnh về các hỗ trợ đồ họa cũng như các công cụ để phát triển và sản xuất phần mềm. Rất tiếc, trình dịch này không hoàn toàn tương thích với các chuẩn. Để có mã nguồn theo chuẩn thì người lập trình phải cài đặt lại một số thông số mặc định. Một điểm yếu của trình dịch này là nó không hỗ trợ cho các hệ điều hành nào không do Microsoft sản xuất.
+Ngoài ra, còn rất nhiều trình dịch khác ở mức độ ít phổ biến hơn như là trình dịch C/C++ của Intel, Bell Labs,...
+
+Cú pháp ngôn ngữ (lập trình) C là tập hợp các quy tắc nhằm xác định cách thức để viết và dịch trong ngôn ngữ lập trình C.
+Các hàm
+Cú pháp
+Một hàm C phải bao gồm một kiểu trả về (kiểu đó trả về void nếu không có giá trị trả về), một tên xác định, một danh sách các tham số để trong ngoặc đơn (nếu danh sách này không có tham số nào thì ghi là void bên trong dấu ngoặc), sau đó là khối các câu lệnh (hay khối mã) và/hay các câu lệnh return. (Nếu kiểu trả về là void thì mệnh đề này không bắt buộc phải có. Ngược lại, cũng không bắt buộc chỉ có một câu lệnh return mà tùy theo kỹ thuật, người lập trình có thể dẫn dòng mã sao cho mọi hướng chẻ nhánh đều được trả về đúng kiểu.)
+Trong đó, <danh sách tham số> của N biến thì được khai báo như là kiểu dữ liệu và tách rời nhau bởi dấu phẩy.
+Toàn bộ danh sách này được đặt trong ngoặc đơn ngay sau tên_hàm.
+
+Thí dụ
+Hàm add tính tổng hai số có kiểu integer, hàm abs tính trị tuyệt đối của số có kiểu integer, và chương trình (hàm main) hiển thị hai dòng 1 + 1 = 2 và absolute value of -2 is 2
+
+Chú ý: phần mã trên đã được thử thành công dùng trình dịch GNU (cho ANSI C và C99)
+
+
+Mô tả
+Trong các câu lệnh tiền xử lý, ở cấp độ cao nhất, một chương trình ngôn ngữ C luôn có một chuỗi các khai báo cho các tập tin bao gồm.
+
+Sau đó là các khai báo của phạm vi tập tin. Các khai báo này giới thiệu các hàm, các biến và các kiểu biến. Các hàm trong C nhìn tương tự với các chương trình con của Fortran hay các thủ tục của Pascal. Định nghĩa của hàm xuất hiện trong phần thân của nó (phần giữa bộ dấu ngoặc { và } theo sau nguyên dạng của hàm).
+
+Các chương trình trong C để tạo các ứng dụng trực tiếp đều cần phải có một hàm đặc biệt tên là main, đây sẽ là hàm đầu tiên được gọi khi chương trình bắt đầu thực thi. Sau đây là một chương trình đầy đủ mặc dù không có mấy ứng đụng thiết thực.
+
+Hàm main thường gọi các hàm khác để giúp nó hoàn tất công việc (tuỳ theo sự lập trình của người dùng).
+
+Trọng một số trường hợp C được dùng không phải để tạo ra các ứng dụng trực tiếp mà để dùng với hệ điều hành hay các nơi khác (như là phát triển các bộ điều vận, các phần sụn, hay các thư viện...). Những trường hợp như vậy thì người lập trình hoàn toàn tự do trong việc giải quyết làm sao để xử lý khởi động chương trình, đặc biệt nó sẽ không cần định nghĩa hàm main.
+
+Các hàm có thể được viết ra bởi người lập trình hay được cung cấp sẵn bởi các thư viện. Các thư viện cần được khai báo (sử dụng) bằng cách nêu tên các tập tin tiêu dề trong câu lệnh dạng #include tập tin tiêu đề. Một số hàm thư viện như là printf đã được định nghĩa bởi chuẩn C, chúng được tham chiếu như là các hàm thư viện chuẩn.
+
+Một hàm có thể trả về một giá trị cho môi trường gọi nó. Khi hàm main trả về giá trị 0 chỉ dấu cho rằng toàn bộ chương trình đã hoàn tất thành công và kết thúc. Hàm printf cùng có giá trị trả về, đó là số lượng ký tự đã hiển thị, nhưng giá trị này thường bị bỏ qua không dùng.
+
+Truyền các biến
+Các biến trong C được truyền qua các hàm bằng giá trị trong khi nhiều ngôn ngữ khác lại được truyền bằng tham chiếu (hay bằng địa chỉ). Điều này có nghĩa là hàm chỉ chép lại các giá trị và không thể thay đổi các giá trị đó của các biến (hay đối số) đưa vào. Để có thể thay đổi được giá trị của các biến truyền vào, người lập trình có thể truyền địa chỉ của nó vào hàm và tham chiếu ngược nó trong hàm được dùng (xem thêm kiểu tham chiếu)
+
+Để có thể chuyển một con trỏ (mà có thể cần đổi địa chỉ nó chỉ đến), có thể chuyển một tham chiếu cho con trỏ (tham chiếu này chỉ đến địa chỉ của con trỏ):
+
+int **p sẽ định nghĩa một con trỏ chỉ đến con trỏ (thay vì chỉ đến các kiểu dữ liệu thông thường) tức là chỉ đến địa chỉ của con trỏ p.
+
+Hàm scanf làm việc theo cùng một cách thức:
+
+Các cấu trúc dòng điều khiển
+Một cách cơ bản thì C là ngôn ngữ dạng tự do. Trong phần này, tất cả các chữ "mệnh đề" có nghĩa tương đương với chữ "câu lệnh".
+
+Các mệnh đề phức hợp
+Câu lệnh phức hợp được bọc trong dấu ngoặc { và } còn được gọi là khối mã. Các câu lệnh phức hợp trong C có dạng.
+
+Khối mã được dùng như là phần thân của một hàm hay đưọc đặt bất kì ở vị trí nào mà một câu lệnh đơn giản có thể đặt. Nghĩa là, về ý nghĩa văn phạm thì câu lệnh đơn giản và câu lệnh phức hợp là tương đương nhau.
+
+Các mệnh đề biểu thức
+Một câu lệnh (hay một mệnh đề) của C có dạng:
+
+Biểu thức tùy chọn là một mệnh đề biểu thức. Nếu biểu thức này không có nội dung (mà chỉ còn lại dấu ; thì biểu thức được gọi là mệnh đề null (hay mệnh dề rỗng). (Theo ngôn ngữ máy Assembler thì mệnh đề null sẽ tương đương với câu lệnh NOP; chiếm 1 byte chỉ làm nhiệm vụ tăng địa chỉ của chồng (stack) lên 1 đơn vị.)
+
+Các mệnh đề lựa chọn (hay điều kiện)
+Có ba loại mệnh đề lựa chọn: hai loại dùng từ khóa if và một loại dùng từ khóa switch. Đó là:
+
+Dạng dùng từ khóa if
+
+Trong dạng này, nếu phần trong ngoặc đơn có giá trị khác 0 hay có giá trị "đúng" (true) thì dòng điều khiển sẽ chuyển vào để thực thi <mệnh đề 1>. Nếu trong câu lệnh if có thêm từ khóa else thì <mệnh đề 2> sẽ được thực thi một khi <biểu thức> có giá trị 0 hay giá trị "sai".
+
+Nhắc lại: như trên thì vị trí mỗi mệnh đề đều có thể thay bằng một khối mã.
+
+Trong cách viết mã lồng nhau phức tạp bao gồm nhiều mệnh đề if thì từ khóa else sẽ được gán vào mệnh đề if phía trên gần nhất nào chưa được ghép. Để tránh sự nhầm lẫn cách tốt nhất là lồng chúng vào trong các dấu { và }.
+
+Dạng dùng từ khóa switch
+Mệnh đề switch sẽ gây ra việc chuyển dòng điều khiển sang một trong những mệnh đề con kế tiếp tùy theo giá trị của một biểu thức X (biểu thức này phải có kiểu nguyên). Các mệnh đề con này thường là các mệnh đề phức hợp. Đứng trước mỗi mệnh đề con sẽ là một từ khóa case, sau đó là một biểu thức hằng Hi, và dấu hai chấm : gắn liền tiếp theo đó là mệnh đề con Mi.
+
+Khi giá trị của X trùng với một giá trị Hi được nêu ở đâu thì mệnh đề con đi gắn liền với hằng tại đó (tức là Mi) sẽ được thực thi.
+
+Nếu X không bằng với bất kì giá trị Hi nào thì người lập trình có thể dùng thêm từ khóa default, sau đó là dấu hai chấm : và tiếp theo là một mệnh đề con Mdefault. Mệnh đề con này sẽ được thực thi khi mà giá trị của X khác với mọi giá trị hằng Hi.
+
+Lưu ý:
+
+Trong câu lệnh switch thì không cho phép có hai giá trị hằng bằng nhau. Nghĩa là khi X được đánh giá thì chỉ có tối đa một mệnh đề con được thực thi.
+Các câu lệnh switch có thể được dùng trong dạng lồng vào nhau (nest), một từ khóa case hay default sẽ thuộc vào câu lệnh switch bên trong nhất (hay nhỏ nhất) chứa nó.
+Một khi dòng điều khiển hoàn tất câu lệnh con Mi thì nó sẽ tiếp tục thi hành các câu lệnh con Mi+1 theo sau cho đến khi nó bị yêu cầu ngưng bởi câu lệnh nhảy (mà thường dược dùng nhiều nhất là câu lệnh break)
+Trong dạng thí dụ dưới đây, nếu <biểu thức X> có giá trị bằng <hằng H2> thì mệnh đề các biểu thức <mệnh đề M2>,<mệnh đề M3>, và <mệnh đề Mdefault> sẽ lần lần lượt được thực thi theo thứ tự nếu như trong chúng không có câu lệnh break. Nhưng vì trong mã thí dụ có câu lệnh break nên dòng điều khiển sẽ ngưng và kết thúc câu lệnh switch khi thi hành lệnh break này.
+
+Các mệnh đề tái lặp (hay vòng lặp)
+C có 3 dạng câu lệnh vòng lặp:
+
+Vòng lặp do
+Trong mệnh đề này thì mệnh đề được thực thi lặp lại cho tới khi nào <biểu thức> được đánh giá (hay có giá trị) là true. Một khi <biểu thức> không còn có giá trị true nữa thì vòng lặp sẽ bị kết thúc.
+
+Vòng lặp while
+<mệnh đề> chỉ được thực thi hay thực thi lặp lại khi <biểu thức> có giá trị là true. Nếu <biểu thức> có giá trị false thì câu lệnh sẽ bị kết thúc ngay lập tức.
+
+Vòng lặp for
+Dạng C89 của vòng lặp for là:
+
+Nó đã được tổng quát hóa trong C99 thành:
+
+Khi cả ba biểu thức đều hiện diện trong một câu lệnh for, thì mệnh đề:
+
+Bất kì biểu thức nào trong vòng lặp for có thể được loại bỏ. Một biểu thức bị mất (e2 chẳng hạn) có thể làm cho vòng lặp biến thành vòng lặp vô hạn.
+
+Vòng lặp kết thúc vì điều kiện trong biểu thức thứ nhì ((x>4) && (y<8)) không còn đúng nữa.
+
+Các mệnh đề nhảy (hay bước nhảy)
+Các lệnh nhảy sẽ thay đổi dòng điều khiển một cách vô điều kiện. có 4 kiểu mệnh đề nhảy trong C là goto, continue, break, và return.
+
+goto
+câu lệnh goto sẽ có dạng:
+
+goto <nhãn>;
+nhãn phải có mặt trong hàm có chứa câu lệnh goto. Khi đọc đến lệnh này, dòng điều khiển sẽ chuyển đến mệnh đề nhãn.
+
+continue
+Mệnh đề continue chỉ có thể xuất hiện trong một vòng lặp và có tác dụng làm cho dòng điều khiển chuyển sang chu kì mới của vòng lặp trong cùng nhất (có chứa câu lệnh). Các dạng sử dụng bao gồm
+
+Mệnh đề break dùng để kết thúc một câu lệnh vòng lặp hay câu lệnh switch ngay lập tức và chuyển tiếp đến câu lệnh tiếp theo sau của vòng lặp đó.
+
+return
+Một hàm trả dòng điều khiển về nơi gọi nó bằng câu lệnh return. Khi lệnh return được theo sau bởi một biểu thức thì biểu thức đó sẽ được đánh giá và giá trị này sẽ được trả về cho nơi đã gọi hàm. Khi return được gọi mà không có biểu thức đi kèm thì giá trị trả về là không xác định.
+
+Các phép toán
+Xem thêm bài chính Phép toán trong C và C++
+
+Để tham khảo, sau đây là bảng thứ tự ưu tiên của các phép toán theo C89:
+
+Khai báo dữ liệu
+Các kiểu dữ liệu cơ bản
+Nhiều ngôn ngữ lập trình kể cả C, biểu thị các số trong hai dạng: nguyên và thực (hay không nguyên). Sự khác nhau này hình thành từ khía cạnh kỹ thuật của các cách thức xử lý và lưu trữ các giá trị trong bộ nhớ.
+
+Kiểu nguyên viết dưới dạng int được dùng để biểu thị các số nguyên. Kiểu nguyên có trong nhiều kích cỡ khác nhau tùy theo phân lượng bộ nhớ được dùng và độ lớn cao nhất1. Các từ khóa, có tên là các định tính, được dùng thêm vào để điều chỉnh lại kích cỡ là: short, long và long long2. Kiểu ký tự mà từ khóa của nó là char, biểu thị đơn vị nhỏ nhất có thể địa chỉ hóa được (bởi kiến trúc máy tính) thường là một byte với 8 bit.
+Dạng thực được dùng để biểu thị các số thập phân hay các bộ phận hữu tỉ. Mặc dù vậy chúng không hoàn toàn chính xác mà chỉ là các biểu thị gần đúng.
+
+Có 3 kiểu giá trị thực bao gồm: loại có độ chính xác đơn (có đặc tả là float), loại có độ chính xác kép (có đặc tả là double), và loại có độ chính xác kép mở rộng (có đặc tả là long double). Mỗi loại dùng để biểu thị các giá trị không nguyên trong một dạng khác nhau.
+
+Các kiểu nguyên có thể hoặc là có dấu (signed) hay không dấu (unsigned). Nếu không chỉ rõ khi khai báo thì mặc định (hiểu ngầm) sẽ là loại có dấu. Một ngoại lệ là các kiểu char, signed char và unsigned char đều khác nhau, và kiểu char có thể là loại có dấu hay không có dấu.
+
+Đối với loại có dấu, thì bit có nghĩa cao nhất được dùng để biểu thị dấu (dương hay âm). Thí dụ một số nguyên 16-bit loại có dấu thì chỉ dùng 15 bit để biểu thị giá trị (tuyệt đối) của nó còn bit có nghĩa cao nhất lại được dùng để cho biết đó là số dương hay âm. Đối với loại không dấu thì bit này lại được dùng thêm vào để biểu thị giá trị.
+
+Trong các kiểu nguyên, độ lớn cao nhất biểu thị giá trị lớn nhất (tùy theo có dấu hay không) mà nó biểu thị. (Xem thêm bản dưới đây)
+
+Từ khóa long long được đưa thêm vào trong chuẩn C99.
+
+Các hằng số xác định các giá trị biên
+Tập tin tiêu đề chuẩn limits.h sẽ xác định các giá trị nhỏ nhất và lớn nhất của các kiểu nguyên cơ bản cũng như là xác định các giới hạn khác. Tập tin tiêu đề chuẩn float.h sẽ xác định các giá trị nhỏ nhất và lớn nhất của các kiểu float, double, và long double. Nó cũng xác định các giới hạn khác liên quan tới việc xử lý các giá trị của dấu chấm động (floating-point) có độ chính xác đơn hay có độ chính xác kép như là chúng được định nghĩa trong chuẩn IEEE 754.
+
+Định tính long long chỉ được hỗ trợ trong các trình dịch thỏa mãn chuẩn C99.
+
+Các hằng LLONG_MIN, LLONG_MAX, và ULLONG_MAX chỉ được định nghĩa trong limits.h nếu trình dịch tương ứng thỏa mãn chuẩn C99.
+
+Các giá trị biên điển hình
+Sau đây là danh sách kích cỡ và các biên điển hình của các kiểu nguyên. Các giá trị này có thể khác nhau tùy theo kiến trúc (máy và trình dịch). ISO C cung cấp tiêu đề inttypes.h, trong đó, có xác định các kiểu nguyên có dấu và không có dấu nhưng điều chắc chắn là kích cỡ đều nằm trong khoảng 8 đến 64 bit.
+
+Kích cỡ và giới hạn của kiểu cơ bản int (mà không có các định tính short, long, hay long long) có thể thay đổi khác nhau (nhiều hơn các kiểu nguyên khác) tùy theo sư thiết lập (của trình dịch hay của kiến trúc máy). Cho nên, một thao tác thông thường là định nghĩa nó như là một đồng nghĩa của size_t — trong tập tin sys/types.h — và do đó, đủ sức để thích ứng với giá trị lớn nhất khả dĩ của con trỏ mà có thể được cấp phát bởi hệ thống. Đặc tả UNIX đơn chỉ ra rằng kiểu int phải có ít nhất 32 bit, mặc dù chuẩn ISO C chỉ yêu cầu có 16 bit.
+
+Các kiểu tham chiếu
+Tiền tố ký tự * được dùng để biểu thị kiểu tham chiếu, mà thường được biết đến như là một con trỏ. Nếu như đặc tả int biểu thị một kiểu nguyên cơ bản thì đặc tả int * lại biểu thị một tham chiếu kiểu nguyên, tức là một loại con trỏ. Các giá trị tham chiếu tương quan sẽ bao gồm hai phần thông tin: đó là địa chỉ của vùng nhớ và một kiểu dữ liệu. Câu lệnh sau đây khai báo một biến tham chiếu nguyên có tên là ptr:
+
+int *ptr;
+Sự tham chiếu
+Khi một con trỏ địa phương được khai báo, thì chưa có một địa chỉ nào gán cho nó cả. Địa chỉ tương quan với một con trỏ có thể được thay đổi (hay hình thành) qua phép gán. Trong thí dụ sau, biến ptr sẽ cài cho nó chỉ tới cùng một dữ liệu như là biến nguyên cơ bản a:
+
+int *ptr;
+int a;
+
+ptr = &a;
+Để làm được việc này, toán tử tham chiếu (hay còn gọi là tham chiếu ngược) & đã được dùng tới. Nó trả về vị trí của biến trong bộ nhớ (tức là địa chỉ) hay là chỗ chứa thực thể theo sau (trong thí dụ thì thực thể đó là a). Toán tử này như là công việc nó làm thường được gọi là toán tử "địa chỉ".
+
+Trong trường hợp tổng quát, cụm từ giá trị tham chiếu được dùng để nói về địa chỉ trong bộ nhớ của sự tham chiếu (hay tham chiếu ngược).
+
+Sự tham chiếu ngược
+Cùng một biểu hiện, giá trị có thể đọc về từ một giá trị tham chiếu. Trong thí dụ sau, biến nguyên cơ bản b sẽ được gán đến dữ liệu mà dữ liệu đó được tham chiếu bởi ptr:
+
+Việc quá tải của ký tự * có hai biểu hiện liên hệ mà có thể gây ra sự nhầm lẫn. Hiểu được sự khác nhau giữa việc dùng nó như là một tiền tố trong một khai báo (con trỏ) và việc xem nó là toán tử tham chiếu trong một biểu thức là rất quan trọng.
+
+Sự tham chiếu tương đương và các mệnh đề cơ bản
+Bảng sau đây là danh sách các mệnh đề tương đương giữa kiểu cơ bản và kiểu tham chiếu (hay tham chiếu ngược). Trong đó, biến cơ bản d và biến tham chiếu ptr được hiểu ngầm.
+
+Khai báo mảng tĩnh
+Trong C, mảng được dùng để biểu thị một cấu trúc của một dãy nhiều giá trị có cùng một kiểu được xếp thứ tự. Một mảng gọi là tĩnh nếu độ dài của dãy mảng này cố định. Sự khai báo của mảng tĩnh có cú pháp sau:
+
+trong đó, tên của mảng là array sẽ có thể chứa được n giá trị của kiểu cơ bản int. Trong thực hành, phần bộ nhớ cho n giá trị nguyên này được để dành riêng và được gán cho mảng này (mặc dù giá trị của các phần tử trong mảng chưa được xác định). Biến array thực chất là một kiểu tham chiếu của kiểu nguyên; nó khởi thủy sẽ chỉ tới địa chỉ của giá trị đầu tiên trong mảng.
+
+Truy cập các phần tử
+Các giá trị của một mảng được gọi là các phần tử trong mảng.
+
+Một cách để truy cập đến các phần tử này là dùng đến cặp ký tự ngoặc vuông dạng [k]. Trong đó k là chỉ số (hay vị trí thứ tự đếm từ 0). Như vậy, phần tử thứ k trong mảng array sẽ có cú pháp
+Giá trị trả về của array[k] chính là giá trị mà nó chứa ở vị trí k. Thoạt nhìn thì cú pháp của việc truy cập này trông giống như cú pháp khi mảng array được khai báo nhưng về chức năng thì hoàn toàn khác nhau.
+
+Chỉ số bắt đầu của một mảng là 0. Như vậy, chỉ số lớn nhất của một mảng bằng tổng số các phần tử trong mảng trừ đi 1. Thí dụ mảng A có 10 phần tử thì giá trị của phần tử đầu tiên của A là A[0] và của phần tử cuối dùng là A[9].
+
+Một cách truy cập khác là dùng con trỏ số học để tham chiếu đến giá trị của các phần tử trong mảng.
+Bảng sau đây sẽ minh họa cách dùng của cả hai phương pháp:
+
+Các mảng động
+C không cung cấp phương tiện để kiểm tra biên cho các mảng. Nghĩa là nó không thể bắt được các lỗi khi gán cho một mảng chỉ số âm hay chỉ số vượt quá độ đài của mảng đó. Và hơn thế nữa các chỉ số trong một mảng có thể vượt khỏi độ dài sẵn có của mảng đó.
+
+Vì các mảng là thuần nhất, tức là nó chỉ chứa các dữ liệu có chung một kiểu nên hai thành phần thông tin cần nhớ là địa chỉ của phần tử đầu tiên và kiểu của dữ liệu.
+
+Nhắc lại về cú pháp để khai báo một mảng tĩnh, tức là tạo ra một biến tham chiếu nguyên và cấp phát một vùng nhớ tương ứng cho nó:
+
+Cách biểu hiện này có thể được tái lập với sự giúp đỡ của thư viện chuẩn C. Hàm calloc cung cấp một cách đơn giản để cấp phát một vùng nhớ. Hai tham số dùng đến sẽ là số lượng các phần tử và kích cỡ (độ lớn) của mỗi phần tử. Khi việc cấp phát bộ nhớ hoàn thành, calloc trả về một con trỏ chỉ tới phần tử đầu tiên và gán cho mọi phần tử giá trị khởi động là 0. Nếu sự cấp phát vùng nhớ không thành công (vì bộ nhớ không đủ chỗ trống hạn) thì calloc trả về con trỏ rỗng. Thí dụ: đoạn mã sau đây có chức năng tương đương với việc khai báo một mảng tĩnh của n phần tử có kiểu int:
+
+Tuy nhiên, điểm vượt trội của cách khai báo này là việc sử dụng cấp phát vùng nhớ động . Kích cỡ của mảng (tức là lượng không gian nhớ được cấp phát một cách an toàn cho mảng) lại có thể được thay đổi sau khi đã khai báo.
+
+Một khi việc cấp phát vùng nhớ động không còn cần thiết nữa thì phần bộ nhớ đó nên được trả về cho hệ điều hành. Thao tác này có thể tiến hành bằng hàm free. Nó cần một tham số: tên của con trỏ mà trước đây đã xin cấp phát vùng nhớ. Một cách an toàn hơn là sau khi đã trả vùng nhớ về cho hệ điều hành, người lập trình cũng nên cài (hay gán) cho con trỏ liên đới giá trị NULL để hủy bỏ địa chỉ mà nó đang chỉ tới (nhằm tránh gây ra các hiệu ứng phụ do việc tham chiếu của con trỏ này có thể gây ra).
+
+Các mảng đa chiều
+C có hỗ trợ việc dùng mảng đa chiều. Việc định nghĩa chúng giống như là tạo ra mảng của các mảng , mặc dù vậy trong thực tế nó không hoàn toàn đúng.
+sẽ định nghĩa một mảng hai chiều; chiều thứ nhất có số_hàng phần tử. Chiều thứ hai sẽ có số_hàng * số_cột các phần tử—một tập hợp của số_cột các phần tử mà mỗi phần tử là một chiều thứ nhất.
+
+Các mảng đa chiều hoàn toàn có thể được xem như là dãy của các con trỏ. Trong thí dụ trên, array2D (nếu số_hàng là 1) sẽ là một tham chiếu giá trị nguyên mà nó chỉ tới một mảng của số_cột các phần tử.
+
+Dãy ký tự
+Dãy ký tự có thể được thay đổi nội dung của nó mà không cần đến thư viện chuẩn. Tuy nhiên, thư viện này có nhiều hàm có thể dùng cho cả dãy ký tự có kết thúc 0 và mảng không có ký tự kết thúc kiểu char. Trong phần này từ "dãy" được để chỉ dãy ký tự.
+
+Các hàm thường dùng là:
+
+strcat(dest, source) - nối một dãy ký tự source tiếp vào vị trí cuối của dãy ký tự dest
+strchr(source, c) - tìm vị trí sự xuất hiện đầu tiên của c trong dãy ký tự source và trả về con trỏ chỉ tới vị trí đó hay con trỏ trống nếu c không tìm thấy trong source
+strcmp(a, b) - so sánh hai dãy ký tự a và b (theo thứ tự từ điển); trả về số âm nếu a nhỏ hơn b, 0 nếu chúng bằng nhau, dương nếu a lớn hơn
+strcpy(dest, source) - chép và thay các ký tự của dãy source vào dãy dest
+strlen(st) - trả về độ dài của st
+strncat(dest, source, n) - nối tối đa n ký tự từ dãy source tiếp vào vị trí cuối của dãy dest; các ký tự sau dấu kết thúc null sẽ không được chép vào
+strncmp(a, b, n) - so sánh từ ký tự đầu cho đến tối đa n ký tự từ hai dãy a và b (theo thứ tự từ điển); hàm trả về số âm nếu phần so sánh của a nhỏ hơn b, 0 nếu bằng nhau, và dương nếu lớn hơn
+strncpy(dest, source, n) - chép từ đầu đến tối đa n ký tự từ dãy source vào dãy dest
+strrchr(source, c) - tìm vị trí hiện lần cuối cùng của ký tự c trong dãy source và trả về một con trỏ chỉ vào vị trí đó hay con trỏ trống nếu không tìm thấy c trong đó
+Các hàm ít dùng tới hơn là:
+
+strcoll(s1, s2) - so sánh hai dãy theo một trình tự địa phương đặc thù
+strcspn(s1, s2) - trả về chỉ số của ký tự đầu tiên trong s1 trùng với ký tự bất kì nào trong s2
+strerror(err) - trả về một dãy ký tự dưới dạng một thông báo lỗi ứng với mã (câu viết) trong err
+strpbrk(s1, s2) - trả về một con trỏ chỉ vào ký tự đầu tiên nào trong s1 mà trùng với ký tự bất kì trong s2 hay một con trỏ trống nếu không tìm thấy
+strspn(s1, s2) - trả về chỉ số của ký tự đầu tiên trong s1 mà nó không xuất hiện trong s2
+strstr(source, subst) - trả về một con trỏ chỉ tới vị trí của dãy subst trong dãy source hay trả về một con trỏ rỗng nếu không tồn tại một dãy như vậy bên trong source
+strtok(s1, s2) - trả về một con trỏ chỉ đến một token bên trong s1 mà được phân chia ra bởi các ký tự trong s2
+strxfrm(s1, s2, n) - chuyển đổi s2 thành s1 dùng các quy tắc địa phương đặc thù
+
+Tập tin I/O
+Trong C, I/O đưọc tiến hành qua một nhóm các hàm trong thư viện chuẩn. Trong ANSI/ISO C, những hàm đó được định nghĩa trong stdio.h.
+
+fopen
+fclose
+Tiêu chuẩn I/O
+Ba tiêu chuẩn dòng I/O được định nghĩa sẵn là:
+
+stdin đầu vào chuẩn
+stdout đầu ra chuẩn
+stderr lỗi chuẩn
+Các dòng này được tự động mở và đóng lại bởi môi trường của thời gian thi hành, chúng không cần và không nên được mở một cách rõ ràng.
+
+Thí dụ sau minh họa làm thế nào một chương trình bộ lọc được cấu trúc một cách điển hình:
+
+Việc chuyển các đối số qua dòng lệnh
+Các tham số được gõ vào một dòng lệnh thì được chuyển vào một chương trình C với hai biến sẵn có - một để đếm số đối số là argc và biến kia là một mảng con trỏ có tên là argv, mà mỗi con trỏ chỉ đến một đối số (các đối số được xem như là mảng ký tự)
+
+Thí dụ mệnh lệnh
+myFilt p1 p2 p3
+(Lưu ý: không có gì bảo đảm rằng các dãy ký tự riêng lẻ là liền nhau)
+
+Đối với thí dụ này, các giá trị riêng lẻ của các tham số có thể được truy cập bằng argv[1], argv[2], và argv[3] như là được chỉ ra trong chương trình sau:
+
+Thứ tự đánh giá
+Một trình dịch C có thể đánh giá các biểu thức theo thứ tự bất kì giữa dãy các điểm. Dãy các điểm được định nghĩa bởi:
+
+Các kết thúc của mệnh đề tại các dấu chấm phẩy.
+Toán tử dãy: dấu phẩy.
+Các toán tử ngắn mạch: gồm phép và (&&) và phép hoặc (||).
+Toán tử điều kiện (A?B:C): Giá trị của biểu thức A được đánh giá trước. Nếu A là đúng thì B sẽ được đánh giá bỏ qua biểu thức C. Nếu A sai thì B bị bỏ qua và chỉ có C được đánh giá tiếp.
+Lưu ý: Các biểu thức đứng trước trong một dãy điểm sẽ luôn luôn được đánh giá trước các biểu thức theo sau. Trong trường hợp đánh giá của các ngắn mạch, biểu thức thứ hai có thể sẽ không cần được đánh giá. Thí dụ, trong biểu thức (a() || b()), nếu a() trả về giá trị đúng thì trình dịch sẽ không cần đánh giá b() nữa (vì lúc đó đã đủ để kết luận mệnh đề (a() || b()) là đúng). Trong thực hành viết mã, nhiều lập trình viên thiếu kinh nghiệm rất dễ bị lọt vào tình huống rằng trình dịch không chịu tiến hành những gì họ muốn mà bỏ qua nhiều bước dẫn tới các kết quả không chính xác mặc dù về lô gíc họ không hề sai sót. Trong trường hợp như vậy, cách tốt nhất là hãy xem lại thật kỹ các mệnh đề Bool và đặc tính đánh giá này của trình dịch. Các lỗi này thuộc loại rất khó tìm ra bởi vì nó hoàn toàn chính xác về mặt cú pháp, về mặt toán học và ngay cả về mặt thuật toán xử lý và rất dễ dẫn đến nhiều kết quả sai về mặt tính toán mà người lập trình không ngờ. Đây cũng là điểm khác nhau giữa ngôn ngữ toán học thuần túy (dùng trong các mã giả --pseudo code ) và thực tế của ngôn ngữ lập trình.
+
+Ứng xử không xác định
+Một khía cạnh thú vị (mặc dù chắc không đơn nhất) của tiêu chuẩn C là ứng xử của một số dạng mã chắc chắn dẫn tới tình trạng không xác định. Trong thực tế, điều này có nghĩa là chương trình tạo ra từ mã này có thể làm bất kì gì từ việc thực thi đúng theo ý muốn cho đến việc hư hỏng mỗi lần nó chạy.
+
+Thí dụ: mã sau đây gây ra ứng xử không xác định, vì biến b được dùng tới nhiều hơn một lần (đồng thời lại có sự biến đổi của chính b trong lúc tính toán) qua biểu thức a = b + b++;:
+
+Vì không có dãy điểm giữa việc truy cập của b trong b + b++, nó tạo nên tình trạng là trình dịch có thể tự quyết định tăng b trước hay sau khi cộng (tùy theo trình dịch và trạng thái máy!) dẫn đến kết quả là 2 hay 3. Mặc dù vậy, vì để cho phép trình dịch thực hiện tốt các quá trình tối ưu, tiêu chuẩn này (của C) còn có thể tạo ra tình hình tệ hơn như trình bày trên. Một cách tổng quát, mọi sự diều chỉnh (hay thay đổi giá trị) và truy cập giữa các dãy điểm có thể gây ra tình huống bất định.

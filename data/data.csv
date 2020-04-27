@@ -16,6 +16,7 @@ info_codebot,general,0,chức năng của codebot.
 info_codebot,general,0,codebot có thể làm được những gì?
 info_codebot,general,0,bạn có thể làm được những gì?
 info_author,general,0,ai là người làm ra codebot?
+info_author,general,0,tác giả codebot là ai?
 info_author,general,0,tác giả là ai?
 info_author,general,0,thông tin tác giả
 info_author,general,0,ai là người làm ra bạn?
@@ -52,108 +53,108 @@ tip,general,1,tip lập trình
 tip,general,1,tip hay trong lập trình
 tip,general,1,programming tip
 tip,general,1,mẹo hay lập trình
-which,cpp,1,C++ có những kiểu dữ liệu cơ sở nào?
-diff,general,1,"Phân biệt Syntax error, Runtime error và Logical error?"
-what,cpp,1,Complier và linker là gì?
-what,general,1,Vòng lặp vô hạn là gì?
-what,cpp,1,"Biến static, extern là gì?"
-when,cpp,1,Hàm sprintf được sử dụng trong trường hợp nào?
-diff,cpp,1,Sự khác nhau giữa memcpy và strcpy?
-diff,cpp,1,Sự khác nhau giữa memcpy và memmove?
-diff,cpp,1,Sự khác nhau giữa con trỏ và tham chiếu?
-diff,cpp,1,Sự khác nhau giữa truyền giá trị và truyền tham biến?
-what,cpp,1,Memory leak là gì?
-how,cpp,1,Cách tránh memory leak?
-diff,cpp,1,Sự khác nhau giữa cấp phát tĩnh và cấp phát động?
-diff,cpp,1,Sự khác nhau giữa const char* s và char* const s?
-diff,cpp,1,Sự khác nhau giữa mảng và chuỗi?
-what,cpp,1,Con trỏ void là gì?
-diff,cpp,1,Sự khác nhau giữa malloc và calloc?
-diff,cpp,1,"Sự khác nhau giữa việc #include và #include ""xxx.h""?"
-what,cpp,1,Từ khóa auto có ý nghĩa gì?
-diff,cpp,1,Sử dụng macro hay function tốt hơn?
-diff,cpp,1,Sự khác nhau giữa kích thước của biến con trỏ int* và biến con trỏ char* ?
-diff,cpp,1,Sự khác nhau giữa struct và union?
-diff,cpp,1,Sự khác nhau giữa #define và const?
-diff,cpp,1,Sự khác nhau giữa bộ nhớ stack và heap?
-diff,cpp,1,Sự khác nhau giữa hàm strdup() và strcpy()?
-diff,cpp,1,Sự khác nhau giữa mảng và danh sách liên kết?
-what,cpp,1,Mảng con trỏ là gì?
-when,cpp,1,Ứng dụng của mảng con trỏ?
-what,cpp,1,Con trỏ hàm là gì?
-when,cpp,1,Ứng dụng con trỏ hàm?
-what,cpp,1,Con trỏ gần là gì?
-what,cpp,1,Con trỏ xa là gì?
-what,cpp,1,Alignment struct là gì?
-what,cpp,1,Macro là gì?
-diff,cpp,1,Sự khác nhau giữa ++x và x++ trong C/C++?
-why,cpp,1,Tại sao keyword default và break được sử dụng trong lệnh switch case?
-diff,cpp,1,Nên sử dụng switch case hay if else?
-diff,cpp,1,Sử dụng hàm nào an toàn hơn trong 2 hàm fgets và gets?
-diff,cpp,1,Những ưu điểm khi sử dụng enum thay vì sử dụng #define?
-what,cpp,1,Từ khóa #prama là gì?
-diff,cpp,1,Sự khác nhau giữa const và volatite?
-why,cpp,1,Tại sao nên gán NULL cho con trỏ sau khi giải phóng vùng nhớ?
-diff,cpp,1,Sự khác nhau giữa linker và linkage?
-diff,cpp,1,Sự khác nhau giữa malloc và new?
-what,cpp,1,Hàm inline là gì?
-what,cpp,1,Hàm hủy là gì?
-what,cpp,1,Hàm tạo là gì?
-what,cpp,1,Hàm hủy ảo (virtual destructor) là gì?
-what,cpp,1,Hàm tạo copy là gì?
-diff,cpp,1,C và C++ khác nhau như thế nào?
-what,cpp,1,Khái niệm name mangling trong C++ là gì?
-diff,cpp,1,Sự khác nhau giữa con trỏ và tham chiếu
-what,cpp,1,Khái niệm null reference là gì?
-why,cpp,1,Tại sao chúng ta sử dụng nạp chồng toán tử (operator overloading)?
-when,cpp,1,Trong trường hợp nào nên sử dụng tham số hằng tham chiếu?
-what,cpp,1,Const function là gì?
-when,cpp,1,Hàm tạo copy được gọi trong trường hợp nào?
-what,cpp,1,Template class là gì?
-which,cpp,1,Những toán tử nào ko thể thực hiện overloading?
-when,cpp,1,Khi nào chúng ta cần deep copy?
-what,cpp,1,"Trong C++, Conversion constructor là gì?"
-when,cpp,1,Khi nào nên sử dụng static data member trong C++?
-what,cpp,1,"Trong C++, mutable data members là gì?"
-what,cpp,1,Smart pointer trong C++ là gì?
-diff,cpp,1,Sự khác nhau giữa đa kế thừa và kế thừa đa tầng là gì?
-diff,cpp,1,Sự khác nhau giữa overloading và overriding?
-what,cpp,1,"Ý nghĩa của ""vptr"" trong hàm ảo là gì?"
-how,cpp,1,Đa hình động được thực thi như thế nào trong C++?
-diff,cpp,1,So sánh đa hình tĩnh và đa hình động?
-what,cpp,1,Ý nghĩa của hàm thuần ảo (pure virtual function) trong C++?
-which,cpp,1,Kể ra các loại đa hình trong C++?
-which,cpp,1,Liệt kê các loại exception trong C++?
-what,cpp,1,dynamic_cast trong C++ là gì?
-what,cpp,1,dangling pointer C++ là gì?
-when,cpp,1,Khi nào nên sử dụng namespace?
-what,cpp,1,Namespace trong C++ là gì?
-why,cpp,1,"Tại sao static member trong class lại ko nhận con trỏ ""this""?"
-what,cpp,1,abstraction trong C++ là gì?
-what,cpp,1,encapsulation trong C++ là gì?
-what,cpp,1,Binding trong C++ là gì?
-diff,cpp,1,Static binding và run-time binding khác nhau thế nào?
-when,cpp,1,Khi nào chúng ta sử dụng hàm hủy ảo (virtual destructor)?
-what,cpp,1,C++ là gì?
-what,cpp,1,C là gì?
-what,py,1,Python là gì?
-why,py,1,Vì sao nói Python là ngôn ngữ thông dịch?
-what,py,1,PEP8 là gì?
-how,py,1,Quá trình thông dịch của Python như thế nào?
-how,py,1,Python quản lý bộ nhớ như thế nào?
-diff,py,1,"Trong python, list và tuple khác nhau như thế nào?"
-which,py,1,Python có những kiểu dữ liệu sẵn nào?
-why,py,1,Vì sao biểu thức lambda không chứa câu lệnh?
-what,py,1,Pass trong Python là gì?
-what,py,1,Namespace trong python là gì?
-what,py,1,"Trong python, iterator là gì?"
-what,py,1,"Trong python, generator là gì?"
-what,py,1,Docstring trong python là gì?
-what,py,1,"Trong python, index có giá trị âm nghĩa là gì?"
-how,py,1,Làm sao để chuyển một số thành một chuỗi trong python?
-what,py,1,Module trong python là gì?
-what,py,1,Package trong python là gì?
-diff,py,1,Biến cục bộ và biến toàn cục trong python khác nhau như thế nào?
+list,cpp,1,C++ có những kiểu dữ liệu cơ sở nào?
+compare,general,1,"Phân biệt Syntax error, Runtime error và Logical error?"
+explain,cpp,1,Complier và linker là gì?
+explain,general,1,Vòng lặp vô hạn là gì?
+explain,cpp,1,"Biến static, extern là gì?"
+apply,cpp,1,Hàm sprintf được sử dụng trong trường hợp nào?
+compare,cpp,1,Sự khác nhau giữa memcpy và strcpy?
+compare,cpp,1,Sự khác nhau giữa memcpy và memmove?
+compare,cpp,1,Sự khác nhau giữa con trỏ và tham chiếu?
+compare,cpp,1,Sự khác nhau giữa truyền giá trị và truyền tham biến?
+explain,cpp,1,Memory leak là gì?
+usage,cpp,1,Cách tránh memory leak?
+compare,cpp,1,Sự khác nhau giữa cấp phát tĩnh và cấp phát động?
+compare,cpp,1,Sự khác nhau giữa const char* s và char* const s?
+compare,cpp,1,Sự khác nhau giữa mảng và chuỗi?
+explain,cpp,1,Con trỏ void là gì?
+compare,cpp,1,Sự khác nhau giữa malloc và calloc?
+compare,cpp,1,"Sự khác nhau giữa việc #include và #include ""xxx.h""?"
+explain,cpp,1,Từ khóa auto có ý nghĩa gì?
+compare,cpp,1,Sử dụng macro hay function tốt hơn?
+compare,cpp,1,Sự khác nhau giữa kích thước của biến con trỏ int* và biến con trỏ char* ?
+compare,cpp,1,Sự khác nhau giữa struct và union?
+compare,cpp,1,Sự khác nhau giữa #explain và const?
+compare,cpp,1,Sự khác nhau giữa bộ nhớ stack và heap?
+compare,cpp,1,Sự khác nhau giữa hàm strdup() và strcpy()?
+compare,cpp,1,Sự khác nhau giữa mảng và danh sách liên kết?
+explain,cpp,1,Mảng con trỏ là gì?
+apply,cpp,1,Ứng dụng của mảng con trỏ?
+explain,cpp,1,Con trỏ hàm là gì?
+apply,cpp,1,Ứng dụng con trỏ hàm?
+explain,cpp,1,Con trỏ gần là gì?
+explain,cpp,1,Con trỏ xa là gì?
+explain,cpp,1,Alignment struct là gì?
+explain,cpp,1,Macro là gì?
+compare,cpp,1,Sự khác nhau giữa ++x và x++ trong C/C++?
+reason,cpp,1,Tại sao keyword default và break được sử dụng trong lệnh switch case?
+compare,cpp,1,Nên sử dụng switch case hay if else?
+compare,cpp,1,Sử dụng hàm nào an toàn hơn trong 2 hàm fgets và gets?
+compare,cpp,1,Những ưu điểm khi sử dụng enum thay vì sử dụng #explain?
+explain,cpp,1,Từ khóa #prama là gì?
+compare,cpp,1,Sự khác nhau giữa const và volatite?
+reason,cpp,1,Tại sao nên gán NULL cho con trỏ sau khi giải phóng vùng nhớ?
+compare,cpp,1,Sự khác nhau giữa linker và linkage?
+compare,cpp,1,Sự khác nhau giữa malloc và new?
+explain,cpp,1,Hàm inline là gì?
+explain,cpp,1,Hàm hủy là gì?
+explain,cpp,1,Hàm tạo là gì?
+explain,cpp,1,Hàm hủy ảo (virtual destructor) là gì?
+explain,cpp,1,Hàm tạo copy là gì?
+compare,cpp,1,C và C++ khác nhau như thế nào?
+explain,cpp,1,Khái niệm name mangling trong C++ là gì?
+compare,cpp,1,Sự khác nhau giữa con trỏ và tham chiếu
+explain,cpp,1,Khái niệm null reference là gì?
+reason,cpp,1,Tại sao chúng ta sử dụng nạp chồng toán tử (operator overloading)?
+apply,cpp,1,Trong trường hợp nào nên sử dụng tham số hằng tham chiếu?
+explain,cpp,1,Const function là gì?
+apply,cpp,1,Hàm tạo copy được gọi trong trường hợp nào?
+explain,cpp,1,Template class là gì?
+list,cpp,1,Những toán tử nào không thể thực hiện overloading?
+apply,cpp,1,Khi nào chúng ta cần deep copy?
+explain,cpp,1,"Trong C++, Conversion constructor là gì?"
+apply,cpp,1,Khi nào nên sử dụng static data member trong C++?
+explain,cpp,1,"Trong C++, mutable data members là gì?"
+explain,cpp,1,Smart pointer trong C++ là gì?
+compare,cpp,1,Sự khác nhau giữa đa kế thừa và kế thừa đa tầng là gì?
+compare,cpp,1,Sự khác nhau giữa overloading và overriding?
+explain,cpp,1,"Ý nghĩa của ""vptr"" trong hàm ảo là gì?"
+usage,cpp,1,Đa hình động được thực thi như thế nào trong C++?
+compare,cpp,1,So sánh đa hình tĩnh và đa hình động?
+explain,cpp,1,Ý nghĩa của hàm thuần ảo (pure virtual function) trong C++?
+list,cpp,1,Kể ra các loại đa hình trong C++?
+list,cpp,1,Liệt kê các loại exception trong C++?
+explain,cpp,1,dynamic_cast trong C++ là gì?
+explain,cpp,1,dangling pointer C++ là gì?
+apply,cpp,1,Khi nào nên sử dụng namespace?
+explain,cpp,1,Namespace trong C++ là gì?
+reason,cpp,1,"Tại sao static member trong class lại ko nhận con trỏ ""this""?"
+explain,cpp,1,abstraction trong C++ là gì?
+explain,cpp,1,encapsulation trong C++ là gì?
+explain,cpp,1,Binding trong C++ là gì?
+compare,cpp,1,Static binding và run-time binding khác nhau thế nào?
+apply,cpp,1,Khi nào chúng ta sử dụng hàm hủy ảo (virtual destructor)?
+explain,cpp,1,C++ là gì?
+explain,cpp,1,C là gì?
+explain,py,1,Python là gì?
+reason,py,1,Vì sao nói Python là ngôn ngữ thông dịch?
+explain,py,1,PEP8 là gì?
+usage,py,1,Quá trình thông dịch của Python như thế nào?
+usage,py,1,Python quản lý bộ nhớ như thế nào?
+compare,py,1,"Trong python, list và tuple khác nhau như thế nào?"
+list,py,1,Python có những kiểu dữ liệu sẵn nào?
+reason,py,1,Vì sao biểu thức lambda không chứa câu lệnh?
+explain,py,1,Pass trong Python là gì?
+explain,py,1,Namespace trong python là gì?
+explain,py,1,"Trong python, iterator là gì?"
+explain,py,1,"Trong python, generator là gì?"
+explain,py,1,Docstring trong python là gì?
+explain,py,1,"Trong python, index có giá trị âm nghĩa là gì?"
+usage,py,1,Làm sao để chuyển một số thành một chuỗi trong python?
+explain,py,1,Module trong python là gì?
+explain,py,1,Package trong python là gì?
+compare,py,1,Biến cục bộ và biến toàn cục trong python khác nhau như thế nào?
 set_context,cpp,1,mình có thắc mắc về C++
 set_context,cpp,1,cho mình hỏi đôi chút về C++
 set_context,cpp,1,mình có câu hỏi về C++
@@ -170,3 +171,29 @@ set_context,py,1,Python khó quá cậu ạ
 set_context,py,1,đang đau đầu vì Python đây
 set_context,py,1,Python nhiều cái mới lạ quá
 set_context,py,1,Tớ cần giúp đỡ về Python
+agree,general,0,đồng ý
+agree,general,0,chuẩn
+agree,general,0,đúng rồi
+agree,general,0,được
+agree,general,0,ok
+agree,general,0,duyệt
+agree,general,0,phải rồi
+agree,general,0,nó đó
+agree,general,0,ừ
+agree,general,0,ờ
+agree,general,0,đúng ý mình rồi
+disagree,general,0,không phải
+disagree,general,0,mình không có ý đó
+disagree,general,0,nhầm rồi
+disagree,general,0,không đúng
+disagree,general,0,không đồng ý
+disagree,general,0,sai rồi
+disagree,general,0,sai hoàn toàn nhé
+disagree,general,0,không phải vậy
+disagree,general,0,ý tôi không phải thế
+disagree,general,0,tôi không rõ bạn đang nói gì cả
+disagree,general,0,bậy rồi
+disagree,general,0,tào lao quá
+disagree,general,0,quá xàm xí
+disagree,general,0,xàm quá
+disagree,general,0,trả lời không đúng ý tôi
