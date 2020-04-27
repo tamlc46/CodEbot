@@ -2,8 +2,14 @@
 
 import os
 import re
+import sys
+import traceback
 from utilities import *
 import joblib
+
+# Set terminal encoding to utf-8
+sys.stdin.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')
 
 class codebot:
     def __init__(self, kbmodel_dir_path=""):

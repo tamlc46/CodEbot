@@ -1,5 +1,6 @@
 
 @import "fonts/styles.css";
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;900&display=swap");
 
 // Fontawesome
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
@@ -17,7 +18,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import "~bootstrap/scss/buttons";
 
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Vollkorn', 'Courier New', Courier, monospace;
 }
 
 .wrapper {
@@ -79,7 +80,6 @@ body {
     ~ .chatbox-wrap {
       height: 100%;
       #chatbox {
-        border-radius: 40px;
         box-shadow: -4px 3px 20px -2px rgba(0,0,0,0.6);
       }
     }
@@ -144,6 +144,7 @@ body {
     opacity: 0;
     transition: ease 1s all;
 
+    scroll-behavior: smooth;
     scrollbar-width: none;
     &::-webkit-scrollbar {
       display: none;
@@ -198,11 +199,12 @@ body {
         flex-direction: column;
         overflow-y: scroll;
         
+        scroll-behavior: smooth;
         scrollbar-width: none;
         &::-webkit-scrollbar {
           display: none;
         }
-
+        
         .fill {
           flex-grow: 1;
         }
@@ -227,7 +229,7 @@ body {
 
           &.bot-message {
             .avatar {
-              background: #f0f2f5 url("image/logo.png") no-repeat center;
+              background: #f0f2f5 url("/image/logo.png") no-repeat center;
               background-size: auto 45px;
               border: 1px solid #e4e4e4bb;
               box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.36)
@@ -239,8 +241,9 @@ body {
             }
           }
           &.user-message {
-            
             .avatar {
+              background: #f0f2f5 url("/image/user.svg") no-repeat center;
+              background-size: 65%;
               background-color: #1483ce;
               box-shadow: 0px 0px 14px -5px rgb(0, 0, 0)
             }
@@ -254,20 +257,43 @@ body {
       }
 
       .chat-status {
+        display: none;
         position: absolute;
         right: 0;
         bottom: 0;
         left: -15px;
-        background-color: #4784ff;
         text-align: center;
         color: #fff;
-        opacity: 0.45;
         font-weight: bold;
+                
+        cursor: pointer;
+        
+        &.show {
+          display: block;
+        }
+
+        div {
+          padding: 3px;
+          line-height: 1;
+        }
+        
+        .info {
+          background-color: #4784ff;
+        }
+
+        .success {
+          background-color: #84ff47;
+        }
+
+        .error {
+          background-color: #ff4747;
+        }
       }
     }
 
     .chat-input {
-      height: 80px;
+      flex-shrink: 0;
+      height:14%;
 
       margin: 0;
       overflow: hidden;
@@ -303,18 +329,23 @@ body {
 @media (min-width: 992px) { 
   #information.show ~ .chatbox-wrap #chatbox {
     padding: 1.5rem;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
   }
 }
 
 @media (min-width: 1200px) {
   #information.show ~ .chatbox-wrap {
-    padding: 3%;
+    padding: 3% 1%;
 
     #chatbox {
-      border-bottom-right-radius: 40px;
-      border-top-right-radius: 40px;
+      border-radius: 40px;
     }
+  }
+}
+
+@media (min-width: 1600px) {
+  #information.show ~ .chatbox-wrap {
+    padding: 4%;
   }
 }

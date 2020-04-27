@@ -1,8 +1,10 @@
+const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const BrotliPlugin = require("brotli-webpack-plugin");
 
 module.exports = {
   entry: [path.resolve(__dirname, "src", "client", "index.js"), path.resolve(__dirname, "src", "client", "style")],
@@ -32,19 +34,6 @@ module.exports = {
             plugins: ["@babel/plugin-proposal-object-rest-spread"]
           }
         }
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              sourceMap: true,
-              outputPath: "../image",
-              publicPath: "../image"
-            }
-          }
-        ],
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -83,6 +72,19 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "../css/style.css",
       chunkFilename: "[hash].css"
+    }),
+    new CompressionPlugin({
+      filename: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.7
+     }),
+    new BrotliPlugin({
+      asset: "[path].br[query]",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.7
     })
   ],
   optimization: {

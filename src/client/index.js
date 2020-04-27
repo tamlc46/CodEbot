@@ -7,7 +7,11 @@ import io from "socket.io-client";
 
 console.log("Document Loaded!");
 
-if (window.innerWidth <= 768)
+const chat_text = document.getElementById("chat-text");
+const chat_submit = document.getElementById("chat-submit");
+var socket;
+
+if (window.innerWidth <= 1024)
 {
   console.log("Mobile View! Width:", window.innerWidth);
   let info = document.getElementById("information");
@@ -26,109 +30,134 @@ if (window.innerWidth <= 768)
   };
 }
 
-// var socket = io();
+chat_text.onkeydown = function (ev) {
+  let value = chat_text.value;
 
-// var card_template =
-//   '<div class="card"><div class="card-header p-0"><a data-toggle="collapse" data-target="#{{ id }}" aria-expanded="true" aria-controls="{{ id }}"><i class="fas fa-caret-down"></i> {{ question }}</a></div><div id="{{ id }}" class="collapse show"><div class="card-body"><pre>{{ answer }}</pre></div></div></div>';
+  if (ev.keyCode == 13) {  // Enter key pressed
+    ev.preventDefault();
+    console.log(value.endsWith("\n"));
+    if (value.length > 0 && 
+        !value.endsWith("\n") && 
+        (ev.ctrlKey || ev.shiftKey)) {
 
-// socket.on("connect", () => {
-//   console.log("Connected to Server");
-// });
+      chat_text.value = value + "\n";
+      chat_text.dispatchEvent(new InputEvent("input"));
+    } else {
+      chat_submit.click();
+    }
+  }
+};
 
-// socket.on("answer", msg => {
-//   var box = $("#messages-view");
+chat_text.oninput = function (ev) {
+  let value = chat_text.value;
+  chat_submit.disabled = !(value.length != 0);
+};
 
-//   var card = card_template
-//     .replace(/{{ id }}/g, msg.id)
-//     .replace(/{{ question }}/g, msg.question)
-//     .replace(/{{ answer }}/g, msg.answer);
+chat_submit.onclick = function (ev) {
+  let value = chat_text.value.trim();
 
-//   box.append(card);
-//   box.animate({ scrollTop: box.prop("scrollHeight") }, 1000);
+  if (socket == null || !socket.connected)
+    show_status("Không thể gửi tin nhắn!", "fas fa-times-circle", "error", 3);
+  if (value == "") return;
 
-//   $(`#${msg.id}`).on("hide.bs.collapse", () => {
-//     var symbol = $(`#${msg.id}`)
-//       .parent()
-//       .find(".card-header a i");
+  chat_text.value = "";
+  chat_text.dispatchEvent(new InputEvent("input"));
 
-//     symbol.removeClass("fa-caret-down");
-//     symbol.addClass("fa-caret-right");
-//   });
+  // Clean input text
+  value = value.split("\n").map(x => x.trim()).join("\n");
+  console.log(value)
 
-//   $(`#${msg.id}`).on("show.bs.collapse", () => {
-//     var symbol = $(`#${msg.id}`)
-//       .parent()
-//       .find(".card-header a i");
+  user_bubble(value);
+  socket.emit("ask", {
+    id: id_generator(),
+    question: value
+  });
+}
 
-//     symbol.removeClass("fa-caret-right");
-//     symbol.addClass("fa-caret-down");
-//   });
-// });
+function user_bubble(text) {
+  let msg_list = document.querySelector("#chatbox .chatview .message-list");
+  let bubble = `<div class="row user-message message justify-content-end"><div class="chat-bubble">${text.replace(/\n+/g, "<br>")}</div><div class="avatar"></div></div>`;
+  
+  msg_list.insertAdjacentHTML("beforeend", bubble);
+  scroll_to_bottom();
+}
 
-// $("#chatbox").submit(event => {
-//   event.preventDefault();
+function codebot_bubble(text) {
+  let msg_list = document.querySelector("#chatbox .chatview .message-list");
+  let bubble = `<div class="row bot-message message"><div class="avatar"></div><div class="chat-bubble">${text.replace(/\n+/g, "<br>")}</div></div>`;
+  
+  let scrollHeight = msg_list.scrollHeight;
+  msg_list.insertAdjacentHTML("beforeend", bubble);
+  if (msg_list.scrollTop + msg_list.clientHeight >= scrollHeight - 200) {
+    msg_list.scrollTop = msg_list.scrollHeight;
+  }
+  else {
+    // Show statusbar
+    let status = show_status("Có tin nhắn mới!", "fas fa-comments", "info", 0);
 
-//   var value = $("#message")
-//     .val()
-//     .trim();
+    status.onclick = function(ev) {
+      close_status();
+      scroll_to_bottom();
+      status.onclick = null;
+    }
+  }
+}
 
-//   if (value != "") {
-//     socket.emit("ask", {
-//       id: id_generator(),
-//       question: value
-//     });
-//   }
-//   $("#message").val("");
-//   $("#message").change();
-// });
+function scroll_to_bottom() {
+  let msg_list = document.querySelector("#chatbox .chatview .message-list");
+  msg_list.scrollTop = msg_list.scrollHeight;
+}
 
-// // Autoresize message Input area
-// (function() {
-//   var msgInp = $("#message");
-//   var msgBtn = $("#chatbox #outbound button");
+function show_status(msg, fa_icon, type="info", timeup=3) {
+  let status = document.querySelector("#chatbox .chat-status");
+  let status_dom = `<div class="${type}"><i class="${fa_icon}"></i> ${msg}</div>`;
 
-//   function resize() {
-//     msgInp.css("height", "40px");
-//     msgInp.css("height", msgInp[0].scrollHeight + "px");
+  status.innerHTML = status_dom;
+  status.classList.toggle("show", true);
 
-//     msgBtn.css("height", "40px");
-//     msgBtn.css("height", msgInp[0].scrollHeight + "px");
-//   }
-//   /* 0-timeout to get the already changed msgInp */
-//   function delayedResize() {
-//     window.setTimeout(resize, 0);
-//   }
+  if (timeup > 0)
+    setTimeout(close_status, timeup*1000);
 
-//   msgInp.on("change", resize);
-//   msgInp.on("cut", delayedResize);
-//   msgInp.on("paste", delayedResize);
-//   msgInp.on("drop", delayedResize);
-//   msgInp.on("keydown", event => {
-//     if (event.keyCode == 13) {
-//       event.preventDefault();
+  return status;
+}
 
-//       if (event.ctrlKey) {
-//         event.target.value = event.target.value + "\n";
-//       } else {
-//         $("#chatbox").submit();
-//       }
-//     }
-//     delayedResize();
-//   });
+function close_status() {
+  let status = document.querySelector("#chatbox .chat-status");
+  status.classList.toggle("show", false);
+}
 
-//   msgInp.focus();
-//   msgInp.select();
-//   resize();
-// })();
+function connect_ws() {
+  show_status("Đang kết nối...", "fas fa-spinner fa-spin", "info", 0);
+  socket = io();
 
-// function id_generator() {
-//   // Math.random should be unique because of its seeding algorithm.
-//   // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-//   // after the decimal.
-//   return (
-//     "_" +
-//     Math.random()
-//       .toString(36)
-//       .substr(2, 9)
-//   );
-// }
+  socket.on("connect", () => {
+    show_status("Kết nối thành công!", "fas fa-check-circle", "success", 3);
+  });
+
+  socket.on("connect_error", (error) => {
+    show_status("Kết nối thất bại!", "fas fa-times-circle", "error", 3);
+  });
+
+  socket.on("reconnect_attemp", (number) => {
+    show_status("Đang thử kết nối lại...", "fas fa-spinner fa-spin", "info", 0);
+  });
+
+  socket.on("answer", (data) => {
+    console.log(data);
+    codebot_bubble(data);
+  })
+}
+
+connect_ws();
+
+function id_generator() {
+  // Math.random should be unique because of its seeding algorithm.
+  // Convert it to base 36 (numbers + letters), and grab the first 9 characters
+  // after the decimal.
+  return (
+    "_" +
+    Math.random()
+      .toString(36)
+      .substr(2, 9)
+  );
+}
