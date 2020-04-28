@@ -5,3 +5,234 @@ C++ được thiết kế hướng tới lập trình hệ thống và phần m�
 C++ được Tổ chức Tiêu chuẩn hóa Quốc tế (ISO) chuẩn hóa, với phiên bản tiêu chuẩn mới nhất được ISO phê chuẩn và công bố vào tháng 12 năm 2017 là ISO / IEC 14882: 2017 (được gọi một cách không chính thức là C++ 17).[8] Ngôn ngữ lập trình C++ ban đầu được chuẩn hóa vào năm 1998 là ISO / IEC 14882: 1998, sau đó được sửa đổi theo tiêu chuẩn C++ 03, C++ 11 và C++ 14. Tiêu chuẩn C++ 17 hiện tại thay thế các tính năng mới này và một thư viện tiêu chuẩn mở rộng. Trước khi tiêu chuẩn hóa ban đầu vào năm 1998, C++ được phát triển bởi Bjarne Stroustrup tại Bell Labs từ năm 1979, như một phần mở rộng của ngôn ngữ C khi ông muốn một ngôn ngữ hiệu quả và linh hoạt tương tự như C, cũng cung cấp các tính năng cấp cao cho tổ chức chương trình.[9] C++ 20 là tiêu chuẩn được lên kế hoạch tiếp theo sau đó, phù hợp với chuỗi hiện tại của một phiên bản mới cứ sau ba năm[10].
 
 Nhiều ngôn ngữ lập trình khác được phát triển dựa trên nền tảng C++, bao gồm C#, D, Java và các phiên bản mới hơn của C.
+
+Trong tiêu chuẩn 1998 của C++ có hai phần chính: phần ngôn ngữ cốt lõi và phần Thư viện chuẩn C++(STL - Standard Template Library). Phần thư viện này lại bao gồm hầu hết thư viện tiêu bản chuẩn và phiên bản có điều chỉnh chút ít của thư viện chuẩn C. Nhiều thư viện C++ hiện hữu không thuộc về tiêu chuẩn như là thư viện Boost. Thêm vào đó, nhiều thư viện không theo tiêu chuẩn được viết trong C một cách tổng quát đều có thể sử dụng trong các chương trình C++.
+
+Chức năng dẫn nhập trong C++
+So với C, C++ tăng cường thêm nhiều tính năng, bao gồm: khai báo như mệnh đề, chuyển kiểu giống như hàm, new/delete, bool, các kiểu tham chiếu, const, các hàm nội tuyến (inline), các đối số mặc định, nạp chồng hàm, không gian tên (namespace), các lớp (bao gồm tất cả các chức năng liên quan tới lớp như kế thừa, hàm thành viên (phương pháp), hàm ảo, lớp trừu tượng, và cấu tử), nạp chồng toán tử, tiêu bản, toán tử phạm vi ::, xử lý ngoại lệ, và sự nhận dạng kiểu trong thời gian thi hành.
+
+C++ còn tiến hành nhiều phép kiểm tra kiểu hơn C trong nhiều trường hợp.
+
+Câu lệnh chú giải bắt đầu với // nguyên là một phần của BCPL được tái sử dụng trong C++.
+
+Một số thành phần của C++ sau này đã được thêm vào C, bao gồm const, inline, khai báo biến trong vòng lặp for và chú giải kiểu C++ (sử dụng ký hiệu //). Tuy nhiên, C99 cũng bổ sung thêm một số tính năng không có trong C++, ví dụ như macro với số đối số động.
+
+Vì được phát triển từ C, trong C++, thuật ngữ đối tượng có nghĩa là vùng nhớ như được dùng trong C, chứ không phải là một phiên bản của lớp như được hiểu trong phần lớn ngôn ngữ lập trình hướng đối tượng khác. Ví dụ như: int i;
+
+Dòng trên sẽ định nghĩa một đối tượng kiểu int (số nguyên), tức là một vùng nhớ sẽ được sử dụng để lưu giữ biến i.
+
+Thư viện C++
+Thư viện chuẩn C++ dùng lại thư viện chuẩn C với một số điều chỉnh nhỏ để giúp nó hoạt động tốt hơn với ngôn ngữ C++. Một bộ phận lớn khác của thư viện C++ dựa trên Thư viện tiêu bản chuẩn (hay còn gọi là STL - viết tắt từ chữ Standard Template Library). Thư viện này có nhiều công cụ hữu dụng như là các thùng chứa (ví dụ như vector, danh sách liên kết và biến lặp (tổng quát hóa từ khái niệm con trỏ) để cung cấp những thùng chứa này sự truy cập giống như là truy cập mãng. Xa hơn nữa, bảng (đa) ánh xạ (mảng kết hợp) và (đa) tập, tất cả được cung cấp để có thể xuất ra các giao diện tương thích. Do đó, có thể dùng tiêu bản để viết các thuật toán tổng quát mà chúng làm việc được với bất kì thùng chứa nào hay với bất kì dãy nào được định nghĩa bởi biến lặp. Giống như C, các tính năng của thư viện này thì được truy cập bởi việc sử dụng lệnh dẫn hướng #include để bao gồm một tập tin tiêu đề chuẩn. C++ cung ứng 69 tiêu đề chuẩn, trong đó có 19 tiêu đề không còn hiệu lực nữa.
+
+Vì thư viện chuẩn được thiết kế bởi những chuyện gia hàng đầu và đã được chứng minh trong toàn bộ lịch sử kĩ nghệ, các thành phần của thư viện này được khuyến cáo sử dụng thay vì dùng những phần viết tay bên ngoài hay những phương tiện cấp thấp khác. Ví dụ, dùng std:vector hay std::string thay vì dùng kiểu mảng đơn thuần sẽ không những là cho "đời sống dễ thở hơn", mà còn là một cách hữu hiệu để viết phần mềm được an toàn và linh hoạt hơn.
+
+STL nguyên là một thư viện của hãng HP và sau đó là của SGI, trước khi nó được nhận vào thành chuẩn C++. Tiêu chuẩn thì không tham chiếu nó bằng cái tên "STL", khi đa phần nó chỉ là bộ phận tiêu chuẩn. Tuy vậy, nhiều người vẩn dùng khái niệm "STL" này để phân biệt nó với phần còn lại của thư viện C++ như là IOstream, quốc tế hóa (ký tự và ngôn ngữ trình bày), chẩn đoán, thư viện C, v.v..
+
+Một đề án mang tên STLPort, dựa cơ sở trên SGI STL, bảo trì các thiết lập mới của STL, IOStream và string. Các đề án khác cũng có những xây dựng đặc thù riêng của thư viện chuẩn với các mục tiêu thiết kế khác nhau. Mỗi nơi sản xuất hay phổ biến nhà trình dịch C++ đều bao gồm một sự thiết lập của thư viện, vì đây là phần quan trọng của tiêu chuẩn và lại là kỳ vọng của người lập trình.
+
+C++ Các chức năng hướng đối tượng
+C++ dẫn nhập thêm một số chức năng hướng đối tượng (OO) lên C. Nó cung cấp các lớp mà có 4 chức năng thông dụng trong các ngôn ngữ OO: tính trừu tượng, tính đóng gói, tính đa hình, và tính kế thừa.
+
+Lưu ý: trong phần này các từ "hàm nội tại", "phương pháp", hay "hàm" đều có cùng một nghĩa là "phương thức thuộc về một lớp".
+
+Tính đóng gói
+C++ xây dựng tính đóng bằng cách cho phép mọi thành viên của một lớp có thể được khai báo bằng các từ khoá public, private, hay protected. (xem thêm các khái niệm cơ bản trong ngôn ngữ OOP). Một thành viên private chỉ có thể được truy cập từ các phương pháp (hàm nội tại) là thành viên của chính lớp đó hay được truy cập từ các hàm và các lớp được đặc biệt cho phép sử dụng bằng cách dùng từ khóa friend. Một thành viên protected của một lớp sẽ có thể truy cập được từ các thành viên (nào đó) của các lớp có tính kế thừa của nó hay cũng có thể truy cập được từ các thành viện của chính lớp đó và của mọi thành viên friend.
+
+Nguyên lý của OOP là mọi và chỉ có các hàm là có thể truy cập được đến các giá trị nội tại của cùng lớp thì nên có tính đóng. C++ có hỗ trợ đặc tính này (qua các hàm thành viên và các hàm friend), nhưng C++ lại không là yêu cầu bắt buộc: người lập trình có thể khai báo các phần hay tất cả các giá trị nội tại là công cộng (public), và cũng cho phép làm cho toàn bộ lớp trở thành công cộng. Lý do là vì C++ hỗ trợ không chỉ lập trình hướng đối tượng mà còn hỗ trợ các mẫu hình yếu hơn như là lập trình mô-đun.
+
+Một thói quen tốt cần có trong thực hành là khai báo mọi dữ liệu đều là riêng tư (private), hay ít nhất ở dạng bảo tồn, và sau đó, tạo ra một giao diện nhỏ (thông qua các phương pháp) cho người dùng của lớp này dấu đi các chi tiết thiết lập bên trong.
+
+Tính đa hình
+Khái niệm đa hình được dùng khá rộng rãi và là khái niệm bị lạm dụng cũng như không được định nghĩa rõ ràng.
+
+Nói chung tính đa hình trong lập trình hướng muốn nói đến 1 đoạn code nhưng trong 2 trường hợp khác nhau có thể xuất ra 2 kết quả khác nhau. Vì tính chất ra nhiều kết quả khác nhau này nên nó được gọi là đa hình.
+
+Trong trường hợp của C++, khái niệm này thường được nối kết với các tên của các hàm thành viên. Các hàm thành viên này có cùng tên, sự khác nhau chỉ có thể được dựa vào một hay cả hai yếu tố sau:
+
+Số lượng và kiểu của các đối số (tức là nguyên mẫu của hàm) -- Tính chất này gọi là đa hình tĩnh (static polymorphism)
+Kiểu lớp mà thực thể thực sự thuộc vào. Tính chất này được dùng khi hàm thành viên được định nghĩa là hàm ảo qua từ khóa virtual—tính chất này gọi là đa hình động (dynamic polymorphism)
+Khi được gọi thì chương trình sẽ tùy theo hai yếu tố trên để xác định chính xác hàm nào phải được thực thi trong số các hàm cùng tên.
+
+Ví dụ sau đây mô tả tính đa hình:
+
+Ví dụ thứ hai về tính đa hình động:
+
+Trong C, thì đa hình (động) có thể đạt tới bằng cách dùng từ khóa switch hay dùng con trỏ hàm.
+
+C++ còn cung cấp hai tính năng độc đáo cho đa hình là:
+
+Nạp chồng toán tử (overloading): Cho phép một toán tử hay một hàm có những ứng xử khác nhau phụ thuộc vào kiểu của các toán hạng hay các tham số tại thời điểm toán tử hay hàm được triệu gọi.
+Ví dụ, ta có thể định nghĩa hai hàm trùng tên như sau: float Demo(float a, float b) {return a + b;} và int Demo(int a, int b) {return a - b;} Ta cũng có thể tải bội phép cộng cho lớp MATRIX để có thể viết được C = A + B khi A, B và C có kiểu MATRIX.
+
+Tính ảo (virtual): Cho phép một phương thức (hàm thành viên hoặc toán tử) của lớp có ứng xử khác nhau phụ thuộc vào sự kế thừa của lớp con cháu (Xem phương thức Chao() trong ví dụ trên.
+Hai tính năng trên cho phép chương trình định ra nhiều sự thiết lập khác nhau của một hàm để sử dụng ứng với các kiểu (khác nhau) của các đối tượng.
+
+Việc quá tải hàm cho phép các chương trình khai báo nhiều hàm có chung một tên (ngay cả việc các hàm này thuộc cùng một lớp). Các hàm này phân biệt được bởi số lượng và kiểu của các tham số. Ví dụ, một chương trình có thể có khai báo 3 hàm sau:
+
+Sau, đó, khi trình dịch đọc phải câu lệnh có gọi tới hàm pageUser(), thì mó sẽ xác định xem đó là hàm nào tùy dựa trên số lượng và kiểu của các đối số đã được đưa vào (tức là dựa vào sự khác nhau của các nguyên mẫu của những hàm này). Lý do ta gọi kiểu quá tải hàm này là đa hình tĩnh vì nó được phân lập trong thời gian dịch mã.
+
+Chú ý: trình dịch sẽ không phân biệt khác nhau về kiểu trả về, do đó không thể quá tải hai hàm hoàn toàn giống nhau trong cùng một lớp mà lại chỉ khác nhau về kiểu trả về.
+
+Quá tải toán tử (operation overloading) là một dạng của quá tải hàm. Nó là một trong những đặc tích của C++ bị nhiều tranh cãi nhất. Nhiều người cho rằng việc quá tải toán tử đã bị lạm dụng quá đáng, nhưng nhiều người khác nghĩ rằng đây là công cụ rất mạnh để tăng cường sự biểu thị (qua ký các hiệu toán tử).
+
+Toán tử là một trong những ký hiệu đã được định nghĩa trong ngôn ngữ C++ đóng vai trò của các toán tử để thực hiện các phép toán trên các kiểu dữ liệu. Quá tải toán tử được hiểu là quá trình hay phương thức để tái sử dụng một toán tử sẵn có để định nghĩa và dùng cho một phép toán khác.
+Danh sách các toán tử có thể thực hiện quá tải
+
+Việc quá tải hàm cho phép người lập trình định nghĩa nhiều phiên bản khác nhau của một hàm để dùng với các kiểu đối số khác nhau trong khi việc quá tải toán tử lại cho phép người lập trình định nghĩa nhiều phiên bản khác nhau của một toán tử để dùng với các kiểu phép toán khác nhau.
+
+Trong phần lớn trường hợp, đoạn mã nguồn trên sẽ làm tăng giá trị của biến a lên 3. Tuy nhiên, lập trình viên viết lớp Integer có thể định nghĩa toán tử Integer::operator++() làm bất cứ gì lập trình viên muốn. Vì toán tử thường được dùng ngầm, lập trình viên không nên khai báo toán tử trừ trường hợp ý nghĩa của toán tử là rõ ràng và không gây nhầm lẫn. Tuy nhiên, có nhiều ý kiến cho rằng thư viện chuẩn C++ không tuân theo quy ước này. Ví dụ, đối tượng cout, được sử dụng để xuất ký tự ra màn hình có toán tử quá tải <<, nhiều người cho rằng toán tử << là không rõ ràng và vô nghĩa trong trường hợp muốn xuất ký tự ra màn hình do toán tử này cũng là toán tử được dùng trong phép tính dịch bit. Tuy nhiên, phần lớn lập trình viên cho rằng cách sử dụng toán tử << trong trường hợp cout là có thể chấp nhận được.
+
+Tiêu bản C++ sử dụng rất nhiều tính đa hình tĩnh, trong đó bao gồm cả các toán tử được quá tải.
+
+Hàm ảo cung cấp một kiểu đa hình khác. Trong trường hợp này, các đối tượng có cùng một lớp cơ sở có thể sử dụng một hàm một cách khác nhau. Ví dụ, lớp cơ sở PrintJob bao gồm hàm thành viên:
+
+Mỗi cách khác nhau của công việc in như là DoubleSpacedPrintJob, có thể trở thành phương pháp ưu tiên với một hàm mà có thể tính được gần đúng số trang của công việc in theo cách đó. Ngược lại, với việc quá tải hàm, các tham số của một hàm thành phần cho trước thì luôn luôn xác định và không đổi về số lượng và kiểu. Chỉ có kiểu của đối tượng (mà theo đó tên của phương pháp này được gọi) là có thay đổi.
+
+Khi một hàm thành viên ảo của một đối tượng được gọi thì trình dịch đôi khi không được kiểu của đối tượng này ở thời gian dịch và do đó không thể xác định hàm (quá tải) nào để gọi. Quyết định gọi này bởi vậy phải để vào thời gian thực thi. Trình dịch sẽ tạo ra các mã để kiểm tra lại kiểu của đối tượng ở thời gian thi hành và từ đó xác định hàm nào để gọi. Bởi vì việc xác định hàm chỉ xảy ra lúc chạy chương trình nên phương pháp quá tải hàm này được gọi là đa hình động.
+
+Sự xác định và thi hành của một hàm trong thời gian thực thi gọi là điều phối động. Trong C++, việc này thường hoàn tất bằng cách dùng các bảng ảo.
+
+Tính kế thừa
+Kế thừa từ một lớp cơ sở có thể được khai báo thông qua các đặc tính công cộng, bảo tồn, hay riêng tư. Những đặc tính này cho phép xác định khi nào các lớp dẫn xuất hay không liên quan có thể sử dụng các thành viên công cộng, bảo tồn, hay riêng tư của lớp cơ sở. Tuy nhiên, chỉ có sự kế thừa dạng công cộng là hoàn toàn theo đúng ý nghĩa của việc "kế thừa". Hai dạng khác thì ít được dùng hơn. Nếu các đặc tả này không được khai báo thì việc kế thừa được gán mặc định là dạng riêng tư cho lớp cơ sở và dạng công cộng cho một cấu trúc cơ sở.
+
+Các lớp cơ sở có thể được khai báo là ảo (thông qua từ khóa virtual). Kế thừa ảo bảo đảm rằng chỉ có một thực thể của lớp cơ sở tồn tại trong đồ thị kế thừa, tránh được một số vấn đề mơ hồ của việc đa kế thừa.
+
+Đa kế thừa cũng là một tính năng có nhiều tranh cãi trong C++. Tính đa kế thừa cho phép một lớp được dẫn xuất từ nhiều hơn một lớp cơ sở; điều này có thể dẫn tới một đồ thị phức tạp của các quan hệ kế thừa. Ví dụ, lớp "Buổi học" có thể kế thừa từ hai lớp "thời gian" và "bộ môn". Một số ngôn ngữ khác như Java, tiến hành cách thức tương tự bằng cách cho phép kế thừa của nhiều giao diện trong khi giới hạn số lượng của các lớp cơ sở (kế thừa) chỉ còn là một lớp. (giao diện, không như lớp, không cho phép thiết lập nội dung của các thành viên và do đó không thể có thực thể)
+
+Thiết kế của C++
+Trong tác phẩm The Design and Evolution of C++ ISBN 0-201-54330-3, Bjarne Stroustrup miêu tả các quy tắc mà ông ta dùng cho việc thiết kế C++. Biết rõ các quy tắc này sẽ giúp hiểu được tại sao C++ lại đi theo cách riêng của nó. Sau đây là một tổng kết sơ lược của các quy tắc. Các chi tiết của chúng có thể được tìm thấy trong cuốn The Design and Evolution of C++.
+
+C++ được thiết kế để là một ngôn ngữ tổng quát có kiểu tĩnh mà lại hữu hiệu và năng động như C
+C++ được thiết kế nhằm hỗ trợ trực tiếp và đầy đủ nhiều kiểu lập trình như là lập trình cấu trúc, sự Trừu tượng của dữ liệu, lập trình hướng đối tượng, và lập trình tổng quát.
+C++ được thiết kế để người lập trình có cơ hội lựa chọn ngay cả khi điều này có thể dẫn tới sự chọn lựa sai lầm của người lập trình.
+C++ được thiết kế để tương thích với C càng nhiều càng tốt, do đó, có cung ứng một sự chuyển đổi (ngôn ngữ) rất thuận tiện từ C.
+C++ tránh các chức năng mà chúng thuộc về dặc điểm riêng của nền tảng hay của mục đích chung chung.
+C++ không lệ thuộc vào các phần bổ sung cho các tính năng thừa
+C++ được thiết kế để hoạt động mà không cần phải có môi trường lập trình hoàn thiện.
+Đọc thêm:
+
+Inside the C++ Object Model, cuốn sách đào sâu nội dung của C++ của Stanley B. Lippman, ông là người xây đựng và bảo trì C-front, một phiên bản thiết lập nguyên thủy của C++ tại Bell Labs. Sách này trình bày làm thế nào trình dịch C++ chuyển các câu lệnh vào sự thiết trí bên trong bộ nhớ.
+
+Lịch sử C++
+Stroustrup đã bắt đầu làm việc với khái niệm lớp trong 1979. Ý tưởng tạo ra một ngôn ngữ mới bắt nguồn từ kinh nghiệm lập trình khi mà ông viết luận án tiến sĩ. Stroustrup nhận ra rằng Simula có nhiều tính năng hữu dụng cho việc phát triển một phần mềm lớn nhưng nó đã quá chậm trong ứng dụng thực tế, trong khi đó, BCPL lại nhanh nhưng ở cấp quá thấp và không tiện cho việc phát triển phần mềm lớn. Đến khi làm việc ở Bell Labs, thì ông gặp phải vấn đề trong việc phân tích nhân Unix với việc tính toán phân tán. Dùng lại kinh nghiệm lúc làm luận án tiến sĩ, Stroustrup cài thêm các tính năng giống như Simula vào trong C để nâng cao. C được chọn là vì đó là ngôn ngữ tổng quát, nhanh và năng động. Lần đầu tiên, các chức năng như là lớp, lớp dẫn xuất, kiểm tra kiểu mạnh, nội tuyến (inline), và đối số mặc định đã được thêm vào trong C. Lần xuất bản đầu tiên vào thị trường xảy ra trong tháng 11/1985.
+
+Năm 1983, thì tên C với các lớp được đổi thành C++. các chức năng mới được thêm vào bao gồm hàm ảo, quá tải hàm và toán tử, tham chiếu, hằng, khả năng kiểm soát bộ nhớ của lưu trữ tự do, nâng cao việc kiểm soát kiểu, và lệnh chú giải kiểu (//).
+
+Năm 1985, tác phẩm The C++ Programming Language được xuất bản lần đầu tiên, cung cấp một tài liệu tham khảo quan trọng cho ngôn ngữ nhưng đó chưa là một tiêu chuẩn chính thức.
+
+Năm 1989 phiên bản C++ 2.0 phát hành. Các tính năng mới bao gồm đa kế thừa, lớp trừu tượng, hàm tĩnh, hàm thành viên hằng, và thành viên bảo tồn.
+
+Năm 1990, cuốn The Annotated C++ Reference Manual được xuất bản cung cấp nền tảng cho tiêu chuẩn tương lai.
+
+Phiên bản xuất bản sau đó có thêm các chức năng tiêu bản, ngoại lệ, không gian tên, chuyển kiểu cho toán tử new, và kiểu Boolean.
+
+Khi C++ hình thành, thì thư viện chuẩn hoàn thiện với nó. Thư viện C++ đầu tiên thêm vào là iostream.h cung cấp cơ sở để thay thế các hàm C truyền thống như là printf và scanf. Sàu này, trong những thư viện chuẩn quan trọng nhất được thêm vào là Thư viện Tiêu bản Chuẩn.
+
+Sau nhiều năm làm việc, có sự cộng tác giữa ANSI và hội đồng tiêu chuẩn hoá C++ của ISO để soạn thảo tiêu chuẩn ISO/IEC 14882:1998. Phiên bản tiêu chuẩn này được phát hành năm 1989, hội đồng tiếp tục xử lý các báo cáo trục trặc, và ấn hành một phiên bản sửa sai của chuẩn C++ trong năm 2003.
+
+Không ai là chủ nhân của ngôn ngữ C++, nó hoàn toàn miễn phí khi dùng. Mặc dù vậy, các văn bản tiêu chuẩn thì không miễn phí.
+
+Sự phát triển trong tương lai
+C++ tiếp tục phát triển để thỏa mãn các nhu cầu tương lai. Đặc biệt nhóm Boost.org, làm việc trên hầu hết các dạng và các khuyến cáo trong C++ cho Hội đồng Tiêu chuẩn C++ về các chức năng hoạt động tốt và các chức năng cần được cải thiện. Công việc hiện tại cho thấy bản năng đa mẫu hình của C++ sẽ ngày càng nhiều. Ví dụ: Công việc của Boost.org mở rộng rất mạnh chức năng của C++ và khả năng siêu lập trình (metaprogramming) của nó. Chuẩn C++ không đề cập về sự thiết lập của mã hóa tên (name decoration), xử lý ngoại lệ và sự thiết lập các tính năng đặc biệt khác, tạo mã đối tượng mà nó được làm ra từ những trình dịch không tương thích khác. Dù vậy, vẫn có những tiêu chuẩn khác từ các nhà sản xuất dùng cho những máy hay OS riêng biệt nhằm tiêu chuẩn hóa các trình dịch trên các nền tảng đó, Ví dụ [1].
+
+Các trình dịch cho đến gần đây (2004) vẫn lưỡng lự khi hỗ trợ toàn bộ chuẩn C++, đặc biệt là trong những lãnh vực của tiêu bản (đây là phần ngôn ngữ đã được công nhận hoàn toàn từ hội đồng tiêu chuẩn. Một điểm các biệt đáng nói nữa là từ khóa export, nhằm cho phép các định nghĩa của các tiêu bản được tách rời khỏi các khai báo của chúng. Trình dịch đầu tiên thiết kế kiểu này là Comeau C++, đầu năm 2003 (5 năm sau khi tiêu chuẩn đã được phát hành!); trong năm 2004, phiên bản beta trình dịch của Borland C++ Builder X cũng hỗ trợ dùng export. Cả hai trình dịch đó dựa trên mặt ngoài của EDG C++. Cũng cần lưu ý rằng nhiều sách cung cấp mã Ví dụ cho việc thiết lập từ khóa export (Ivor Horton's Beginning ANSI C++, pg. 827) mà lại không dịch được, nhưng lại cũng không có tham khảo vấn dề này với việc (khó khăn) đã nêu trên. Những trình dịch khác như là Microsoft Visual C++ và GCC thì hoàn toàn không hỗ trợ nó. Herb Sutter, thư ký hội đồng tiêu chuẩn C++, có khuyến cáo rằng export sẽ được hủy bỏ trong các phiên bản tương lai của chuẩn C++ [2]. Nhưng quyết định tối hậu đã được đưa ra là giữ nguyên nó trong chuẩn C++.
+
+Nhiều vấn đề về tiêu bản bao gồm các xây dựng như đặc biệt hóa tiêu bản từng phần, mà đã được hỗ trợ một cách nghèo nàn trong nhiều năm sau khi chuẩn C++ đã ra đời.
+
+Lịch sử của tên "C++"
+Tên C++ được đặt ra bởi Rick Mascitti (giữa 1983) và lần đầu tiên được dùng trong tháng 12 1983. Trước đó, trong suốt thời kì nghiên cứu, khi ngôn ngữ phát triển đã được đề cập như là "C với các lớp". Toán tử ++ được nối vào với tên "C" (có nghĩa là tăng giá trị của C lên 1 đơn vị) được dùng theo cách đặt tên thông thường của việc dùng dấu + với ý nghĩa "nâng cao". Ví dụ: "Wikipedia+". Sau này phiên bản ngôn ngữ lập trình cao hơn dựa trên nền tảng của C và C++ được gọi là C#, tương ứng với 4 dấu +. Theo Stroustrup thì:
+
+Cái tên C++ nhấn mạnh sự tiến hóa tự nhiên của các thay đổi từ C. C+ là tên của một ngôn ngữ lập trình cũ và không liên quan gì đến C hay C++.
+
+C++ không phải là C mở rộng
+Trong khi nhiều mã nguồn viết trong C sẽ được dịch như là ngôn ngữ C++ mà không gặp trở ngại gì thì cũng có một số khác nhau giữa hai ngôn ngữ đã ngăn không cho C++ trở thành (ngôn ngữ) mở rộng của C. Chẳng hạn như C++ cấm gọi hàm main bên trong một chương trình, trong khi điều này hợp lệ trong C. Thêm vào đó C++ có nhiều giới hạn trong một số tính năng như là nó thiếu sự chuyển kiểu mặc định giữa các kiểu con trỏ không liên hệ nhau và cũng không cho phép một hàm được sử dụng nếu chưa khai báo.
+
+Một vấn đè thường xảy ra khi chuyển dịch từ C sang C++ là nhiều từ khoá được thêm vào trong C++. Điều này có thể làm cho một số tên trong C trở thành bất hợp lệ trong C++. Ví dụ:
+
+hợp lệ trong C nhưng không dùng được trong C++ vì các từ khoá template, new và class.
+
+Sự khác nhau còn xảy ra trong kiểu trình bày. Ví dụ như trong một cách cũ và truyền thống của việc khai báo trong C sau đây sẽ không được chấp thuận trong C++.
+
+Cú pháp ngôn ngữ C++ là tập hợp các quy tắc nhằm xác định cách thức viết và dịch trong ngôn ngữ lập trình C++.
+
+Vì C++ là ngôn ngữ được thiết kế để có thể hoạt động tương thích với ngôn ngữ C nên hai ngôn ngữ này chia sẻ nhau nhiều điểm chung trong cú pháp. Đối với các cấu trúc câu lệnh thông thường, các hàm, biến, và kiểu dữ liệu cơ bản xin xem thêm bài cú pháp C. Bài này chỉ tập trung vào các chủ đề căn bản mà ngôn ngữ C không có trong đó bao gồm việc hỗ trợ các mẫu hình lập trình tiêu bản và lập trình hướng đối tượng của C++.
+
+Chức năng Hướng đối tượng
+Lớp
+Định nghĩa lớp cơ bản
+Việc sử dụng lớp trong một chương trình C++ có hai phần chính là phần định nghĩa lớp và phần khai báo và truy cập các thành viên của một đối tượng có kiểu là một lớp cho trước.
+
+Lưu ý: khi các từ khoá đặc tính public:, private: và protected: không có mặt thì toàn bộ các thành viên của lớp sẽ được hiểu mặc định là có đặc tính riêng tư (private).
+
+Định nghĩa thông thường của một lớp con kế thừa từ lớp MyClass. Trong thí dụ dưới đây thì [đặc_tính] có thể thay bằng một trong ba từ khoá đặc tính public:, private: và protected: hoặc nếu bỏ qua không viết ra thì đặc tính kế thừa mặc định của lớp con sẽ là "riêng tư".
+
+Định nghĩa thông thường của một lớp con kế thừa từ hai lớp MyClass1 và MyClass2. Tương tự trên, [đặc_tính] có thể thay bằng một trong ba từ khoá đặc tính public:, private: và protected: hoặc nếu bỏ qua không viết ra thì đặc tính kế thưà mặc định của lớp con sẽ là "riêng tư".
+
+Khai báo một biến đối tượng
+Biến đối tượng thông thường
+Biến đối tượng có thể khai báo hay đôi khi còn gọi là thực thể hoá tùy theo cách xây dựng lớp của người lập trình. Thường quá trình xác lập này được tiến hành thông qua các hàm dựng. Dĩ nhiên, người ta có thể dùng ngay cả các phương thức thường dùng như là dùng tham chiếu (tức là dùng định nghĩa con trỏ), dùng mảng, dùng cấu trúc, hay phức tạp hơn (mảng tham chiếu chẳng hạn) để khai báo một biến đối tượng. (Xem thêm Cú pháp ngôn ngữ C.) Trong mọi trường hợp này thì kiểu của biến đối tượng được xem là lớp mà nó khai báo. Thí dụ:
+
+Lưu ý: người lập trình hoàn toàn có thể thực thể hoá một biến đối tượng mà không cần phải xây dựng một hàm dựng, trình dịch sẽ tự tạo ra một "hàm dựng mặc định". Tuy nhiên, một khi đã xây dựng bất kì một hàm dựng nào thì cách khai báo mặc định này sẽ không còn được trình dịch chấp thuận và sẽ báo lỗi. Thí dụ sau đây thể hiện cách tạo một lớp mà không cần hàm dựng:
+
+Biến đối tượng là một hằng
+Trường hợp khi thành lập một đối tượng hằng thì việc điều chỉnh trạng thái nội tại của nó là không hợp lệ do đó, chỉ có một cách duy nhất là gán cho nó một bộ giá trị (hay một trạng thái) ban đầu. Trong trường hợp này thì sau khi đã thực thể hóa, biến đối tượng chỉ có thể cho phép đọc các giá trị nào mà lớp tạo ra nó cho phép. (xem thí dụ)
+
+Các thành viên của lớp
+Thành viên dữ liệu
+Ngoài các khai cáo thành viên có kiểu dữ liệu như thông thường trong C, thì người lập trình còn có thể khai báo nó như một hằng, hay như một biến tĩnh, hay có cả hai đặc tính:
+
+Thành viên dữ liệu là một hằng: Trương tự như trong C, một thành viên là dữ liệu có thể được khai báo như là một hằng bởi từ khóa const đứng trước tên kiểu dữ liệu. Một khi đã khai báo là hằng thì không thể gán giá trị mới hay thay đổi nội dung của kiểu dữ liệu đó nữa (Lưu ý: trong C++ thì kiểu dữ liệu có thể là một lớp đã được định nghĩa). Do đó, dữ liệu là hằng sẽ được gán giá trị ban đầu ngay trong dòng lệnh khai báo tên của nó: const int x;
+Thành viên dữ liệu có kiểu static: Một khi thành viên của một lớp có kiểu là static thì nó sẽ có giá trị tĩnh cho mọi thực thể của cùng một lớp. Nghĩa là sự thay đổi giá trị của thành viên tĩnh này trong một thực thể bất kì sẽ có hiệu quả thay đổi của cùng thành viên đó trong các thực thể khác của cùng một lớp. Thực tế, khi một thành viên của một lớp được khai báo tĩnh thì phần bộ nhớ chứa giá trị của thành viên này sẽ được chia sẻ cho mọi thực thể về sau. Nói cách khác, ứng với mỗi thành viên tĩnh, chỉ có duy nhất một giá trị chia sẻ chung cho cả lớp.
+
+Thành viên dữ liệu có thể có cả hai đặc tính trên tức là vừa có kiểu tĩnh vừa là hằng số. Thường từ khóa static được viết trước sau đó là từ khóa const. Thí dụ dưới đây minh họa các cú pháp khai báo. việc sử dụng một biến hằng có kiểu tĩnh rất tiện lợi cho nhiều đối tượng thực thể hóa có cùng một lớp chia sẻ chung một hằng số (thí dụ: hằng số Pi dùng chung cho các đối tượng cung tròn, đường tròn, và elipse). Ngược lại, khi có các hằng số đặc thù cho từng thực thể của một lớp thì một cách là dùng hằng số thông thường (chẳng hạn như cùng một lớp "chiết tính tiền lời cho vay" nhưng thực thể ngắn hạn có "hằng số lãi kép" cao hơn nhiều so với hằng số lãi kép dài hạn). Thí dụ dưới đây minh họa cú pháp khai báo.
+
+C++11, được biết đến trước đây với tên gọi C++0x, là tên gọi của tiêu chuẩn của ngôn ngữ lập trình C++. Tiêu chuẩn này được chấp nhận bởi tổ chức ISO vào ngày 12 tháng 4 năm 2011 nhằm thay thế cho tiêu chuẩn C++03.[1]. Tên gọi C++11 của tiêu chuẩn này dược dựa trên truyền thống đặt tên phiên bản ngôn ngữ theo ngày xuất bản của bản chi tiết kỹ thuật (specification).
+
+C++11 đưa thêm một số mở rộng mới vào phần ngôn ngữ cốt lõi C++ và một số mở rộng cho thư viện chuẩn của C++, trong đó bao gồm hầu hết các thư viện trong báo cáo kỹ thuật TR1 (C++ Technical Report 1) ngoại trừ thư viện các hàm toán học đặc biệt. C++11 được ban hành dưới dạng tiêu chuẩn ISO/IEC 14882:2011 vào tháng 9/2011. Bản thảo tiêu chuẩn mới nhất là N3242 được viết vào ngày 28 tháng 2 năm 2011. Tuy nhiên sự khác biệt giữa bản thảo này và C++11 là không đáng kể.
+
+Một số đề xuất thay đổi cho việc cập nhật tiêu chuẩn
+Các thay đổi cho C++ bao gồm cả những thay đổi cho phần cốt lõi ngôn ngữ và những thay đổi cho phần thư viện chuẩn. Trong quá trình phát triển tiêu chuẩn mới, ủy ban cập nhật dựa trên các nguyên tắc sau:
+
+Duy trì sự ổn định và tương thích với chuẩn C++98 và có thể tương thích với cả ngôn ngữ C.
+Ưu tiên việc đưa các thay đổi vào thư viện chuẩn hơn là đưa vào phần ngôn ngữ cốt lõi.
+Ưu tiên các thay đổi có thể thay đổi căn bản các kỹ thuật lập trình.
+Ưu tiên nâng cấp các thiết kế hệ thống và thiết kế thư viện hơn là việc đơn thuần đưa thêm các chức năng mới cho các ứng dụng cụ thể.
+Tăng cường độ an toàn cho các kiểu (type) bằng cách đưa vào các kỹ thuật mới an toàn hơn.
+Tăng hiệu năng và khả năng làm việc trực tiếp với phần cứng.
+Cung cấp các giải pháp chính xác cho các vấn đề hay các bài toán thực tế.
+Thực thi nguyên tắc "zero-overhead" (tạm dịch: chi phí phát sinh bằng không) trong đó quy định các hỗ trợ thêm cho một số tính năng chỉ được sử dụng khi ta sử dụng tính năng đó.
+Làm cho ngôn ngữ C++ trở nên dễ học và dễ dạy hơn bằng các giảm thiểu các tính năng mà cần các lập trình viên chuyên nghiệp.
+Việc chú trọng vào những người mới học được coi là rất quan trọng vì đối tượng này chiếm phần lớn số lượng các lập trình viện và đa số họ có xu hướng chỉ chú tâm vào các lĩnh vực chuyên môn hóa. Việc đưa ra mẫu hình lập trình mới cũng có thể gây ra những khó khăn nhất định cho việc tiếp cận ngay cả với những người có nhiều kinh nghiệm lập trình C++.
+
+Các mở rộng cho phần ngôn ngữ cốt lõi của C++
+Một chức năng của C++11 là sự phát triển của ngôn ngữ cốt lõi. Lĩnh vực ngôn ngữ cốt lõi đã được cải thiện đáng kể bao gồm hỗ trợ đa luồng (multithreading), hỗ trợ lập trình tổng quát?, khởi tạo đồng bộ, và cải tiến hiệu suất. Về mục đích của điều khoản này, các tính năng ngôn ngữ cốt lõi và những thay đổi được nhóm lại thành bốn phần chung: tăng cường thời gian chạy hiệu suất, cải tiến hiệu suất thời gian xây dựng, cải tiến khả năng sử dụng và các chức năng mới. Một số tính năng có thể rơi vào nhiều nhóm, nhưng chúng chỉ được nhắc đến trong các nhóm chủ yếu đại diện cho tính năng này.
+
+Các cải tiến hiệu năng thực thi của ngôn ngữ cốt lõi
+C++11 đưa ra nhiều cải tiến nhằm nâng cao hiệu năng thực thi về việc sử dụng bộ nhớ hay về tốc độ thực thi của chương trình.
+
+Tham chiếu R - value và cấu trúc động
+Trong C++03 và các phiên bản trước, biến tạm? (được gọi là R - value) thường nằm bên phải của phép gán, được xây dựng chắc chắn như không thể thay đổi - như trong C, được xem là giống như từ const T và các "type". Tuy nhiên trong một số trường hợp, các biến tạm có thể được thay đổi, động thái này thậm chí được coi là một kẽ hở hữu ích. C++11 cho biết thêm một kiểu tham chiếu không dùng hằng mới gọi là "tham chiếu R - value", được xác định bởi T&&. Điều này có nghĩa là biến tạm vẫn được phép sửa đổi sau khi khởi tạo, với mục đích cho phép một "ngôn ngữ khả chuyển".
+
+Một vấn đề hiệu suất kình niên với C++03 là bản sao chìm tốn nhiều bộ nhớ và không cần thiết có thể xuất hiện khi một đối tượng được truyền theo tham trị. Để minh họa cho vấn đề này, ta xét một biến cục bộ std::vector<T>, bao hàm một mảng kiểu C với kích thước xác định. Nếu một vector<T> dùng làm biến tạm được tạo ra hay là giá trị trả về từ một hàm, nó có thể được lưu trữ chỉ bằng cách tạo ra một vector<T> mới và sao chép tất cả dữ liệu từ R - value vào nó (để đơn giản, ta bỏ qua việc tối ưu hóa giá trị trả về)
+
+Các cải tiến hiệu năng biên dịch của ngôn ngữ cốt lõi
+Tiêu bản ngoài
+Tiểu bản ngoài (tiếng Anh: extern template) là cú pháp mới được C++11 cung cấp nhằm rút ngắn thời gian biên dịch. Trong phiên bản C++03, chương trình biên dịch phải khởi tạo một tiêu bản (template) mỗi khi gặp tiêu bản đó khi dịch một đoạn mã lệnh nào đó. Nếu chỉ một tiêu bản của cùng một kiểu dữ liệu của các đoạn mã lệnh cần dịch được khởi tạo một lần thì việc biên dịch sẽ trở nên nhanh hơn rất nhiều. Hiện tại chúng ta không có cách nào làm được việc này trong C++03. Chính vì vậy C++11 đã giới thiệu cú pháp mới: tiêu bản ngoài (extern template) nhằm hỗ trợ cho việc định nghĩa tiêu bản ngoài. Ví dụ:
+
+Trong C++03, cú pháp sau dùng để yêu cầu trình biên dịch khởi tạo một tiêu bản:
+
+Hiện tại C++11 cung cấp cú pháp sau để yêu cầu trình biên dịch không khởi tạo tiêu bản khi dịch đoạn mã này:
+
+Các cải tiến về việc sử dụng ngôn ngữ cốt lõi
+Các cải tiến này nhằm làm cho việc sử dụng ngôn ngữ trở nên dễ dàng hơn và tăng sự an toàn các kiểu dữ liệu, loại bớt các đoạn mã lặp và giúp tránh nhiều đoạn mã lệnh sai.
+
+Các danh sách khởi tạo
+C++03 kế thừa tính năng "danh sách khởi tạo" từ ngôn ngữ C. Một kiểu cấu trúc (struct) hay một mảng (array) có thể được khởi tạo bằng một danh sách các tham số đầu vào theo thứ tự của các thành viên trong cấu trúc hoặc mảng đó. Các danh sách khởi tạo này có thể được tạo ra theo phương thức đệ quy (recursive) nhằm định nghĩa các cấu trúc hay mảng lồng xếp nhau. Ví dụ:
+
+Tính năng này rất hữu ích khi sử dụng với các cấu trúc dữ liệu tĩnh (static).
+
+C++ cũng hỗ trợ việc sử dụng hàm khởi tạo (constructor) để khởi tạo một đối tượng của một lớp nào đó nhưng không tạo được sự thuận tiện như danh sách khởi tạo. C++03 chỉ hỗ trợ danh sách khởi tạo cho các cấu trúc (struct) và các lớp (class) phù họp với định nghĩa Dữ liệu cũ đơn giả (POD - Plain Old Data). C++11 mở rộng danh sách khởi tạo bằng cách cho phép chúng có thể được sử dụng với tất cả các lớp (class), kể cả các thùng chứa chuẩn (standard containers) của C++ như std::vector. Ví dụ:
+
+Khai báo trên cho phép chúng ta khởi tạo một đối tượng mới như sau:
+
+Hàm khởi tạo đặc biệt này được gọi là hàm khởi tạo theo danh sách khởi tạo (initializer-list constructor). Các lớp có các hàm khởi tạo đặc biệt này sẽ được xử lý một cách đặc biệt trong quá trình khởi tạo đồng nhất.
