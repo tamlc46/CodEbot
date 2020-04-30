@@ -1,12 +1,16 @@
 {
     "greeting":[
-        "$self chào $opp, $opp có thắc mắc gì về $topic ạ?",
-        "$self chào $opp, $opp có câu hỏi gì về $topic ạ?",
-        "$self chào $opp, hãy đặt câu hỏi cho $self về $topic ạ!",
-        "$self chào $opp, $self sẵn sàng giải đáp thắc mắc cho $opp về $topic ạ!"
+        ["$self chào $opp", "$opp có thắc mắc gì về $topic ạ?"],
+        ["$self chào $opp", "$opp có câu hỏi gì về $topic ạ?"],
+        ["$self chào $opp", "hãy đặt câu hỏi cho $self về $topic ạ!"],
+        ["$self chào $opp", "$self sẵn sàng giải đáp thắc mắc cho $opp về $topic ạ!"]
     ],
     "credit_info": [
-        "CodEbot là một hệ thống chatbot sử dụng ngôn ngữ Tiếng Việt để giải đáp thắc mắc trong lập trình C++ và Python 3 cơ bản.\nCodEbot được phát triển bởi nhóm tác giả là Vương Lê Minh Nguyên và Lương Công Tâm dưới sự hướng dẫn của Tiến sĩ Nguyễn Viết Hưng.\nVào thời điểm xây dựng CodEbot, các tác giả đang là sinh viên năm 3 ngành Khoa học Máy tính của trường Đại học Sư Phạm TP.HCM."
+        [
+            "CodEbot là một hệ thống chatbot sử dụng ngôn ngữ Tiếng Việt để giải đáp thắc mắc trong lập trình C++ và Python 3 cơ bản.", 
+            "CodEbot được phát triển bởi nhóm tác giả là Vương Lê Minh Nguyên và Lương Công Tâm dưới sự hướng dẫn của Tiến sĩ Nguyễn Viết Hưng.", 
+            "Vào thời điểm xây dựng CodEbot, các tác giả đang là sinh viên năm 3 ngành Khoa học Máy tính của trường Đại học Sư Phạm TP.HCM."
+        ]
     ],
     "other": [
         "$self không hiểu $opp đang nói gì cả. $recommend",
@@ -21,35 +25,38 @@
     ],
     "help": {
         "general": [
-            "Chào $opp, không biết $self có thể giúp gì được cho $opp?"
+            "Không biết $self có thể giúp gì được cho $opp?"
         ],
         "cpp": [
-            "Chào $opp, $opp có thắc mắc gì về C++ ạ?"
+            "$opp có thắc mắc gì về C++ ạ?"
         ],
-        "python": [
-            "chào $opp, $opp có thắc mắc gì về Python ạ?"
+        "py": [
+            "$opp có thắc mắc gì về Python ạ?"
         ]
     },
     "tip": {
         "general": [
-            "%s"
+            ["$self có câu này tặng bạn", "Có công mài sắt có ngày nên kim"]
         ],
         "cpp": [
-            "%s"
+            ["$self có câu này tặng bạn", "Có công mài sắt có ngày nên kim"]
         ],
-        "python": [
-            "%s"
+        "py": [
+            ["$self có câu này tặng bạn", "Có công mài sắt có ngày nên kim"]
         ]
     },
-    "reference": {
+    "references": {
         "general": [
-            "%s"
+            ["Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein", 
+             "Code Complete: A Practical Handbook of Software Construction by Steve McConnell",
+             "Code Simplicity: The Fundamentals of Software by Max Kanat-Alexander",
+             "Clean Code: A Handbook of AGILE Software Craftmanship by Robert C. Martin"]
         ],
         "cpp": [
-            "%s"
+            ["The C++ Programming Language by Bjarne Stroustrup", "Programming: Principles and Practice Using C++ by Bjarne Stroustrup", "A Tour of C++ by Bjarne Stroustrup"]
         ],
-        "python": [
-            "%s"
+        "py": [
+            ["Python Cookbook: Recipes for Mastering Python 3 by Brian K. Jones and David M. Beazley", "Learn Python 3 the Hard Way: A Very Simple Introduction to the Terrifyingly Beautiful World of Computers and Code by Zed Shaw"]
         ]
     },
     "define": {
@@ -59,7 +66,7 @@
         "cpp": [
             "Trong ngôn ngữ C++, đây có thể là định nghĩa %s mà bạn đang tìm"
         ],
-        "python": [
+        "py": [
             "Trong ngôn ngữ Python 3, đây có thể là định nghĩa %s mà bạn đang tìm"
         ],
         "null": [
@@ -73,7 +80,7 @@
         "cpp": [
             "Trong ngôn ngữ C++, đây là một số ứng dụng của %s?"
         ],
-        "python": [
+        "py": [
             "Trong ngôn ngữ C++, đây là một số ứng dụng của %s?"
         ],
         "null": [
@@ -87,7 +94,7 @@
         "cpp": [
             "Trong C++, sau đây là sự so sánh giữa %s và %s."
         ],
-        "python": [
+        "py": [
             "Trong Python, sau đây là sự so sánh giữa %s và %s."
         ],
         "null": [
