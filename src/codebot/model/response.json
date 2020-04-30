@@ -1,0 +1,116 @@
+{
+    "greeting":[
+        "$self chào $opp, $opp có thắc mắc gì về $topic ạ?",
+        "$self chào $opp, $opp có câu hỏi gì về $topic ạ?",
+        "$self chào $opp, hãy đặt câu hỏi cho $self về $topic ạ!",
+        "$self chào $opp, $self sẵn sàng giải đáp thắc mắc cho $opp về $topic ạ!"
+    ],
+    "credit_info": [
+        "CodEbot là một hệ thống chatbot sử dụng ngôn ngữ Tiếng Việt để giải đáp thắc mắc trong lập trình C++ và Python 3 cơ bản.\nCodEbot được phát triển bởi nhóm tác giả là Vương Lê Minh Nguyên và Lương Công Tâm dưới sự hướng dẫn của Tiến sĩ Nguyễn Viết Hưng.\nVào thời điểm xây dựng CodEbot, các tác giả đang là sinh viên năm 3 ngành Khoa học Máy tính của trường Đại học Sư Phạm TP.HCM."
+    ],
+    "other": [
+        "$self không hiểu $opp đang nói gì cả. $recommend",
+        "$self không rõ $opp đang thắc mắc điều gì. $recommend",
+        "Hình như bạn đang nói chuyện không liên quan đến lập trình! $recommend"
+    ],
+    "agree": [
+        "Cảm ơn $opp."
+    ],
+    "disagree": [
+        "Xin lỗi $opp. $recommend"
+    ],
+    "help": {
+        "general": [
+            "Chào $opp, không biết $self có thể giúp gì được cho $opp?"
+        ],
+        "cpp": [
+            "Chào $opp, $opp có thắc mắc gì về C++ ạ?"
+        ],
+        "python": [
+            "chào $opp, $opp có thắc mắc gì về Python ạ?"
+        ]
+    },
+    "tip": {
+        "general": [
+            "%s"
+        ],
+        "cpp": [
+            "%s"
+        ],
+        "python": [
+            "%s"
+        ]
+    },
+    "reference": {
+        "general": [
+            "%s"
+        ],
+        "cpp": [
+            "%s"
+        ],
+        "python": [
+            "%s"
+        ]
+    },
+    "define": {
+        "general": [
+            "Sau đây là định nghĩa %s mà có thể bạn đang tìm"
+        ],
+        "cpp": [
+            "Trong ngôn ngữ C++, đây có thể là định nghĩa %s mà bạn đang tìm"
+        ],
+        "python": [
+            "Trong ngôn ngữ Python 3, đây có thể là định nghĩa %s mà bạn đang tìm"
+        ],
+        "null": [
+            "Khái niệm bạn đang thắc mắc không nằm trong tầm hiểu biết của $self ạ! $recommend"
+        ]
+    },
+    "apply": {
+        "general": [
+            "Sau đây là một số ứng dụng của %s"
+        ],
+        "cpp": [
+            "Trong ngôn ngữ C++, đây là một số ứng dụng của %s?"
+        ],
+        "python": [
+            "Trong ngôn ngữ C++, đây là một số ứng dụng của %s?"
+        ],
+        "null": [
+            "Khái niệm bạn đang thắc mắc không nằm trong tầm hiểu biết của $self ạ! $recommend"
+        ]
+    },
+    "compare": {
+        "general": [
+            "$self không thể giải đáp thắc mắc giúp bạn. Vui lòng chỉ rõ bạn muốn so sánh khái niệm trong ngôn ngữ nào trong câu hỏi ạ."
+        ],
+        "cpp": [
+            "Trong C++, sau đây là sự so sánh giữa %s và %s."
+        ],
+        "python": [
+            "Trong Python, sau đây là sự so sánh giữa %s và %s."
+        ],
+        "null": [
+            "Khái niệm bạn đang thắc mắc không nằm trong tầm hiểu biết của $self ạ! $recommend"
+        ]
+    },
+    "low_conf": [
+        "$self không rõ $opp đang muốn nói gì. Hãy chắc rằng bạn hỏi đúng chủ đề lập trình nhé!",
+        "$self không chắc $opp đang muốn nói gì. Hãy nhắc lại câu hỏi một cách ngắn gọn, súc tích!"
+    ],
+    "$self": [
+        "CodEbot"
+    ],
+    "$opp": [
+        "bạn"
+    ],
+    "$topic": [
+        "lập trình C++ hay Python 3 cơ bản",
+        "lập trình cơ bản với C++ hoặc Python 3"
+    ],
+    "$recommend": [
+        "Hãy đặt một câu hỏi khác liên quan đến $topic ạ!",
+        "Hãy đặt một câu hỏi khác. Nhớ là liên quan đến $topic nhé!",
+        "Vui lòng đặt một câu hỏi khác liên quan đến $topic đi $opp."
+    ]
+}
