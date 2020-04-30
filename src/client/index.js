@@ -138,13 +138,21 @@ function connect_ws() {
     show_status("Kết nối thất bại!", "fas fa-times-circle", "error", 3);
   });
 
-  socket.on("reconnect_attemp", (number) => {
+  socket.on("reconnecting", (number) => {
     show_status("Đang thử kết nối lại...", "fas fa-spinner fa-spin", "info", 0);
   });
 
   socket.on("answer", (data) => {
     console.log(data);
-    codebot_bubble(data);
+	data = JSON.parse(data);
+	if (Array.isArray(data)) {
+	  data.forEach(text => {
+		codebot_bubble(text);
+	  })
+	}
+	else {
+	  codebot_bubble(data);
+	}
   })
 }
 
