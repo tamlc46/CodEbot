@@ -36,13 +36,13 @@
     },
     "tip": {
         "general": [
-            ["$self có câu này tặng bạn", "Có công mài sắt có ngày nên kim"]
+            ["$self có câu này tặng bạn: Có công mài sắt có ngày nên kim"]
         ],
         "cpp": [
-            ["$self có câu này tặng bạn", "Có công mài sắt có ngày nên kim"]
+            ["$self có câu này tặng bạn: Có công mài sắt có ngày nên kim"]
         ],
         "py": [
-            ["$self có câu này tặng bạn", "Có công mài sắt có ngày nên kim"]
+            ["$self có câu này tặng bạn: Có công mài sắt có ngày nên kim"]
         ]
     },
     "references": {
@@ -61,13 +61,13 @@
     },
     "define": {
         "general": [
-            "Sau đây là định nghĩa %s mà có thể bạn đang tìm"
+            "Sau đây là định nghĩa của $obj mà bạn đang tìm"
         ],
         "cpp": [
-            "Trong ngôn ngữ C++, đây có thể là định nghĩa %s mà bạn đang tìm"
+            "Trong ngôn ngữ C++, sau đây là định nghĩa của $obj mà bạn đang tìm"
         ],
         "py": [
-            "Trong ngôn ngữ Python 3, đây có thể là định nghĩa %s mà bạn đang tìm"
+            "Trong ngôn ngữ Python 3, sau đây là định nghĩa của $obj mà bạn đang tìm"
         ],
         "null": [
             "Khái niệm bạn đang thắc mắc không nằm trong tầm hiểu biết của $self ạ! $recommend"
@@ -75,13 +75,13 @@
     },
     "apply": {
         "general": [
-            "Sau đây là một số ứng dụng của %s"
+            "Sau đây là định nghĩa của $obj mà bạn đang tìm"
         ],
         "cpp": [
-            "Trong ngôn ngữ C++, đây là một số ứng dụng của %s?"
+            "Trong ngôn ngữ C++, sau đây là định nghĩa của $obj mà bạn đang tìm"
         ],
         "py": [
-            "Trong ngôn ngữ C++, đây là một số ứng dụng của %s?"
+            "Trong ngôn ngữ Python 3, sau đây là định nghĩa của $obj mà bạn đang tìm"
         ],
         "null": [
             "Khái niệm bạn đang thắc mắc không nằm trong tầm hiểu biết của $self ạ! $recommend"
@@ -89,22 +89,28 @@
     },
     "compare": {
         "general": [
-            "$self không thể giải đáp thắc mắc giúp bạn. Vui lòng chỉ rõ bạn muốn so sánh khái niệm trong ngôn ngữ nào trong câu hỏi ạ."
+            "$self không thể giải đáp thắc mắc giúp bạn. Vui lòng chỉ rõ bạn muốn so sánh khái niệm của ngôn ngữ nào trong câu hỏi ạ."
         ],
         "cpp": [
-            "Trong C++, sau đây là sự so sánh giữa %s và %s."
+            "Trong C++, sau đây là sự so sánh giữa $obj và $obj."
         ],
         "py": [
-            "Trong Python, sau đây là sự so sánh giữa %s và %s."
+            "Trong Python, sau đây là sự so sánh giữa %s và $obj."
         ],
         "null": [
             "Khái niệm bạn đang thắc mắc không nằm trong tầm hiểu biết của $self ạ! $recommend"
         ]
     },
-    "low_conf": [
-        "$self không rõ $opp đang muốn nói gì. Hãy chắc rằng bạn hỏi đúng chủ đề lập trình nhé!",
-        "$self không chắc $opp đang muốn nói gì. Hãy nhắc lại câu hỏi một cách ngắn gọn, súc tích!"
-    ],
+    "low_conf": {
+        "greeting": "Có phải $opp đang muốn gửi lời chào với $self?",
+        "credit_info": "Có phải $opp đang muốn biết thêm về $self?",
+        "tip": "Có phải $opp muốn biết thêm về mẹo lập trình?",
+        "references": "Có phải $opp đang muốn xin thêm tài liệu lập trình?",
+        "help": "Có phải $opp đang cần giúp đỡ?",
+        "define": "Có phải $opp đang cần $self định nghĩa gì đó?",
+        "compare": "Có phải $opp đang cần $self so sánh cái gì đó?",
+        "apply": "Có phải $opp đang cần $self đưa ra ứng dụng của một cái gì đó?"
+    },
     "$self": [
         "CodEbot"
     ],

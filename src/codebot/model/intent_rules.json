@@ -1,0 +1,49 @@
+{
+    "low_conf": {
+        "low_conf": "other"
+    },
+    "greeting": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "credit_info": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "other": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "agree": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "disagree": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "help": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "tip": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "references": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "define": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "apply": {
+        "agree": "other",
+        "disagree": "other"
+    },
+    "compare": {
+        "agree": "other",
+        "disagree": "other"
+    }
+}

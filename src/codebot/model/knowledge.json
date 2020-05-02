@@ -1,10 +1,28 @@
 {
     "c++": {
-        "def": "C++ (đọc là \"C cộng cộng\" hay \"xi-plus-plus\", IPA: /siː pləs pləs/) là một loại ngôn ngữ lập trình bậc trung (middle-level). Đây là ngôn ngữ lập trình đa năng được tạo ra bởi Bjarne Stroustrup như một phần mở rộng của ngôn ngữ lập trình C, hoặc \"C với các lớp Class\", Ngôn ngữ đã được mở rộng đáng kể theo thời gian và C ++ hiện đại có các tính năng: lập trình tổng quát, lập trình hướng đối tượng, lập trình thủ tục, ngôn ngữ đa mẫu hình tự do có kiểu tĩnh, dữ liệu trừu tượng, và lập trình đa hình, ngoài ra còn có thêm các tính năng, công cụ để thao tác với bộ nhớ cấp thấp. Từ thập niên 1990, C++ đã trở thành một trong những ngôn ngữ thương mại ưa thích và phổ biến của lập trình viên.",
-        "apply": ""
+        "def": "C++ là một loại ngôn ngữ lập trình bậc. Đây là ngôn ngữ lập trình đa năng được tạo ra bởi Bjarne Stroustrup như một phần mở rộng của ngôn ngữ lập trình C, hoặc \"C với các Class\", Ngôn ngữ đã được mở rộng đáng kể theo thời gian và C ++ hiện đại có các tính năng: lập trình tổng quát, lập trình hướng đối tượng, lập trình thủ tục, ngôn ngữ đa mẫu hình tự do có kiểu tĩnh, dữ liệu trừu tượng, và lập trình đa hình, ngoài ra còn có thêm các tính năng, công cụ để thao tác với bộ nhớ cấp thấp. Từ thập niên 1990, C++ đã trở thành một trong những ngôn ngữ thương mại ưa thích và phổ biến của lập trình viên.",
+        "apply": "C++ được thiết kế hướng tới lập trình hệ thống và phần mềm nhúng, bao gồm cả hệ thống có tài nguyên hạn chế và tài nguyên khổng lồ, với ưu điểm là hiệu suất, hiệu quả và tính linh hoạt cao. C ++ có thể tìm thấy ở mọi nơi, với những điểm mạnh là cơ sở hạ tầng phần mềm và các ứng dụng bị hạn chế tài nguyên, bao gồm: phần mềm ứng dụng máy tính cá nhân, các hệ thống máy chủ (ví dụ: thương mại điện tử, cỗ máy tìm kiếm trên web hoặc máy chủ SQL) và các ứng dụng ưu tiên về hiệu suất (ví dụ: tổng đài thông tin liên lạc hoặc thiết bị thăm dò không gian).",
+        "tag": [],
+        "summary": [
+            "Là ngôn ngữ lập trình bậc trung",
+            "Là ngôn ngữ biên dịch, cần một trình biên dịch mã nguồn ra mã máy",
+            "Đa mục đích",
+            "Khả năng kiểm soát tài nguyên thực thi vượt trội (thời gian chạy tối ưu và cho phép lập trình viên quản lý bộ nhớ qua con trỏ)",
+            "Ứng dụng lập trình hệ thống, hệ điều hành, phần mềm nhúng, công cụ đồ họa, game engines, trình biên dịch, thông dịch cho các ngôn ngữ khác,..."
+        ],
+        "source": ["https://vi.wikipedia.org/wiki/C++"]
     },
     "python": {
-        "def": "",
-        "apply": ""
+        "def": "Python là một ngôn ngữ lập trình bậc cao cho các mục đích lập trình đa năng, do Guido van Rossum tạo ra và lần đầu ra mắt vào năm 1991. Python được thiết kế với ưu điểm mạnh là dễ đọc, dễ học và dễ nhớ. Python là ngôn ngữ có hình thức rất sáng sủa, cấu trúc rõ ràng, thuận tiện cho người mới học lập trình. Cấu trúc của Python còn cho phép người sử dụng viết mã lệnh với số lần gõ phím tối thiểu.",
+        "apply": "Python được ứng dụng phát triển nhanh các phần mềm, xây dựng web, làm việc với số liệu khoa học, và được sử dụng để giảng dạy lập trình ở nhiều nơi,...",
+        "tag": [],
+        "summary": [
+            "Là ngôn ngữ lập trình bậc cao",
+            "Là ngôn ngữ thông dịch, cần một trình thông dịch để thực thi mã nguồn",
+            "Đa mục đích",
+            "Tự động kiểu và tự động quản lý bộ nhớ",
+            "Ứng dụng phát triển nhanh các phần mềm, xây dựng web, làm việc với số liệu khoa học, và được sử dụng để giảng dạy lập trình ở nhiều nơi,..."
+        ],
+        "source": ["https://vi.wikipedia.org/wiki/Python_(ng%C3%B4n_ng%E1%BB%AF_l%E1%BA%ADp_tr%C3%ACnh)", "https://www.python.org/about/apps/"]
     }
 }
