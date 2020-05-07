@@ -1,13 +1,13 @@
 ﻿intent,context,question
 agree,general,cậu biết ý tớ đó
 agree,general,câu trả lời thật là bổ ích
-agree,general,câu trả lời thật là bổ ích
+agree,general,câu trả lời thật là bổ ích đó ạ
 agree,general,chuẩn
 agree,general,chuẩn không cần chỉnh
 agree,general,đồng ý
 agree,general,đúng rồi
 agree,general,đúng ý mình rồi
-agree,general,đúng ý mình rồi
+agree,general,đúng đó ạ
 agree,general,được
 agree,general,duyệt
 agree,general,mình hiểu ra rồi
@@ -24,12 +24,12 @@ agree,general,ok phải rồi đó
 agree,general,ok quá chuẩn luôn
 agree,general,phải rồi
 agree,general,tớ biết rồi
-agree,general,tớ biết rồi
-agree,general,tớ đồng ý
+agree,general,tớ biết rồi ạ
+agree,general,tớ đồng ý ạ
 agree,general,tôi đồng ý
 agree,general,"tốt, đúng ý tôi"
-agree,general,trả lời hay lắm
-agree,general,trả lời hay lắm
+agree,general,chuẩn rồi ạ
+agree,general,chuẩn lắm
 agree,general,ừ
 agree,general,ừ đúng rồi
 agree,general,ừ được rồi
@@ -49,6 +49,11 @@ apply,cpp,"Trong C++, kiểu tham chiếu được dùng khi nào?"
 apply,cpp,"Mình muốn biết trong C++, namespace được sử dụng khi nào?"
 apply,cpp,Ứng dụng con trỏ hàm trong C++ là gì?
 apply,cpp,Cho mình mảng con trỏ trong C++ dùng để làm gì?
+apply,general,ứng dụng python là gì?
+apply,general,python có ứng dụng gì?
+apply,general,ứng dụng C++
+apply,general,C++ dùng để làm gì?
+apply,general,Python dùng để làm gì?
 apply,general,Mình có thắc mắc hàm tạo copy được sử dụng trong trường hợp nào?
 apply,general,Khi nào nên sử dụng namespace?
 apply,general,"Cho mình hỏi, khi nào chúng ta cần dùng deep copy?"
@@ -73,14 +78,12 @@ apply,py,Kiểu từ điển trong python dùng để làm gì?
 apply,py,"Tôi đang thắc mắc trong python, hàm input dùng để làm gì?"
 apply,py,"Hãy cho tôi biết trong python, ký tự tab có chức năng gì?"
 apply,py,"Trong python, từ khóa in có chức năng gì?"
-compare,cpp,C và C++ khác nhau như thế nào?
 compare,cpp,Cho biết sự khác nhau giữa kích thước của biến con trỏ int* và biến con trỏ char*  trong C++?
 compare,cpp,Cho biết sự khác nhau giữa malloc và calloc trong C++
 compare,cpp,"Cho biết sự khác nhau giữa việc #include và #include ""xxx.h"" trong C++"
 compare,cpp,Hãy phân biệt con trỏ và tham chiếu trong C++?
 compare,cpp,Hãy so sánh static binding và run-time binding trong C++
 compare,cpp,Hãy so sánh macro và function trong C++
-compare,cpp,Sự khác nhau giữa ++x và x++ trong C++?
 compare,cpp,"Trong C++, memcpy và strcpy khác nhau như thế nào?"
 compare,cpp,"Trong C++, struct và union khác nhau thế nào?"
 compare,cpp,"Trong C++, sự khác nhau giữa #define và const là gì?"
@@ -93,6 +96,10 @@ compare,cpp,"Trong C++, sự khác nhau giữa truyền giá trị và t
 compare,cpp,"Trong C++, enum có gì khác #define?"
 compare,cpp,"Trong ngôn ngữ lập trình C++, sự khác nhau giữa memcpy và memmove là gì?"
 compare,cpp,"Với C++, sự khác nhau giữa mảng và chuỗi là gì?"
+compare,general,C++ và python khác nhau như nào?
+compare,general,Python và C++ khác nhau ở đâu?
+compare,general,cho biết sự khác biệt của python và C++
+compare,general,Hãy so sánh C++ và python
 compare,general,Cho biết sự khác nhau giữa linker và linkage
 compare,general,Cho biết sự khác nhau giữa malloc và new?
 compare,general,Cho biết sự khác nhau giữa overloading và overriding?
@@ -113,7 +120,6 @@ credit_info,general,bạn là ai?
 credit_info,general,cho mình hiểu thêm chút về bạn đi
 credit_info,general,cho tớ biết thêm về cậu đi codebot
 credit_info,general,chức năng của codebot.
-credit_info,general,codebot
 credit_info,general,codebot có thể làm được những gì?
 credit_info,general,codebot có thể làm gì?
 credit_info,general,codebot là ai?
@@ -130,13 +136,12 @@ credit_info,general,tác giả là ai?
 credit_info,general,thông tin tác giả
 credit_info,general,thông tin về codebot.
 credit_info,general,vì sao codebot lại ra đời?
-define,cpp,abstraction trong C++ là gì?
+define,cpp,Hãy định nghĩa hàm trong C++
 define,cpp,binding trong C++ là gì?
 define,cpp,Tôi muốn biết C++ có những kiểu dữ liệu cơ sở nào?
-define,cpp,Cho mình hỏi C++ là gì?
 define,cpp,Mình có thắc mắc con trỏ gần là gì trong C++?
 define,cpp,"Codebot giải thích giúp mình, con trỏ hàm là gì trong C++ thế?"
-define,cpp,Con trỏ xa là gì trong C++?
+define,cpp,Hãy định nghĩa con trỏ trong C++
 define,cpp,dangling pointer C++ là gì?
 define,cpp,"Đối với C++, compiler và linker là gì?"
 define,cpp,Thế nào là dynamic_cast trong C++ vậy?
@@ -156,6 +161,11 @@ define,cpp,Mình muốn biết từ khóa #prama trong C++ là gì?
 define,cpp,Từ khóa auto có ý nghĩa gì trong ngôn ngữ C++?
 define,cpp,Với C++ thì hàm hủy ảo (virtual destructor) là gì?
 define,cpp,Ý nghĩa của hàm thuần ảo (pure virtual function) trong C++?
+define,general,Tôi có thắc mắc C++ là gì?
+define,general,Cho tôi hỏi C++ là gì?
+define,general,C++ là gì
+define,general,Python là gì
+define,general,Cho mình hỏi C++ là gì?
 define,general,Alignment struct là gì?
 define,general,Biểu thức lambda là gì?
 define,general,Const function là gì?
@@ -168,16 +178,25 @@ define,general,Cho tôi hỏi PEP8 là gì?
 define,general,Tôi có thắc mắc thế nào là quá tải toán tử?
 define,general,Tôi có thắc mắc template class là gì?
 define,general,"Ý nghĩa của ""vptr"" trong hàm ảo là gì?"
+define,general,Python là gì vậy ạ?
+define,general,Hãy định nghĩa Python
+define,general,Cho biết định nghĩa Python
+define,general,Hãy cho biết C++ là gì?
+define,general,Định nghĩa C++
+define,general,cho biết định nghĩa C++
+define,general,Cho tôi hỏi Python là gì?
 define,py,Mình muốn biết docstring trong python là gì?
 define,py,Vậy Module trong python là gì?
 define,py,Thế namespace trong python là gì?
 define,py,Mình muốn hỏi package trong python là gì?
 define,py,Từ khóa pass trong Python có ý nghĩa gì?
-define,py,Cho tôi hỏi Python là gì?
 define,py,"Trong python, generator là gì?"
 define,py,"Trong python, index âm nghĩa là gì?"
 define,py,"Trong python, iterator là gì?"
 define,py,"Trong python, làm sao để chuyển kiểu dữ liệu?"
+define,general,cái cây là gì?
+define,general,con chó là gì?
+define,general,con mèo là gì?
 disagree,general,bạn hiểu nhầm rồi
 disagree,general,codebot hiểu sai ý tôi rồi
 disagree,general,codebot nhầm rồi
@@ -210,6 +229,9 @@ disagree,general,tôi không rõ bạn đang nói gì cả
 disagree,general,trả lời không đúng ý tôi
 disagree,general,ý tôi không phải thế
 disagree,general,ý tôi không phải vậy mà
+greeting,general,codebot ơi!
+greeting,general,codebot ơi codebot à
+greeting,general,codebot
 greeting,general,chào
 greeting,general,chào bạn
 greeting,general,chào buổi sáng
@@ -233,6 +255,14 @@ help,cpp,đang đau đầu vì C++ đây
 help,cpp,mình có câu hỏi về C++
 help,cpp,mình có thắc mắc về C++
 help,cpp,Tớ cần giúp đỡ về C++
+help,cpp,Codebot ơi C++ đang làm khó mình!
+help,cpp,Codebot ơi C++ khó quá cậu ạ
+help,cpp,"Codebot, C++ nhiều cái mới lạ quá"
+help,cpp,"Xin chào codebot, cho mình hỏi đôi chút về C++"
+help,cpp,"Chào codebot, mình đang đau đầu vì C++ đây"
+help,cpp,"codebot ơi, mình có câu hỏi về C++"
+help,cpp,"hello, mình có thắc mắc về C++"
+help,cpp,"xin chào, Tớ cần giúp đỡ về C++"
 help,general,bạn có thể giúp tôi chứ?
 help,general,codebot hãy giúp tôi
 help,general,"codebot, hãy giúp tôi với"
@@ -243,6 +273,13 @@ help,general,tôi cần giúp đỡ
 help,general,tôi có câu hỏi
 help,general,mình có thắc mắc không biết hỏi ai
 help,general,trợ giúp
+help,general,"xin chào codebot, bạn có thể giúp tôi chứ?"
+help,general,"chào codebot, giúp tôi với"
+help,general,"Hi, tớ cần sự trợ giúp"
+help,general,"Hi codebot, tớ có thắc mắc"
+help,general,"Xin chào, tôi cần giúp đỡ"
+help,general,"tôi có thắc mắc cần được giải đáp, giúp tôi với"
+help,general,trợ giúp
 help,py,cho mình hỏi đôi chút về python
 help,py,đang đau đầu vì Python đây
 help,py,mình có câu hỏi về python
@@ -252,21 +289,6 @@ help,py,Python đang làm khó mình!
 help,py,Python khó quá cậu ạ
 help,py,Python nhiều cái mới lạ quá
 help,py,Tớ cần giúp đỡ về Python
-help,cpp,Codebot ơi C++ đang làm khó mình!
-help,cpp,Codebot ơi C++ khó quá cậu ạ
-help,cpp,"Codebot, C++ nhiều cái mới lạ quá"
-help,cpp,"Xin chào codebot, cho mình hỏi đôi chút về C++"
-help,cpp,"Chào codebot, mình đang đau đầu vì C++ đây"
-help,cpp,"codebot ơi, mình có câu hỏi về C++"
-help,cpp,"hello, mình có thắc mắc về C++"
-help,cpp,"xin chào, Tớ cần giúp đỡ về C++"
-help,general,"xin chào codebot, bạn có thể giúp tôi chứ?"
-help,general,"chào codebot, giúp tôi với"
-help,general,"Hi, tớ cần sự trợ giúp"
-help,general,"Hi codebot, tớ có thắc mắc"
-help,general,"Xin chào, tôi cần giúp đỡ"
-help,general,"tôi có thắc mắc cần được giải đáp, giúp tôi với"
-help,general,trợ giúp
 help,py,"xin chào, cho mình hỏi đôi chút về python"
 help,py,"chào codebot, mình đang đau đầu vì Python quá"
 help,py,"hello, mình có câu hỏi về python cần giải đáp"
@@ -282,10 +304,7 @@ other,general,?
 other,general,a
 other,general,anh yêu em
 other,general,buồn ngủ quá ạ
-other,general,cái cây là gì?
 other,general,Có những bài hát đi vào lòng người
-other,general,con chó là gì?
-other,general,con mèo là gì?
 other,general,covid
 other,general,covid19
 other,general,cuộc sống cần rất nhiều yêu thương
@@ -320,6 +339,7 @@ other,general,trời hôm nay có mưa không?
 other,general,trong trường hợp nào thì mình nên nghỉ học?
 other,general,vì sao hổ dữ không ăn thịt con?
 other,general,việc học là việc quan trọng
+other,general,Hôm nay nóng quá. Đi uống nước không?
 other,general,vớ va vớ vẩn
 references,cpp,chia sẻ cho mình sách học lập trình C++ đi ạ
 references,cpp,cho tớ vài tựa sách lập trình C++

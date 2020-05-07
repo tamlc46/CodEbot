@@ -29,7 +29,7 @@ class codebot:
         self.vec_stack = []
         
         self.intent = None          # Intent of user
-        self.context = None         # Context is for looking up the exact language in kb
+        self.context = 'general'         # Context is for looking up the exact language in kb
 
         self.low_conf_accept = False
     
@@ -87,10 +87,6 @@ class codebot:
         for key in replaces:
             response = response.replace(key, replaces[key])
         return self.__parse_rb(response)
-    
-    def __get_kb(self, input_str):
-
-        pass
 
     def __intent_infer(self, cur_intent):
         if self.intent in self.ir and cur_intent in self.ir[self.intent]:
@@ -98,11 +94,90 @@ class codebot:
         return cur_intent
 
     def __context_infer(self, cur_context):
-        if self.context in self.ir and cur_context in self.cr[self.context]:
-            return self.ir[self.context][cur_context]
+        if self.context in self.cr and cur_context in self.cr[self.context]:
+            return self.cr[self.context][cur_context]
         return cur_context
+    
+    def __get_sorted_tfidf_terms(self, n=None):
+        feature_array = np.array(self.preprocessor._vectorizer.get_feature_names())
+        tfidf = self.vec_stack[-1].toarray()[0]
+        tfidf_sorting = np.argsort(tfidf).flatten()[::-1]
+        if n is not None:
+            return feature_array[tfidf_sorting][:n]
+        return feature_array[tfidf_sorting][tfidf[tfidf_sorting] > 0.0]
+    
+    def __get_theory_answer(self):
+        
+        # Searching KB for terms:
+        tokens = self.raw_stack[-1].lower().translate(str.maketrans('', '', string.punctuation.replace('+',''))).split()
+        theory_terms = []
+        for i in range(len(tokens)):
+            for c in range(1, 4):
+                if i+c == len(tokens)+1: 
+                    break
+                tmp = " ".join([tokens[i+j] for j in range(c)])
+                if tmp in self.kb and (self.context == 'general' or self.context in self.kb[tmp]):
+                    theory_terms.append(tmp)
 
-    def __get_response(self):
+        # Replace $obj in response:
+        rb_intent = self.rb[self.intent]
+        response = choice(rb_intent[self.context])
+        knowledge = []
+
+        # print(tokens)
+        # print(self.intent)
+        # print(theory_terms)
+        # print(self.context)
+
+        if len(theory_terms) < response.count('$obj'):
+            self.intent = 'other'
+            response = choice(rb_intent['null'])
+        elif len(theory_terms) > response.count('$obj'):
+            self.intent = 'other'
+            return self.__get_irrelevant_answer()
+        else:
+            for term in theory_terms:
+                response = response.replace('$obj', term, 1)
+                if self.context == 'general' and 'general' not in self.kb[term]:
+                    for c in self.kb[term]:
+                        knowledge.append(self.kb[term][c][self.intent])
+                else:
+                    knowledge.append(self.kb[term][self.context][self.intent])
+                knowledge.append("Nguồn:\n"+'\n'.join(self.kb[term]['__source__']))
+        
+        answer = [response]
+        answer.extend(knowledge)
+        
+        return [self.__parse_rb(sen) for sen in answer]
+
+    def __get_irrelevant_answer(self):
+        answer = ''
+        rb_intent = self.rb[self.intent]
+        
+        if isinstance(rb_intent, list):
+            answer = choice(rb_intent)
+        else:
+            answer = choice(rb_intent[self.context])
+
+        if isinstance(answer, list):
+            return [self.__parse_rb(sen) for sen in answer]
+        return [self.__parse_rb(answer)]
+
+
+    def __get_low_conf_answer(self, original_intent):
+        answer = ''
+        rb_intent_lc = self.rb['low_conf'][original_intent]
+        
+        if isinstance(rb_intent_lc, list):
+            answer = choice(rb_intent_lc)
+        else:
+            answer = rb_intent_lc
+
+        if isinstance(answer, list):
+            return [self.__parse_rb(sen) for sen in answer]
+        return [self.__parse_rb(answer)]
+
+    def __get_final_answer(self):
         # Intent:
         intent = self.__get_intent()
         if intent['conf'] >= 0.0 or self.low_conf_accept:
@@ -125,40 +200,31 @@ class codebot:
             self.low_conf_accept = True
         else:
             self.low_conf_accept = False
-
-        # Build answers:
-        answer = ''
-        rb_intent = self.rb[self.intent]
         
-        if self.intent != "low_conf":
-            if isinstance(rb_intent, list):
-                answer = choice(rb_intent)
-            else:
-                answer = choice(rb_intent[self.context])
+        # Build answer:
+        if self.intent == 'low_conf':
+            final_answer = self.__get_low_conf_answer(intent['name'])
+        elif self.intent in ('define', 'apply', 'compare'):
+            final_answer = self.__get_theory_answer()
         else:
-            rb_intent_lc = rb_intent[intent['name']]
-            if isinstance(rb_intent_lc, list):
-                answer = choice(rb_intent_lc)
-            else:
-                answer = rb_intent_lc
-
-        if isinstance(answer, list):
-            final_answer = [self.__parse_rb(sen) for sen in answer]
-        else:
-            final_answer = [self.__parse_rb(answer)]
+            final_answer = self.__get_irrelevant_answer()
         
         # print(self.intent, intent, self.low_conf_accept, sep='\n')
-        
         self.__clean_up()
         return final_answer
         
-    def answer(self, input_str):
+    def send_replies(self, input_str):
         self.__read_input(input_str)
+        # print(self.__get_sorted_tfidf_terms())
         answers = []
-        answers.extend(self.__get_response())
+        answers.extend(self.__get_final_answer())
         if len(self.raw_stack) and self.intent == 'agree':
-            answers.extend(self.__get_response())
-        return json.dumps(answers, ensure_ascii=False)
+            answers.extend(self.__get_final_answer())
+
+        if self.intent == 'other':
+            self.context = 'general'
+        
+        print(json.dumps(answers, ensure_ascii=False))
 
 if __name__ == "__main__":
     try:
@@ -168,7 +234,7 @@ if __name__ == "__main__":
 
         bot_instance = codebot()
         while True:
-            print(bot_instance.answer(input()))
+            bot_instance.send_replies(input())
         
     except Exception as ex:
         print("An error has occured! Here is the error details:")

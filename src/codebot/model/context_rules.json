@@ -10,5 +10,8 @@
     "py": {
         "low_conf": "py",
         "general": "py"
+    },
+    "low_conf": {
+        "low_conf": "general"
     }
 }

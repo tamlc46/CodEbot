@@ -67,7 +67,7 @@
             "Trong ngôn ngữ C++, sau đây là định nghĩa của $obj mà bạn đang tìm"
         ],
         "py": [
-            "Trong ngôn ngữ Python 3, sau đây là định nghĩa của $obj mà bạn đang tìm"
+            "Trong ngôn ngữ Python, sau đây là định nghĩa của $obj mà bạn đang tìm"
         ],
         "null": [
             "Khái niệm bạn đang thắc mắc không nằm trong tầm hiểu biết của $self ạ! $recommend"
@@ -78,10 +78,10 @@
             "Sau đây là định nghĩa của $obj mà bạn đang tìm"
         ],
         "cpp": [
-            "Trong ngôn ngữ C++, sau đây là định nghĩa của $obj mà bạn đang tìm"
+            "Trong ngôn ngữ C++, sau đây là ứng dụng của $obj mà bạn đang tìm"
         ],
         "py": [
-            "Trong ngôn ngữ Python 3, sau đây là định nghĩa của $obj mà bạn đang tìm"
+            "Trong ngôn ngữ Python, sau đây là ứng dụng của $obj mà bạn đang tìm"
         ],
         "null": [
             "Khái niệm bạn đang thắc mắc không nằm trong tầm hiểu biết của $self ạ! $recommend"
@@ -89,13 +89,13 @@
     },
     "compare": {
         "general": [
-            "$self không thể giải đáp thắc mắc giúp bạn. Vui lòng chỉ rõ bạn muốn so sánh khái niệm của ngôn ngữ nào trong câu hỏi ạ."
+            "Sau đây là sự so sánh giữa $obj và $obj."
         ],
         "cpp": [
             "Trong C++, sau đây là sự so sánh giữa $obj và $obj."
         ],
         "py": [
-            "Trong Python, sau đây là sự so sánh giữa %s và $obj."
+            "Trong Python, sau đây là sự so sánh giữa $obj và $obj."
         ],
         "null": [
             "Khái niệm bạn đang thắc mắc không nằm trong tầm hiểu biết của $self ạ! $recommend"
@@ -107,9 +107,9 @@
         "tip": "Có phải $opp muốn biết thêm về mẹo lập trình?",
         "references": "Có phải $opp đang muốn xin thêm tài liệu lập trình?",
         "help": "Có phải $opp đang cần giúp đỡ?",
-        "define": "Có phải $opp đang cần $self định nghĩa gì đó?",
-        "compare": "Có phải $opp đang cần $self so sánh cái gì đó?",
-        "apply": "Có phải $opp đang cần $self đưa ra ứng dụng của một cái gì đó?"
+        "define": "Có phải $opp đang cần $self trả lời câu hỏi định nghĩa không?",
+        "compare": "Có phải $opp đang cần $self trả lời câu hỏi so sánh không?",
+        "apply": "Có phải $opp đang cần $self trả lời câu hỏi ứng dụng không?"
     },
     "$self": [
         "CodEbot"

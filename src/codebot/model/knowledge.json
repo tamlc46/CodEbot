@@ -1,28 +1,36 @@
 {
     "c++": {
-        "def": "C++ là một loại ngôn ngữ lập trình bậc. Đây là ngôn ngữ lập trình đa năng được tạo ra bởi Bjarne Stroustrup như một phần mở rộng của ngôn ngữ lập trình C, hoặc \"C với các Class\", Ngôn ngữ đã được mở rộng đáng kể theo thời gian và C ++ hiện đại có các tính năng: lập trình tổng quát, lập trình hướng đối tượng, lập trình thủ tục, ngôn ngữ đa mẫu hình tự do có kiểu tĩnh, dữ liệu trừu tượng, và lập trình đa hình, ngoài ra còn có thêm các tính năng, công cụ để thao tác với bộ nhớ cấp thấp. Từ thập niên 1990, C++ đã trở thành một trong những ngôn ngữ thương mại ưa thích và phổ biến của lập trình viên.",
-        "apply": "C++ được thiết kế hướng tới lập trình hệ thống và phần mềm nhúng, bao gồm cả hệ thống có tài nguyên hạn chế và tài nguyên khổng lồ, với ưu điểm là hiệu suất, hiệu quả và tính linh hoạt cao. C ++ có thể tìm thấy ở mọi nơi, với những điểm mạnh là cơ sở hạ tầng phần mềm và các ứng dụng bị hạn chế tài nguyên, bao gồm: phần mềm ứng dụng máy tính cá nhân, các hệ thống máy chủ (ví dụ: thương mại điện tử, cỗ máy tìm kiếm trên web hoặc máy chủ SQL) và các ứng dụng ưu tiên về hiệu suất (ví dụ: tổng đài thông tin liên lạc hoặc thiết bị thăm dò không gian).",
-        "tag": [],
-        "summary": [
-            "Là ngôn ngữ lập trình bậc trung",
-            "Là ngôn ngữ biên dịch, cần một trình biên dịch mã nguồn ra mã máy",
-            "Đa mục đích",
-            "Khả năng kiểm soát tài nguyên thực thi vượt trội (thời gian chạy tối ưu và cho phép lập trình viên quản lý bộ nhớ qua con trỏ)",
-            "Ứng dụng lập trình hệ thống, hệ điều hành, phần mềm nhúng, công cụ đồ họa, game engines, trình biên dịch, thông dịch cho các ngôn ngữ khác,..."
-        ],
-        "source": ["https://vi.wikipedia.org/wiki/C++"]
+        "general": {
+            "define": "C++ là một loại ngôn ngữ lập trình bậc. Đây là ngôn ngữ lập trình đa năng được tạo ra bởi Bjarne Stroustrup như một phần mở rộng của ngôn ngữ lập trình C, hoặc \"C với các Class\". Ngôn ngữ đã được mở rộng đáng kể theo thời gian và C ++ hiện đại có các tính năng: lập trình tổng quát, lập trình hướng đối tượng, lập trình thủ tục, ngôn ngữ đa mẫu hình tự do có kiểu tĩnh, dữ liệu trừu tượng, và lập trình đa hình, ngoài ra còn có thêm các tính năng, công cụ để thao tác với bộ nhớ cấp thấp. Từ thập niên 1990, C++ đã trở thành một trong những ngôn ngữ thương mại ưa thích và phổ biến của lập trình viên.",
+            "apply": "C++ được thiết kế hướng tới lập trình hệ thống và phần mềm nhúng, bao gồm cả hệ thống có tài nguyên hạn chế và tài nguyên khổng lồ, với ưu điểm là hiệu suất, hiệu quả và tính linh hoạt cao. C ++ có thể tìm thấy ở mọi nơi, với những điểm mạnh là cơ sở hạ tầng phần mềm và các ứng dụng bị hạn chế tài nguyên, bao gồm: phần mềm ứng dụng máy tính cá nhân, các hệ thống máy chủ (ví dụ: thương mại điện tử, cỗ máy tìm kiếm trên web hoặc máy chủ SQL) và các ứng dụng ưu tiên về hiệu suất (ví dụ: tổng đài thông tin liên lạc hoặc thiết bị thăm dò không gian).",
+            "compare": "C++ là ngôn ngữ lập trình bậc trung, thuộc dạng ngôn ngữ biên dịch, cần trình biên dịch để dịch mã nguồn ra mã máy. C++ là ngôn ngữ lập trình đa mục đích, có khả năng kiểm soát tài nguyên thực thi vượt trội (thời gian chạy tối ưu và cho phép lập trình viên quản lý bộ nhớ qua con trỏ). C++ được ứng dụng trong lập trình hệ thống, hệ điều hành, phần mềm nhúng, công cụ đồ họa, game engines, trình biên dịch, thông dịch cho các ngôn ngữ khác,..."
+            
+        },
+        "__source__": ["https://vi.wikipedia.org/wiki/C++"]
     },
     "python": {
-        "def": "Python là một ngôn ngữ lập trình bậc cao cho các mục đích lập trình đa năng, do Guido van Rossum tạo ra và lần đầu ra mắt vào năm 1991. Python được thiết kế với ưu điểm mạnh là dễ đọc, dễ học và dễ nhớ. Python là ngôn ngữ có hình thức rất sáng sủa, cấu trúc rõ ràng, thuận tiện cho người mới học lập trình. Cấu trúc của Python còn cho phép người sử dụng viết mã lệnh với số lần gõ phím tối thiểu.",
-        "apply": "Python được ứng dụng phát triển nhanh các phần mềm, xây dựng web, làm việc với số liệu khoa học, và được sử dụng để giảng dạy lập trình ở nhiều nơi,...",
-        "tag": [],
-        "summary": [
-            "Là ngôn ngữ lập trình bậc cao",
-            "Là ngôn ngữ thông dịch, cần một trình thông dịch để thực thi mã nguồn",
-            "Đa mục đích",
-            "Tự động kiểu và tự động quản lý bộ nhớ",
-            "Ứng dụng phát triển nhanh các phần mềm, xây dựng web, làm việc với số liệu khoa học, và được sử dụng để giảng dạy lập trình ở nhiều nơi,..."
-        ],
-        "source": ["https://vi.wikipedia.org/wiki/Python_(ng%C3%B4n_ng%E1%BB%AF_l%E1%BA%ADp_tr%C3%ACnh)", "https://www.python.org/about/apps/"]
+        "general": {
+            "define": "Python là một ngôn ngữ lập trình bậc cao cho các mục đích lập trình đa năng, do Guido van Rossum tạo ra và lần đầu ra mắt vào năm 1991. Python được thiết kế với ưu điểm mạnh là dễ đọc, dễ học và dễ nhớ. Python là ngôn ngữ có hình thức rất sáng sủa, cấu trúc rõ ràng, thuận tiện cho người mới học lập trình. Cấu trúc của Python còn cho phép người sử dụng viết mã lệnh với số lần gõ phím tối thiểu.",
+            "apply": "Python được ứng dụng phát triển nhanh các phần mềm, xây dựng web, làm việc với số liệu khoa học, và được sử dụng để giảng dạy lập trình ở nhiều nơi,...",
+            "compare": "Python là ngôn ngữ lập trình bậc cao thuộc dạng ngôn ngữ thông dịch, cần một trình thông dịch để thực thi mã nguồn. Python là ngôn ngữ đa mục đích, có tự động kiểu và tự động quản lý cấp phát bộ nhớ. Python được ứng dụng phát triển nhanh các phần mềm, xây dựng web, làm việc với số liệu khoa học, và được sử dụng để giảng dạy lập trình ở nhiều nơi,... "
+        },
+        "__source__": ["https://vi.wikipedia.org/wiki/Python_(ng%C3%B4n_ng%E1%BB%AF_l%E1%BA%ADp_tr%C3%ACnh)", "https://www.python.org/about/apps/"]
+    },
+    "hàm": {
+        "general": {
+            "define": "Trong khoa học máy tính, một chương trình con (subprogram) hay subroutine là một đoạn chương trình được đóng gói thành một đơn vị trình, nó thực hiện một số tác vụ cụ thể mà chương trình cần thực hiện nhiều lần từ nhiều nơi trong thời gian chạy của nó. Khi chương trình cần đến tác vụ cụ thể đó thì bố trí chỉ thị gọi (call) đến chương trình con này và nhận kết quả nếu có sau khi nó thực thi xong. Ngay từ lúc máy tính ra đời thì kỹ thuật lập trình kiểu cấu trúc module hóa với các chương trình con đã được thiết lập, và được củng cố trong các phần mềm lập trình hợp ngữ. Ngày nay trong ngôn ngữ bậc cao chương trình con được diễn đạt tùy theo ngôn ngữ là các hàm (function), thủ tục (procedure) và phương thức (method),... Một số ngôn ngữ lập trình, chẳng hạn Pascal và FORTRAN, phân biệt giữa hàm (một chương trình con có trả về giá trị) và thủ tục (không trả về giá trị). Các ngôn ngữ khác, ví dụ C và LISP, coi hai thuật ngữ này như nhau. Cái tên phương thức thường được dùng trong lập trình hướng đối tượng để gọi các chương trình con là một phần của các đối tượng.",
+            "apply": "Người ta thay các đoạn trình giống nhau bằng một chương trình con (subroutine), làm cho mã chương trình ngắn hơn, sáng sủa và dễ bảo dưỡng. Đưa các subroutine đã kiểm tra vào thư viện (library) ở dạng văn bản trình hoặc dạng mã, để khi lập trình mới thì chỉ cần liên kết tới thư viện đó. Những chương trình lớn được thiết kế dạng cấu trúc tốt có thể trao cho các nhóm và người lập trình khác nhau lập trình, đôi khi có thể thuê người làm thêm viết các subroutine không quá phức tạp.",
+            "compare": 
+                "Hàm là một đoạn chương trình con được đóng gói và được gọi ra khi cần, tập hợp các dòng lệnh để thực hiện một chức năng gì đó, giúp mã chương trình ngắn gọn, sáng sủa."
+        },
+        "__source__": ["https://vi.wikipedia.org/wiki/Ch%C6%B0%C6%A1ng_tr%C3%ACnh_con"]
+    },
+    "biến": {
+        "general": {
+            "define": "Trong lập trình máy tính, một biến (variable) hay vô hướng (scalar) là một vị trí lưu trữ gắn liền với một tên tượng trưng (định danh) liên quan, chứa một số lượng thông tin được biết đến hay chưa được biết đến mà gọi là giá trị. Tên biến là cách thường dùng để tham chiếu đến giá trị được lưu trữ; việc tách rời tên và nội dung cho phép tên được dùng độc lập với thông tin chính xác mà nó đại diện. Định danh trong mã nguồn máy tính có thể bị ràng buộc tới một giá trị trong suốt thời gian chạy, và giá trị của biến có thể thay đổi trong quá trình thực thi chương trình. Biến trong lập trình có thể không trực tiếp tương ứng với khái niệm biến trong toán học. Giá trị của một biến máy tính không nhất thiết phải là một phần của phương trình hay công thức như trong toán học.",
+            "apply": "Trong lập trình, biến dùng để lưu lại kết quả hoặc trạng thái cho các quá trình tính toán và thực thi chương trình để tiếp tục được sử dụng hoặc tham chiếu lại sau đó.",
+            "compare": "Biến là một vị trí lưu trữ gắn liền với một tên tượng trưng (định danh), chứa đựng một lượng thông tin gọi là giá trị của biến."
+        },
+        "__source__": ["https://vi.wikipedia.org/wiki/Bi%E1%BA%BFn_(khoa_h%E1%BB%8Dc_m%C3%A1y_t%C3%ADnh)"]
     }
 }
