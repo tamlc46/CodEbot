@@ -233,6 +233,7 @@ if __name__ == "__main__":
         sys.stdout.reconfigure(encoding='utf-8')
 
         bot_instance = codebot()
+        print("[\"<strong>CodEbot</strong> xin chào bạn 😁<br>Bạn có cần mình giúp gì không 😙😙\"]")
         while True:
             bot_instance.send_replies(input())
         
