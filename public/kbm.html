@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="image/logo.png">
+    <title>Knowledge Management - Hỗ trợ học lập trình bằng tiếng Việt</title>
+
+    <link rel="stylesheet" href="css/kbm.style.css" />
+  </head>
+  <body>
+    <div class="wrapper container vh-100">
+      <div class="row">
+        <div class="brand col-12">
+          <a href="">
+            <img class="logo" src="image/logo.png" alt="CodEbot" />
+            <span class="name">CodEbot</span>
+          </a>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-xl-8 justify-content-center text-center">
+          <table id="knowledge-list" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Khái niệm</th>
+                <th>Ngữ cảnh</th>
+                <th>Công cụ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>hàm</td>
+                <td>general</td>
+                <td>
+                  <button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Chỉnh sửa">
+                    <i class="fas fa-pencil-alt"></i>
+                  </button>
+                  <button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Xóa">
+                    <i class="fas fa-eraser"></i>
+                  </button>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>biến</td>
+                <td>general</td>
+                <td>
+                  <button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Chỉnh sửa">
+                    <i class="fas fa-pencil-alt"></i>
+                  </button>
+                  <button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Xóa">
+                    <i class="fas fa-eraser"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>con trỏ</td>
+                <td>C++</td>
+                <td>
+                  <button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Chỉnh sửa">
+                    <i class="fas fa-pencil-alt"></i>
+                  </button>
+                  <button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Xóa">
+                    <i class="fas fa-eraser"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button id="refresh" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Lảm mới">
+            <i class="fas fa-sync-alt"></i>
+          </button>
+          <button id="add-new" class="btn btn-success"  data-toggle="modal" data-target="#knowledge-editor">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="knowledge-editor" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <form action="post">
+            <div class="modal-header justify-content-center">
+              <h5 class="modal-title _title font-weight-bold">CẬP NHẬT TRI THỨC</h5>
+            </div>
+
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="concept" class="font-weight-bold">Khái niệm</label>
+                <input type="text" name="concept" id="concept" class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label for="context" class="font-weight-bold">Ngữ cảnh</label>
+                <small class="form-text text-muted">
+                  CodEbot sẽ trả lời theo một ngữ cảnh tương ứng theo ngôn ngữ mà người dùng hỏi.<br>
+                  Mỗi lần trả lời có thể gồm nhiều bong bóng chat. Mỗi bong bóng chat cách nhau 2 dấu xuống dòng.
+                </small>
+                <div id="context">
+                  <div class="card">
+                    <label for="context-general__switch">
+                      <div class="card-header">
+                        <input type="checkbox" class="btn" id="context-general__switch" data-toggle="collapse" data-target="#context-general" aria-expanded="true" aria-controls="context-general" checked>Tổng quan - General
+                        <small class="form-text text-muted">
+                          Trả lời các câu hỏi tổng quan trong lập trình.
+                        </small>
+                      </div>
+                    </label>
+                
+                    <div id="context-general" class="collapse show">
+                      <div class="card-body">
+
+                        <div class="form-group">
+                          <label for="context-general__define">Định nghĩa</label>
+                          <small class="text-muted">
+                            Kiến thức cho câu hỏi định nghĩa.
+                          </small>
+
+                          <textarea name="context-general__define" id="context-general__define" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="context-general__apply">Áp dụng</label>
+                          <small class="text-muted">
+                            Kiến thức cho câu hỏi áp dụng.
+                          </small>
+
+                          <textarea name="context-general__apply" id="context-general__apply" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="context-general__compare">So sánh</label>
+                          <small class="text-muted">
+                            Kiến thức cho câu hỏi so sánh.
+                          </small>
+                          
+                          <textarea name="context-general__compare" id="context-general__compare" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="context-general__source">Nguồn</label>
+                          <small class="text-muted">
+                            Mỗi nguồn cách nhau bởi một dấu xuống dòng.
+                          </small>
+
+                          <textarea name="context-general__source" id="context-general__source" class="form-control" rows="5"></textarea>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="card">
+                    <label for="context-cpp__switch">
+                      <div class="card-header">
+                        <input type="checkbox" class="btn collapsed" id="context-cpp__switch" data-toggle="collapse" data-target="#context-cpp" aria-expanded="false" aria-controls="context-cpp">Ngôn ngữ C++
+                        <small class="form-text text-muted">
+                          Trả lời các câu hỏi về ngôn ngữ C++.
+                        </small>
+                      </div>
+                    </label>
+                    <div id="context-cpp" class="collapse">
+                      <div class="card-body">
+                        
+                        <div class="form-group">
+                          <label for="context-general__define">Định nghĩa</label>
+                          <small class="text-muted">
+                            Kiến thức cho câu hỏi định nghĩa.
+                          </small>
+
+                          <textarea name="context-general__define" id="context-general__define" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="context-general__apply">Áp dụng</label>
+                          <small class="text-muted">
+                            Kiến thức cho câu hỏi áp dụng.
+                          </small>
+
+                          <textarea name="context-general__apply" id="context-general__apply" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="context-general__compare">So sánh</label>
+                          <small class="text-muted">
+                            Kiến thức cho câu hỏi so sánh.
+                          </small>
+                          
+                          <textarea name="context-general__compare" id="context-general__compare" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="context-general__source">Nguồn</label>
+                          <small class="text-muted">
+                            Mỗi nguồn cách nhau bởi một dấu xuống dòng.
+                          </small>
+
+                          <textarea name="context-general__source" id="context-general__source" class="form-control" rows="5"></textarea>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="card">
+                    <label for="context-py__switch">
+                      <div class="card-header">
+                        <input type="checkbox" class="btn collapsed" id="context-py__switch" data-toggle="collapse" data-target="#context-py" aria-expanded="false" aria-controls="context-py">Ngôn ngữ Python
+                        <small class="form-text text-muted">
+                          Trả lời các câu hỏi về ngôn ngữ Python.
+                        </small>
+                      </div>
+                    </label>
+                    <div id="context-py" class="collapse">
+                      <div class="card-body">
+                        
+                        <div class="form-group">
+                          <label for="context-general__define">Định nghĩa</label>
+                          <small class="text-muted">
+                            Kiến thức cho câu hỏi định nghĩa.
+                          </small>
+
+                          <textarea name="context-general__define" id="context-general__define" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="context-general__apply">Áp dụng</label>
+                          <small class="text-muted">
+                            Kiến thức cho câu hỏi áp dụng.
+                          </small>
+
+                          <textarea name="context-general__apply" id="context-general__apply" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="context-general__compare">So sánh</label>
+                          <small class="text-muted">
+                            Kiến thức cho câu hỏi so sánh.
+                          </small>
+                          
+                          <textarea name="context-general__compare" id="context-general__compare" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="context-general__source">Nguồn</label>
+                          <small class="text-muted">
+                            Mỗi nguồn cách nhau bởi một dấu xuống dòng.
+                          </small>
+
+                          <textarea name="context-general__source" id="context-general__source" class="form-control" rows="5"></textarea>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                <i class="fas fa-times"></i>
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                <i class="fas fa-save"> </i>
+                Lưu
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/kbm.bundle.js"></script>
+  </body>
+</html>
