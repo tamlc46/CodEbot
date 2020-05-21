@@ -88,11 +88,16 @@ body {
   .brand {
     width: 100%;
     padding: 1rem 2rem;
-
+    
     text-align: center;
-
+    
     transition: ease 1s all;
-
+    
+    
+    a {
+      text-decoration: none;
+    }
+    
     .logo {
       height: 40px;
       float: left;
@@ -104,7 +109,6 @@ body {
       font-size: 40px;
       font-family: 'Magneto-Bold';
       font-weight: bold;
-      text-decoration: none;
       color: #fff;
       line-height: 1;
       

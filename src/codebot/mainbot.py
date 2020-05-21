@@ -136,14 +136,39 @@ class codebot:
             self.intent = 'other'
             return self.__get_irrelevant_answer()
         else:
+            tmp = ""
             for term in theory_terms:
+                tmp = term
                 response = response.replace('$obj', term, 1)
-                if self.context == 'general' and 'general' not in self.kb[term]:
-                    for c in self.kb[term]:
-                        knowledge.append(self.kb[term][c][self.intent])
-                else:
-                    knowledge.append(self.kb[term][self.context][self.intent])
-                knowledge.append("Nguồn:\n"+'\n'.join(self.kb[term]['__source__']))
+                
+                if self.context == 'general':
+                    if 'general' in self.kb[term] and self.intent in self.kb[term][self.context]:
+                        knowledge.extend(self.kb[term][self.context][self.intent])
+                    else:
+                        for context in self.kb[term]:
+                            if self.intent in self.kb[term][context]:
+                                knowledge.extend(self.kb[term][context][self.intent])
+                            else:
+                                knowledge = []
+                                break
+
+                elif self.context != 'general' and 'general' in self.kb[term] and self.intent in self.kb[term]['general']:
+                    knowledge.extend(self.kb[term]['general'][self.intent])
+
+                    if self.intent in self.kb[term][self.context]:
+                        knowledge.extend(self.kb[term][self.context][self.intent])
+
+                        if len(self.kb[term][self.context]['__source__']) > 0:
+                            knowledge.append("Nguồn:\n"+'\n'.join(self.kb[term][self.context]['__source__']))
+                    else:
+                        knowledge = []
+                        break
+
+            if len(knowledge) == 0:
+                self.intent = 'other'
+                response = choice(rb_intent['null'])
+                response = response.replace('$obj', tmp, 1)
+                    
         
         answer = [response]
         answer.extend(knowledge)
@@ -200,6 +225,8 @@ class codebot:
             self.low_conf_accept = True
         else:
             self.low_conf_accept = False
+
+        # print(self.intent, self.context)
         
         # Build answer:
         if self.intent == 'low_conf':

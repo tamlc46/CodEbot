@@ -7,10 +7,19 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const BrotliPlugin = require("brotli-webpack-plugin");
 
 module.exports = {
-  entry: [path.resolve(__dirname, "src", "client", "index.js"), path.resolve(__dirname, "src", "client", "style")],
+  entry: {
+    index: [
+      path.resolve(__dirname, "src", "client", "index.js"), 
+      path.resolve(__dirname, "src", "client", "index.scss")
+    ],
+    kbm: [
+      path.resolve(__dirname, "src", "client", "kbm.js"), 
+      path.resolve(__dirname, "src", "client", "kbm.scss")
+    ]
+  },
   output: {
     path: path.resolve(__dirname, "public", "js"),
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     chunkFilename: "[name].bundle.js"
   },
   module: {
@@ -70,7 +79,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "../css/style.css",
+      filename: "../css/[name].style.css",
       chunkFilename: "[hash].css"
     }),
     new CompressionPlugin({
