@@ -72,7 +72,7 @@
           <button id="refresh" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Lảm mới">
             <i class="fas fa-sync-alt"></i>
           </button>
-          <button id="add-new" class="btn btn-success"  data-toggle="modal" data-target="#knowledge-editor">
+          <button id="add-new" class="btn btn-success"  data-toggle="tooltip" data-placement="bottom" title="Thêm mới">
             <i class="fas fa-plus"></i>
           </button>
         </div>
@@ -80,10 +80,10 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="knowledge-editor" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="editor-wrapper" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-          <form action="post">
+          <form action="post" id="knowledge-editor">
             <div class="modal-header justify-content-center">
               <h5 class="modal-title _title font-weight-bold">CẬP NHẬT TRI THỨC</h5>
             </div>
@@ -104,14 +104,14 @@
                   <div class="card">
                     <label for="context-general__switch">
                       <div class="card-header">
-                        <input type="checkbox" class="btn" id="context-general__switch" data-toggle="collapse" data-target="#context-general" aria-expanded="true" aria-controls="context-general" checked>Tổng quan - General
+                        <input type="checkbox" class="btn" id="context-general__switch" data-toggle="collapse" data-target="#context-general" aria-expanded="false" aria-controls="context-general">Tổng quan - General
                         <small class="form-text text-muted">
                           Trả lời các câu hỏi tổng quan trong lập trình.
                         </small>
                       </div>
                     </label>
                 
-                    <div id="context-general" class="collapse show">
+                    <div id="context-general" class="collapse">
                       <div class="card-body">
 
                         <div class="form-group">
@@ -147,7 +147,7 @@
                             Mỗi nguồn cách nhau bởi một dấu xuống dòng.
                           </small>
 
-                          <textarea name="context-general__source" id="context-general__source" class="form-control" rows="5"></textarea>
+                          <textarea name="context-general____source__" id="context-general____source__" class="form-control" rows="5"></textarea>
                         </div>
 
                       </div>
@@ -167,39 +167,39 @@
                       <div class="card-body">
                         
                         <div class="form-group">
-                          <label for="context-general__define">Định nghĩa</label>
+                          <label for="context-cpp__define">Định nghĩa</label>
                           <small class="text-muted">
                             Kiến thức cho câu hỏi định nghĩa.
                           </small>
 
-                          <textarea name="context-general__define" id="context-general__define" class="form-control" rows="5"></textarea>
+                          <textarea name="context-cpp__define" id="context-cpp__define" class="form-control" rows="5"></textarea>
                         </div>
 
                         <div class="form-group">
-                          <label for="context-general__apply">Áp dụng</label>
+                          <label for="context-cpp__apply">Áp dụng</label>
                           <small class="text-muted">
                             Kiến thức cho câu hỏi áp dụng.
                           </small>
 
-                          <textarea name="context-general__apply" id="context-general__apply" class="form-control" rows="5"></textarea>
+                          <textarea name="context-cpp__apply" id="context-cpp__apply" class="form-control" rows="5"></textarea>
                         </div>
 
                         <div class="form-group">
-                          <label for="context-general__compare">So sánh</label>
+                          <label for="context-cpp__compare">So sánh</label>
                           <small class="text-muted">
                             Kiến thức cho câu hỏi so sánh.
                           </small>
                           
-                          <textarea name="context-general__compare" id="context-general__compare" class="form-control" rows="5"></textarea>
+                          <textarea name="context-cpp__compare" id="context-cpp__compare" class="form-control" rows="5"></textarea>
                         </div>
 
                         <div class="form-group">
-                          <label for="context-general__source">Nguồn</label>
+                          <label for="context-cpp__source">Nguồn</label>
                           <small class="text-muted">
                             Mỗi nguồn cách nhau bởi một dấu xuống dòng.
                           </small>
 
-                          <textarea name="context-general__source" id="context-general__source" class="form-control" rows="5"></textarea>
+                          <textarea name="context-cpp____source__" id="context-cpp____source__" class="form-control" rows="5"></textarea>
                         </div>
 
                       </div>
@@ -219,39 +219,39 @@
                       <div class="card-body">
                         
                         <div class="form-group">
-                          <label for="context-general__define">Định nghĩa</label>
+                          <label for="context-py__define">Định nghĩa</label>
                           <small class="text-muted">
                             Kiến thức cho câu hỏi định nghĩa.
                           </small>
 
-                          <textarea name="context-general__define" id="context-general__define" class="form-control" rows="5"></textarea>
+                          <textarea name="context-py__define" id="context-py__define" class="form-control" rows="5"></textarea>
                         </div>
 
                         <div class="form-group">
-                          <label for="context-general__apply">Áp dụng</label>
+                          <label for="context-py__apply">Áp dụng</label>
                           <small class="text-muted">
                             Kiến thức cho câu hỏi áp dụng.
                           </small>
 
-                          <textarea name="context-general__apply" id="context-general__apply" class="form-control" rows="5"></textarea>
+                          <textarea name="context-py__apply" id="context-py__apply" class="form-control" rows="5"></textarea>
                         </div>
 
                         <div class="form-group">
-                          <label for="context-general__compare">So sánh</label>
+                          <label for="context-py__compare">So sánh</label>
                           <small class="text-muted">
                             Kiến thức cho câu hỏi so sánh.
                           </small>
                           
-                          <textarea name="context-general__compare" id="context-general__compare" class="form-control" rows="5"></textarea>
+                          <textarea name="context-py__compare" id="context-py__compare" class="form-control" rows="5"></textarea>
                         </div>
 
                         <div class="form-group">
-                          <label for="context-general__source">Nguồn</label>
+                          <label for="context-py__source">Nguồn</label>
                           <small class="text-muted">
                             Mỗi nguồn cách nhau bởi một dấu xuống dòng.
                           </small>
 
-                          <textarea name="context-general__source" id="context-general__source" class="form-control" rows="5"></textarea>
+                          <textarea name="context-py____source__" id="context-py____source__" class="form-control" rows="5"></textarea>
                         </div>
 
                       </div>
@@ -264,9 +264,9 @@
             <div class="modal-footer justify-content-center">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">
                 <i class="fas fa-times"></i>
-                Close
+                Đóng
               </button>
-              <button type="button" class="btn btn-primary">
+              <button type="submit" class="btn btn-primary">
                 <i class="fas fa-save"> </i>
                 Lưu
               </button>

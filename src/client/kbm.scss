@@ -89,13 +89,13 @@ label {
   margin: 5px;
 }
 
-#knowledge-editor {
-
+#editor-wrapper {
   .card {
     margin-bottom: 0.5rem;
   }
-      
+}
 
+#knowledge-editor {
   input[type="checkbox"] {
     margin-right: 0.5rem;
   }
