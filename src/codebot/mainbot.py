@@ -239,7 +239,12 @@ class codebot:
         else:
             final_answer = self.__get_irrelevant_answer()
         
-        # print(self.intent, intent, self.low_conf_accept, sep='\n')
+        # print(intent, self.intent, context, self.context, self.low_conf_accept, sep='\n')
+
+        # Only allow 1 follow-up question, hence we need to reset context:
+        if self.context != context['name']:
+            self.context = context['name']
+        
         self.__clean_up()
         return final_answer
         
