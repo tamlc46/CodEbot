@@ -1,9 +1,22 @@
-// import "bootstrap";
-// import "bootstrap/js/dist/collapse";
-
-// import $ from 'jquery';
-
 import io from "socket.io-client";
+import marked from "marked";
+import hljs from "./highlight";
+import {throttle, debounce} from "throttle-debounce";
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  highlight: function(code, language) {
+    const validLanguage = hljs.getLanguage(language) ? language : 'bash';
+    return hljs.highlight(validLanguage, code).value;
+  },
+  pedantic: false,
+  gfm: true,
+  breaks: true,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false
+});
 
 console.log("Document Loaded!");
 
@@ -82,9 +95,11 @@ function user_bubble(text) {
   scroll_to_bottom();
 }
 
-function codebot_bubble(text) {
+function codebot_bubble(raw_text) {
+  let parsed = marked(raw_text);
+  console.log(parsed);
   let msg_list = document.querySelector("#chatbox .chatview .message-list");
-  let bubble = `<div class="row bot-message message"><div class="avatar"></div><div class="chat-bubble">${text.replace(/\n+/g, "<br>")}</div></div>`;
+  let bubble = `<div class="row bot-message message"><div class="avatar"></div><div class="chat-bubble">${parsed}</div></div>`;
   
   let scrollHeight = msg_list.scrollHeight;
   msg_list.insertAdjacentHTML("beforeend", bubble);
@@ -94,19 +109,27 @@ function codebot_bubble(text) {
   else {
     // Show statusbar
     let status = show_status("Có tin nhắn mới!", "fas fa-comments", "info", 0);
+    let msg_list = document.querySelector("#chatbox .chatview .message-list");
+    let chatview = document.querySelector("#chatbox .chatview");
 
+    msg_list.onscroll = throttle(300, false, () => {
+      if (msg_list.scrollTop + chatview.offsetHeight == msg_list.scrollHeight)
+        status.click();
+    });
     status.onclick = function(ev) {
       close_status();
       scroll_to_bottom();
       status.onclick = null;
-    }
+      msg_list.onscroll.cancel();
+      msg_list.onscroll = null;
+    };
   }
 }
 
-function scroll_to_bottom() {
+const scroll_to_bottom = debounce(300, false, () => {
   let msg_list = document.querySelector("#chatbox .chatview .message-list");
   msg_list.scrollTop = msg_list.scrollHeight;
-}
+});
 
 function show_status(msg, fa_icon, type="info", timeup=3) {
   let status = document.querySelector("#chatbox .chat-status");
@@ -146,9 +169,18 @@ function connect_ws() {
     console.log(data);
 	data = JSON.parse(data);
 	if (Array.isArray(data)) {
-	  data.forEach(text => {
-		codebot_bubble(text);
-	  })
+    show_status("Đang soạn...", "", "info", 0);
+    setTimeout(function print_single() {
+      let next_time = data[0].split(" ").length / 5 * 1000;
+      // console.log(next_time);
+      close_status();
+      codebot_bubble(data.shift());
+      
+      if (data.length > 0){
+        show_status("Đang soạn...", "", "info", 0);
+        setTimeout(print_single, next_time);
+      }
+    }, 25);
 	}
 	else {
 	  codebot_bubble(data);

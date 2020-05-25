@@ -17,6 +17,9 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/buttons";
 
+// Highlight.js
+@import "./highlight.styles/default.css";
+
 body {
   font-family: 'Vollkorn', 'Courier New', Courier, monospace;
 }
@@ -228,7 +231,7 @@ body {
             max-width: 70%;
             min-height: 50px;
             border-radius: 10px;
-            padding: 1rem;
+            padding: 1rem 1rem 0;
           }
 
           &.bot-message {
