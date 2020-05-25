@@ -1,4 +1,9 @@
 ﻿intent,context,question
+agree,general,chắc là vậy
+agree,general,chắc thế
+agree,general,chắc vậy
+agree,general,có lẽ vậy á
+agree,general,có lẽ
 agree,general,cậu biết ý tớ đó
 agree,general,câu trả lời thật là bổ ích
 agree,general,câu trả lời thật là bổ ích đó ạ
@@ -30,8 +35,13 @@ agree,general,tôi đồng ý
 agree,general,"tốt, đúng ý tôi"
 agree,general,chuẩn rồi ạ
 agree,general,chuẩn lắm
+agree,general,ừm đúng á
+agree,general,ừm đúng rồi
+agree,general,ừa hehe
+agree,general,ừm hihi
 agree,general,ừ
-agree,general,ừ đúng rồi
+agree,general,ừa
+agree,general,ừa đúng rồi
 agree,general,ừ được rồi
 agree,general,ừ nó đó
 agree,general,ừ ok
