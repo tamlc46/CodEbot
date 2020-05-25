@@ -75,7 +75,7 @@
     },
     "apply": {
         "general": [
-            "Sau đây là định nghĩa của $obj mà bạn đang tìm"
+            "Sau đây là ứng dụng của $obj mà bạn đang tìm"
         ],
         "cpp": [
             "Trong ngôn ngữ C++, sau đây là ứng dụng của $obj mà bạn đang tìm"

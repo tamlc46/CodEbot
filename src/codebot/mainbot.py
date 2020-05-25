@@ -144,6 +144,9 @@ class codebot:
                 if self.context == 'general':
                     if 'general' in self.kb[term] and self.intent in self.kb[term][self.context]:
                         knowledge.extend(self.kb[term][self.context][self.intent])
+                        
+                        if len(self.kb[term][self.context]['__source__']) > 0:
+                            knowledge.append("Nguồn:\n"+'\n'.join(self.kb[term][self.context]['__source__']))
                     else:
                         for context in self.kb[term]:
                             if self.intent in self.kb[term][context]:
@@ -157,7 +160,7 @@ class codebot:
 
                     if self.intent in self.kb[term][self.context]:
                         knowledge.extend(self.kb[term][self.context][self.intent])
-
+                        
                         if len(self.kb[term][self.context]['__source__']) > 0:
                             knowledge.append("Nguồn:\n"+'\n'.join(self.kb[term][self.context]['__source__']))
                     else:
@@ -260,7 +263,7 @@ if __name__ == "__main__":
         sys.stdout.reconfigure(encoding='utf-8')
 
         bot_instance = codebot()
-        print("[\"<strong>CodEbot</strong> xin chào bạn 😁<br>Bạn có cần mình giúp gì không 😙😙\"]")
+        # print("[\"<strong>CodEbot</strong> xin chào bạn 😁<br>Bạn có cần mình giúp gì không 😙😙\"]")
         while True:
             bot_instance.send_replies(input())
         
