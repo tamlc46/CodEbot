@@ -20,11 +20,14 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/popover";
 @import "~bootstrap/scss/card";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/close";
 // @import "bootstrap";
 
+// Highlight.js
+@import "./highlight.styles/default.css";
 
 body {
   font-family: 'Vollkorn', 'Courier New', Courier, monospace;
@@ -32,6 +35,17 @@ body {
 
 label {
   margin-bottom: 0;
+}
+
+.popover {
+  max-width: 60% !important;
+  width: 50% !important;
+  box-shadow: -4px 3px 20px -2px rgba(0,0,0,0.4);
+  
+  .popover-body {
+    max-height: 250px;
+    overflow-y: scroll;
+  }
 }
 
 .brand {

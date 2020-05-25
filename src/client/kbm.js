@@ -1,12 +1,33 @@
 import "bootstrap";
 import $ from "jquery";
 import Swal from "sweetalert2";
+import {debounce} from "throttle-debounce";
+import marked from "marked";
+import hljs from "./highlight";
+
+const contexts = ["general", "cpp", "py"];
+const intents = ["define", "apply", "compare", "__source__"];
 
 let list = $("#knowledge-list tbody");
 let editor_wrapper = $("#editor-wrapper");
 let editor = $("#knowledge-editor");
 let current_edit = "";
 let data = {};
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  highlight: function(code, language) {
+    const validLanguage = hljs.getLanguage(language) ? language : 'bash';
+    return hljs.highlight(validLanguage, code).value;
+  },
+  pedantic: false,
+  gfm: true,
+  breaks: true,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false
+});
 
 function get_data() {
   $.ajax("/kbm/list", {
@@ -163,7 +184,7 @@ function load_editor(concept) {
         $(`#context-${context}__${intent}`).val(data[concept][context][intent].join("\n"));
       }
       else {
-        $(`#context-${context}__${intent}`).val(data[concept][context][intent].join("\n\n"));
+        $(`#context-${context}__${intent}`).val(data[concept][context][intent].join("\n%break;\n"));
       }
     })
   })
@@ -186,32 +207,33 @@ editor.submit(ev => {
   console.log("Submitted!");
   console.log(editor.serializeArray());
 
-  let context = ["general", "cpp", "py"];
-  let intent = ["define", "apply", "compare", "__source__"];
-
   let kb = {
     old_concept: current_edit,
     concept: $("#concept").val()
   };
 
-  context.forEach(c => {
-    if ($(`#context-${c}__switch`)[0].checked) {
-      kb[c] = {};
-      intent.forEach(i => {
-        if ($(`#context-${c}__${i}`).val().trim() != "") {
-          if (i == "__source__") {
-            kb[c][i] = $(`#context-${c}__${i}`).val().trim().split("\n");
+  contexts.forEach(context => {
+    if ($(`#context-${context}__switch`)[0].checked) {
+      kb[context] = {};
+      intents.forEach(intent => {
+        if ($(`#context-${context}__${intent}`).val().trim() != "") {
+          if (intent == "__source__") {
+            kb[context][intent] = $(`#context-${context}__${intent}`).val().split("\n").map(x => {console.log(x); return x.trim()});
             
           }
           else {
-            kb[c][i] = $(`#context-${c}__${i}`).val().trim().split("\n\n");
+            kb[context][intent] = $(`#context-${context}__${intent}`).val().split("%break;").map(x =>{console.log(x); return x.trim()});
           }
         }
-      })
+      });
+
+      if ($.isEmptyObject(kb[context])) {
+        delete kb[context];
+      }
     }
   })
 
-  // console.log(kb);
+  console.log(kb);
 
   if (kb["old_concept"]) {
     update_kb(kb);
@@ -219,6 +241,49 @@ editor.submit(ev => {
   else {
     add_kb(kb);
   }
+});
+
+contexts.forEach(context => {
+  intents.forEach(intent => {
+    let dom = $(`#context-${context}__${intent}`)
+
+    function create_popover() {
+      dom.popover("dispose");
+
+      let raw_text = dom.val();
+      let markdown_dom = marked(raw_text.replace(/%break;/g, "\n\n--------------------"));
+
+      dom.popover({
+        placement: "bottom",
+        trigger: "none",
+        html: true,
+        title: "Xem trước Markdown",
+        content: markdown_dom
+      });
+
+      dom.popover("show");
+      return ;
+    }
+
+    // function create_markdown()
+
+    dom.focusin(ev => {
+      create_popover();
+    });
+
+    let update = debounce(250, false, () => {
+      console.log("Hello World");
+      create_popover();
+    })
+
+    dom.on("input", ev => {
+      update();
+    });
+
+    dom.focusout(ev => {
+      dom.popover("dispose");
+    });
+  });
 });
 
 load_list();

@@ -161,7 +161,7 @@ class codebot:
                     if self.intent in self.kb[term][self.context]:
                         knowledge.extend(self.kb[term][self.context][self.intent])
                         
-                        if len(self.kb[term][self.context]['__source__']) > 0:
+                        if "__source__" in self.kb[term][self.context] and len(self.kb[term][self.context]['__source__']) > 0:
                             knowledge.append("Nguồn:\n"+'\n'.join(self.kb[term][self.context]['__source__']))
                     else:
                         knowledge = []
